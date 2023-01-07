@@ -1,0 +1,1953 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="db_toll.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dt_AdminUserNotifications">
+          <Key>
+            <PropertyRef Name="UserNotifId" />
+          </Key>
+          <Property Name="UserNotifId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NotifId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dt_CertCtrTrx">
+          <Key>
+            <PropertyRef Name="CertCtrTrxId" />
+            <PropertyRef Name="pmid" />
+          </Key>
+          <Property Name="CertCtrTrxId" Type="varchar" MaxLength="17" Nullable="false" />
+          <Property Name="DhmValue" Type="datetime" Nullable="false" />
+          <Property Name="SiteId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="StationNumber" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="LaneName" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="BillingId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="Gap" Type="int" Nullable="false" />
+          <Property Name="pmid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dt_CertFilePlan">
+          <Key>
+            <PropertyRef Name="CertFilePlanId" />
+          </Key>
+          <Property Name="CertFilePlanId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DhmCreation" Type="datetime" Nullable="false" />
+          <Property Name="DhmPlan" Type="datetime" Nullable="false" />
+          <Property Name="DhmModification" Type="datetime" Nullable="false" />
+          <Property Name="Source" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="IsRunning" Type="bit" Nullable="false" />
+          <Property Name="IsEveryDay" Type="bit" Nullable="false" />
+          <Property Name="FileTypeId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="SiteId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="BagContainerId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="StationNumber" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="LaneName" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="PdvId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="LSId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="DhmValueStart" Type="datetime" Nullable="false" />
+          <Property Name="DhmValueEnd" Type="datetime" Nullable="false" />
+          <Property Name="CertFileId" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="IsPlanned" Type="bit" Nullable="false" />
+          <Property Name="TaskId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="IsTrxLane" Type="bit" Nullable="false" />
+          <Property Name="BillingId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="CategoryId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="IsFinnished" Type="bit" Nullable="false" />
+          <Property Name="IsCron" Type="bit" Nullable="false" />
+          <Property Name="IsEveryHour" Type="bit" Nullable="false" />
+          <Property Name="AddDaysStart" Type="int" Nullable="false" />
+          <Property Name="AddDaysEnd" Type="int" Nullable="false" />
+          <Property Name="ThreadTotal" Type="int" Nullable="false" />
+          <Property Name="ServerPort" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="ThreadDone" Type="int" Nullable="false" />
+          <Property Name="LinesNumber" Type="int" Nullable="false" />
+          <Property Name="CurrentLineNumber" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dt_CertTrxLaneInterface">
+          <Key>
+            <PropertyRef Name="CertTrxLaneInterfaceRowId" />
+          </Key>
+          <Property Name="DhmValue" Type="datetime" Nullable="false" />
+          <Property Name="SiteId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="StationNumber" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="LaneName" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="TrxNumber" Type="int" Nullable="false" />
+          <Property Name="TrxIndex" Type="int" Nullable="false" />
+          <Property Name="BillingId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="PartialPrice" Type="float" Nullable="false" />
+          <Property Name="OctalCode" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="ModeId" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="IsChecked" Type="bit" Nullable="false" />
+          <Property Name="IsZip" Type="bit" Nullable="false" />
+          <Property Name="IsCe" Type="bit" Nullable="false" />
+          <Property Name="CategoryPreDacId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="StationNumberO" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="CertTrxLaneInterfaceRowId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IsLane" Type="bit" Nullable="false" />
+          <Property Name="IsMsg" Type="bit" Nullable="false" />
+          <Property Name="PostNumber" Type="varchar" MaxLength="2" />
+          <Property Name="LaneTypeId" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="IsLS" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dt_CommVersions">
+          <Key>
+            <PropertyRef Name="VersionId" />
+          </Key>
+          <Property Name="VersionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VersionNumber" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="DhmModification" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dt_HomeUpdate">
+          <Key>
+            <PropertyRef Name="HomeUpdateId" />
+          </Key>
+          <Property Name="HomeUpdateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UpdateMessage" Type="nvarchar" MaxLength="800" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" />
+          <Property Name="UpdateStatusId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="DhmValue" Type="datetime" Nullable="false" />
+          <Property Name="Response" Type="nvarchar" MaxLength="400" Nullable="false" />
+          <Property Name="EmergencyId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="HomeUpdateEditId" Type="int" Nullable="false" />
+          <Property Name="PluginId" Type="int" Nullable="false" />
+          <Property Name="IdParent" Type="int" Nullable="false" />
+          <Property Name="ChannelId" Type="varchar" MaxLength="1" />
+          <Property Name="DhmPlan" Type="datetime" Nullable="false" />
+          <Property Name="TeamId" Type="int" Nullable="false" />
+          <Property Name="RowOrder" Type="int" Nullable="false" />
+          <Property Name="VersionId" Type="int" Nullable="false" />
+          <Property Name="HandledBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dt_HomeUpdateEdit">
+          <Key>
+            <PropertyRef Name="HomeUpdateEditId" />
+          </Key>
+          <Property Name="HomeUpdateEditId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HomeUpdateId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DhmModification" Type="datetime" Nullable="false" />
+          <Property Name="Response" Type="nvarchar" MaxLength="400" Nullable="false" />
+          <Property Name="DhmValueStart" Type="datetime" Nullable="false" />
+          <Property Name="DhmValueEnd" Type="datetime" Nullable="false" />
+          <Property Name="Duration" Type="float" Nullable="false" />
+          <Property Name="ImageExtension" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Link" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dt_LS">
+          <Key>
+            <PropertyRef Name="LSId" />
+          </Key>
+          <Property Name="LSId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="SiteId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="LSName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="pmid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IpAddressP" Type="varchar" MaxLength="15" />
+          <Property Name="IpAddressR" Type="varchar" MaxLength="15" />
+          <Property Name="IpAddressOpe" Type="varchar" MaxLength="15" />
+          <Property Name="IpAddressRed" Type="varchar" MaxLength="15" />
+          <Property Name="IsVirtual" Type="bit" Nullable="false" />
+          <Property Name="UserIdOpe" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="PasswordOpe" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="CexId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="RegionId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="LSOrder" Type="int" Nullable="false" />
+          <Property Name="IsPrincipal" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="ZipLenght" Type="int" Nullable="false" />
+          <Property Name="IsActiveMode" Type="bit" Nullable="false" />
+          <Property Name="IsActiveModeR" Type="bit" Nullable="false" />
+          <Property Name="AxleId" Type="varchar" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dt_Mp">
+          <Key>
+            <PropertyRef Name="MpId" />
+          </Key>
+          <Property Name="MpId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="MpName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MpNameOpe" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MpNameCe" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MpAcronym" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="MpCategory" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MpGroup" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="MpNameExpert" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="MpOrderExpert" Type="int" Nullable="false" />
+          <Property Name="MpCategoryExpert" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dt_ParamCategories">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="CategoryName" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="AxleNumber" Type="int" Nullable="false" />
+          <Property Name="IsHeight" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dt_ParamChannels">
+          <Key>
+            <PropertyRef Name="ChannelId" />
+            <PropertyRef Name="pmid" />
+          </Key>
+          <Property Name="ChannelId" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="ChannelName" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="pmid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dt_ParamEmergencies">
+          <Key>
+            <PropertyRef Name="EmergencyId" />
+            <PropertyRef Name="pmid" />
+          </Key>
+          <Property Name="EmergencyId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="EmergencyName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="pmid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RgbValue" Type="varchar" MaxLength="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dt_ParamFileType">
+          <Key>
+            <PropertyRef Name="FileTypeId" />
+            <PropertyRef Name="pmid" />
+          </Key>
+          <Property Name="FileTypeId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="FileTypeName" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="pmid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FileExtension" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="StartLineNumber" Type="int" Nullable="false" />
+          <Property Name="DiffLineNumber" Type="int" Nullable="false" />
+          <Property Name="Source" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="PluginId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="IsVirtual" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="TaskId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LoopName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="PurgeInDays" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dt_ParamLanes">
+          <Key>
+            <PropertyRef Name="LaneId" />
+          </Key>
+          <Property Name="SiteId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="StationNumber" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="LaneName" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="IpAddress" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="LaneTypeId" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="IsTest" Type="bit" Nullable="false" />
+          <Property Name="Rayon" Type="int" Nullable="false" />
+          <Property Name="IsCamContext" Type="bit" Nullable="false" />
+          <Property Name="IsCamIapi" Type="bit" Nullable="false" />
+          <Property Name="PurgeDuration" Type="int" Nullable="false" />
+          <Property Name="IsHms" Type="bit" Nullable="false" />
+          <Property Name="IsWriteTime" Type="bit" Nullable="false" />
+          <Property Name="IsTrxNumber" Type="bit" Nullable="false" />
+          <Property Name="IsLicensePlate" Type="bit" Nullable="false" />
+          <Property Name="CamBrandId" Type="int" Nullable="false" />
+          <Property Name="LaneModeName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CamBrandName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CamModelName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CamRefName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CamIpAddress" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Observation" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CamIapiIpAddress" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="ImageTypeId" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="ImagesNumber" Type="int" Nullable="false" />
+          <Property Name="IsNoneStop" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsCyclopeNewtrip" Type="bit" Nullable="false" />
+          <Property Name="LaneId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IsPing" Type="bit" Nullable="false" />
+          <Property Name="PingComment" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="DhmValuePing" Type="datetime" Nullable="false" />
+          <Property Name="IsInverted" Type="bit" Nullable="false" />
+          <Property Name="IsCalculateOnContext" Type="bit" Nullable="false" />
+          <Property Name="IsChecked" Type="bit" Nullable="false" />
+          <Property Name="IsAssigned" Type="bit" Nullable="false" />
+          <Property Name="AccessComment" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dt_ParamModules">
+          <Key>
+            <PropertyRef Name="ModuleId" />
+            <PropertyRef Name="pmid" />
+          </Key>
+          <Property Name="ModuleId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="ModuleName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="pmid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="Progression" Type="float" Nullable="false" />
+          <Property Name="ModuleDescription" Type="nvarchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dt_ParamPlugins">
+          <Key>
+            <PropertyRef Name="PluginId" />
+          </Key>
+          <Property Name="PluginId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PluginName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ModuleId" Type="varchar" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dt_ParamProducts">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SerialNumber" Type="varchar" MaxLength="16" Nullable="false" />
+          <Property Name="BillingId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="DhmExpiration" Type="datetime" />
+          <Property Name="ClientCode" Type="varchar" MaxLength="20" />
+          <Property Name="ClientCategory" Type="varchar" MaxLength="24" />
+          <Property Name="ClientName" Type="varchar" MaxLength="100" />
+          <Property Name="ClientPhone" Type="varchar" MaxLength="30" />
+          <Property Name="Identifiant" Type="varchar" MaxLength="30" />
+          <Property Name="IdentifiantType" Type="varchar" MaxLength="30" />
+          <Property Name="ProductTypeCode" Type="varchar" MaxLength="10" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="ObsTickIdPCount" Type="int" Nullable="false" />
+          <Property Name="ObsTickIdDCount" Type="int" Nullable="false" />
+          <Property Name="ObsTickIdICount" Type="int" Nullable="false" />
+          <Property Name="ObsMpId26Count" Type="int" Nullable="false" />
+          <Property Name="DhmUpdate" Type="datetime" Nullable="false" />
+          <Property Name="ObsTickIdPLastQualifDate" Type="datetime" Nullable="false" />
+          <Property Name="ObsTickIdDLastQualifDate" Type="datetime" Nullable="false" />
+          <Property Name="ObsTickIdPDhmUpdate" Type="datetime" Nullable="false" />
+          <Property Name="ObsTickIdDDhmUpdate" Type="datetime" Nullable="false" />
+          <Property Name="TagStatus" Type="varchar" MaxLength="40" />
+          <Property Name="MpName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Sold" Type="float" Nullable="false" />
+          <Property Name="ObsTickIdDCount01" Type="int" Nullable="false" />
+          <Property Name="ObsTickIdDCount02" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dt_ParamTeams">
+          <Key>
+            <PropertyRef Name="TeamId" />
+          </Key>
+          <Property Name="TeamId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DhmCreation" Type="datetime" Nullable="false" />
+          <Property Name="DhmModification" Type="datetime" Nullable="false" />
+          <Property Name="TeamName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="TeamOrder" Type="int" />
+          <Property Name="ImageExtension" Type="varchar" MaxLength="8" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dt_ParamThreads">
+          <Key>
+            <PropertyRef Name="CertFilePlanId" />
+            <PropertyRef Name="pmid" />
+          </Key>
+          <Property Name="CertFilePlanId" Type="int" Nullable="false" />
+          <Property Name="IsFinnished" Type="bit" Nullable="false" />
+          <Property Name="pmid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CertFileIdHeader" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="DhmCreation" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dt_ParamUpdateStatus">
+          <Key>
+            <PropertyRef Name="UpdateStatusId" />
+            <PropertyRef Name="pmid" />
+          </Key>
+          <Property Name="UpdateStatusId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="UpdateStatusName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="pmid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RgbValue" Type="varchar" MaxLength="7" Nullable="false" />
+          <Property Name="ProgressValue" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="Order" Type="int" Nullable="false" />
+          <Property Name="StatusTypeId" Type="varchar" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dt_Profils">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="pmid" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="pmid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="IpNumber" Type="varchar" MaxLength="50" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="50" />
+          <Property Name="SiteId" Type="varchar" MaxLength="50" />
+          <Property Name="Stations" Type="varchar" MaxLength="500" />
+          <Property Name="Emailcc" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ChromePath" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CeUserName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CePassword" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsConnected" Type="bit" Nullable="false" />
+          <Property Name="IsImage" Type="bit" Nullable="false" />
+          <Property Name="IsReportReceipt" Type="bit" Nullable="false" />
+          <Property Name="IsReportPost" Type="bit" Nullable="false" />
+          <Property Name="IsReportNr" Type="bit" Nullable="false" />
+          <Property Name="IsReportTrafic" Type="bit" Nullable="false" />
+          <Property Name="IsReportVers" Type="bit" Nullable="false" />
+          <Property Name="IsReportTrxLane" Type="bit" Nullable="false" />
+          <Property Name="LSIds" Type="varchar" MaxLength="110" />
+          <Property Name="ImageExtension" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Birthday" Type="datetime" Nullable="false" />
+          <Property Name="IsMale" Type="bit" Nullable="false" />
+          <Property Name="City" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Country" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsNotificationActive" Type="bit" Nullable="false" />
+          <Property Name="IsDefaultMode" Type="bit" Nullable="false" />
+          <Property Name="PhoneFix" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="RegionIds" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="ZoneLevelIds" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="TimeLevelIds" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="CexIds" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="JobCode" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="NetworkIds" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="AxleIds" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CellIds" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="dt_QualifTrxLane">
+          <Key>
+            <PropertyRef Name="QualifTrxLaneRowId" />
+          </Key>
+          <Property Name="QualifTrxLaneRowId" Type="int" Nullable="false" />
+          <Property Name="CategoryPostDacId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="ProductNumber" Type="varchar" MaxLength="39" Nullable="false" />
+          <Property Name="ReadTickNumber" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="DhmValueO" Type="datetime" Nullable="false" />
+          <Property Name="LaneNameO" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="ObsPassId" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="ObsTickId" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="ObsMpId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="IsPathQualified" Type="bit" Nullable="false" />
+          <Property Name="NetworkId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="NetworkIdO" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="IsConvenientContext" Type="bit" Nullable="false" />
+          <Property Name="IsConvenientIapi" Type="bit" Nullable="false" />
+          <Property Name="IsConvenientClass" Type="bit" Nullable="false" />
+          <Property Name="IsConvenientContextO" Type="bit" Nullable="false" />
+          <Property Name="IsConvenientIapiO" Type="bit" Nullable="false" />
+          <Property Name="ObsSequId" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="ObsOcrId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="SerialNumber" Type="varchar" MaxLength="16" />
+          <Property Name="CashierNumber" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="Speed" Type="float" Nullable="false" />
+          <Property Name="LicensePlate" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="LicensePlateO" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="IsPathQualifiedObsTickIdD" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dt_Sites">
+          <Key>
+            <PropertyRef Name="SiteId" />
+          </Key>
+          <Property Name="SiteId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="SiteName" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="StationsNumber" Type="int" Nullable="false" />
+          <Property Name="SensesNumber" Type="int" Nullable="false" />
+          <Property Name="BagContainerNumber" Type="int" Nullable="false" />
+          <Property Name="LanesNumber" Type="int" Nullable="false" />
+          <Property Name="PdvsNumber" Type="int" Nullable="false" />
+          <Property Name="PdvPostsNumber" Type="int" Nullable="false" />
+          <Property Name="SiteIdCe" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="IsVirtual" Type="bit" Nullable="false" />
+          <Property Name="AxleId" Type="varchar" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dt_Stations">
+          <Key>
+            <PropertyRef Name="StationId" />
+          </Key>
+          <Property Name="NetworkId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="SiteId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="StationNumber" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="StationName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="BagHeader" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="BagContainerId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="LSId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="StationOpeName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="StationCeName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="StationCeNumber" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="IsDouble" Type="bit" Nullable="false" />
+          <Property Name="LanesNumber" Type="int" Nullable="false" />
+          <Property Name="IsPdv" Type="bit" Nullable="false" />
+          <Property Name="CexIdCe" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="StationIdCe" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="IsVirtual" Type="bit" Nullable="false" />
+          <Property Name="SiteIdCe" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="SearchLatency" Type="int" Nullable="false" />
+          <Property Name="ExportLatency" Type="int" Nullable="false" />
+          <Property Name="BagContainerIdCe" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="Sens" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="StationNameOpeTrafic" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="StationNameOpeReceipt" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="StationNameOpeNr" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="StationNameOpePost" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SectionId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="AxleId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="CexId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="DivisionId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="OrderNumber" Type="int" Nullable="false" />
+          <Property Name="System" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="BagContainerName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsPrincipal" Type="bit" Nullable="false" />
+          <Property Name="IsBidirectional" Type="bit" Nullable="false" />
+          <Property Name="PK" Type="int" Nullable="false" />
+          <Property Name="Color" Type="varchar" MaxLength="7" Nullable="false" />
+          <Property Name="StationOdIndex" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="TmjLastMonth" Type="int" Nullable="false" />
+          <Property Name="RmjLastMonth" Type="float" Nullable="false" />
+          <Property Name="ReceiptTlpRateLastMonth" Type="float" Nullable="false" />
+          <Property Name="NumberTlpRateLastMonth" Type="float" Nullable="false" />
+          <Property Name="StationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SectionOrder" Type="int" Nullable="false" />
+          <Property Name="IsSwitch" Type="bit" Nullable="false" />
+          <Property Name="SectionOrder1" Type="int" Nullable="false" />
+          <Property Name="SectionOrder2" Type="int" Nullable="false" />
+          <Property Name="SectionOrder0" Type="int" Nullable="false" />
+          <Property Name="IsImage" Type="bit" Nullable="false" />
+          <Property Name="IsLoyalty" Type="bit" Nullable="false" />
+          <Property Name="IsRealTime" Type="bit" Nullable="false" />
+          <Property Name="RegionId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="IsCyclopeMatching" Type="bit" Nullable="false" />
+          <Property Name="IsCyclopeClassify" Type="bit" Nullable="false" />
+          <Property Name="CellId" Type="varchar" MaxLength="2" />
+          <Property Name="AxleIdExpert" Type="varchar" MaxLength="2" />
+          <Property Name="PK2" Type="int" />
+          <Property Name="StationNameExpert" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="dt_TaskTeams">
+          <Key>
+            <PropertyRef Name="TaskTeamId" />
+          </Key>
+          <Property Name="TaskTeamId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DhmCreation" Type="datetime" Nullable="false" />
+          <Property Name="DhmModification" Type="datetime" Nullable="false" />
+          <Property Name="TaskId" Type="int" Nullable="false" />
+          <Property Name="TeamId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dt_TeamMembers">
+          <Key>
+            <PropertyRef Name="TeamMemberId" />
+          </Key>
+          <Property Name="TeamMemberId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DhmCreation" Type="datetime" Nullable="false" />
+          <Property Name="DhmModification" Type="datetime" Nullable="false" />
+          <Property Name="TeamId" Type="int" Nullable="false" />
+          <Property Name="MemberId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__dt_HomeUp__UserI__1C74C122">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+          <End Role="dt_HomeUpdate" Type="Self.dt_HomeUpdate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="dt_HomeUpdate">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__dt_HomeUp__Versi__34703EF7">
+          <End Role="dt_CommVersions" Type="Self.dt_CommVersions" Multiplicity="1" />
+          <End Role="dt_HomeUpdate" Type="Self.dt_HomeUpdate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dt_CommVersions">
+              <PropertyRef Name="VersionId" />
+            </Principal>
+            <Dependent Role="dt_HomeUpdate">
+              <PropertyRef Name="VersionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__dt_LS__SiteId__7B28DBF0">
+          <End Role="dt_Sites" Type="Self.dt_Sites" Multiplicity="1" />
+          <End Role="dt_LS" Type="Self.dt_LS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dt_Sites">
+              <PropertyRef Name="SiteId" />
+            </Principal>
+            <Dependent Role="dt_LS">
+              <PropertyRef Name="SiteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__dt_Qualif__Quali__343D96D2">
+          <End Role="dt_CertTrxLaneInterface" Type="Self.dt_CertTrxLaneInterface" Multiplicity="1" />
+          <End Role="dt_QualifTrxLane" Type="Self.dt_QualifTrxLane" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="dt_CertTrxLaneInterface">
+              <PropertyRef Name="CertTrxLaneInterfaceRowId" />
+            </Principal>
+            <Dependent Role="dt_QualifTrxLane">
+              <PropertyRef Name="QualifTrxLaneRowId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="db_tollStoreContainer">
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dt_AdminUserNotifications" EntityType="Self.dt_AdminUserNotifications" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dt_CertCtrTrx" EntityType="Self.dt_CertCtrTrx" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dt_CertFilePlan" EntityType="Self.dt_CertFilePlan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dt_CertTrxLaneInterface" EntityType="Self.dt_CertTrxLaneInterface" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dt_CommVersions" EntityType="Self.dt_CommVersions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dt_HomeUpdate" EntityType="Self.dt_HomeUpdate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dt_HomeUpdateEdit" EntityType="Self.dt_HomeUpdateEdit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dt_LS" EntityType="Self.dt_LS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dt_Mp" EntityType="Self.dt_Mp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dt_ParamCategories" EntityType="Self.dt_ParamCategories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dt_ParamChannels" EntityType="Self.dt_ParamChannels" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dt_ParamEmergencies" EntityType="Self.dt_ParamEmergencies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dt_ParamFileType" EntityType="Self.dt_ParamFileType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dt_ParamLanes" EntityType="Self.dt_ParamLanes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dt_ParamModules" EntityType="Self.dt_ParamModules" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dt_ParamPlugins" EntityType="Self.dt_ParamPlugins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dt_ParamProducts" EntityType="Self.dt_ParamProducts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dt_ParamTeams" EntityType="Self.dt_ParamTeams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dt_ParamThreads" EntityType="Self.dt_ParamThreads" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dt_ParamUpdateStatus" EntityType="Self.dt_ParamUpdateStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dt_Profils" EntityType="Self.dt_Profils" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dt_QualifTrxLane" EntityType="Self.dt_QualifTrxLane" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dt_Sites" EntityType="Self.dt_Sites" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dt_Stations" EntityType="Self.dt_Stations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dt_TaskTeams" EntityType="Self.dt_TaskTeams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dt_TeamMembers" EntityType="Self.dt_TeamMembers" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__dt_HomeUp__UserI__1C74C122" Association="Self.FK__dt_HomeUp__UserI__1C74C122">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="dt_HomeUpdate" EntitySet="dt_HomeUpdate" />
+          </AssociationSet>
+          <AssociationSet Name="FK__dt_HomeUp__Versi__34703EF7" Association="Self.FK__dt_HomeUp__Versi__34703EF7">
+            <End Role="dt_CommVersions" EntitySet="dt_CommVersions" />
+            <End Role="dt_HomeUpdate" EntitySet="dt_HomeUpdate" />
+          </AssociationSet>
+          <AssociationSet Name="FK__dt_LS__SiteId__7B28DBF0" Association="Self.FK__dt_LS__SiteId__7B28DBF0">
+            <End Role="dt_Sites" EntitySet="dt_Sites" />
+            <End Role="dt_LS" EntitySet="dt_LS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__dt_Qualif__Quali__343D96D2" Association="Self.FK__dt_Qualif__Quali__343D96D2">
+            <End Role="dt_CertTrxLaneInterface" EntitySet="dt_CertTrxLaneInterface" />
+            <End Role="dt_QualifTrxLane" EntitySet="dt_QualifTrxLane" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="db_toll" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="dt_HomeUpdate">
+          <Key>
+            <PropertyRef Name="HomeUpdateId" />
+          </Key>
+          <Property Name="HomeUpdateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UpdateMessage" Type="String" MaxLength="800" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateStatusId" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DhmValue" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Response" Type="String" MaxLength="400" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EmergencyId" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HomeUpdateEditId" Type="Int32" Nullable="false" />
+          <Property Name="PluginId" Type="Int32" Nullable="false" />
+          <Property Name="IdParent" Type="Int32" Nullable="false" />
+          <Property Name="ChannelId" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DhmPlan" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TeamId" Type="Int32" Nullable="false" />
+          <Property Name="RowOrder" Type="Int32" Nullable="false" />
+          <Property Name="VersionId" Type="Int32" Nullable="false" />
+          <Property Name="HandledBy" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="dt_CommVersions" Relationship="db_toll.FK__dt_HomeUp__Versi__34703EF7" FromRole="dt_HomeUpdate" ToRole="dt_CommVersions" />
+          <NavigationProperty Name="AspNetUsers" Relationship="db_toll.FK__dt_HomeUp__UserI__1C74C122" FromRole="dt_HomeUpdate" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="dt_HomeUpdateEdit">
+          <Key>
+            <PropertyRef Name="HomeUpdateEditId" />
+          </Key>
+          <Property Name="HomeUpdateEditId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HomeUpdateId" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DhmModification" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Response" Type="String" MaxLength="400" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DhmValueStart" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DhmValueEnd" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Duration" Type="Double" Nullable="false" />
+          <Property Name="ImageExtension" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Link" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dt_ParamChannels">
+          <Key>
+            <PropertyRef Name="ChannelId" />
+            <PropertyRef Name="pmid" />
+          </Key>
+          <Property Name="ChannelId" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ChannelName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pmid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="dt_ParamEmergencies">
+          <Key>
+            <PropertyRef Name="EmergencyId" />
+            <PropertyRef Name="pmid" />
+          </Key>
+          <Property Name="EmergencyId" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EmergencyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pmid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RgbValue" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dt_ParamModules">
+          <Key>
+            <PropertyRef Name="ModuleId" />
+            <PropertyRef Name="pmid" />
+          </Key>
+          <Property Name="ModuleId" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ModuleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pmid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="Progression" Type="Double" Nullable="false" />
+          <Property Name="ModuleDescription" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="dt_ParamPlugins">
+          <Key>
+            <PropertyRef Name="PluginId" />
+          </Key>
+          <Property Name="PluginId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PluginName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ModuleId" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dt_ParamTeams">
+          <Key>
+            <PropertyRef Name="TeamId" />
+          </Key>
+          <Property Name="TeamId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DhmCreation" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DhmModification" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TeamName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TeamOrder" Type="Int32" />
+          <Property Name="ImageExtension" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dt_TaskTeams">
+          <Key>
+            <PropertyRef Name="TaskTeamId" />
+          </Key>
+          <Property Name="TaskTeamId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DhmCreation" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DhmModification" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TaskId" Type="Int32" Nullable="false" />
+          <Property Name="TeamId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dt_TeamMembers">
+          <Key>
+            <PropertyRef Name="TeamMemberId" />
+          </Key>
+          <Property Name="TeamMemberId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DhmCreation" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DhmModification" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TeamId" Type="Int32" Nullable="false" />
+          <Property Name="MemberId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="DB_A430F9_tollEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="dt_HomeUpdate" EntityType="Self.dt_HomeUpdate" />
+          <EntitySet Name="dt_HomeUpdateEdit" EntityType="Self.dt_HomeUpdateEdit" />
+          <EntitySet Name="dt_ParamChannels" EntityType="Self.dt_ParamChannels" />
+          <EntitySet Name="dt_ParamEmergencies" EntityType="Self.dt_ParamEmergencies" />
+          <EntitySet Name="dt_ParamModules" EntityType="Self.dt_ParamModules" />
+          <EntitySet Name="dt_ParamPlugins" EntityType="Self.dt_ParamPlugins" />
+          <EntitySet Name="dt_ParamTeams" EntityType="Self.dt_ParamTeams" />
+          <EntitySet Name="dt_TaskTeams" EntityType="Self.dt_TaskTeams" />
+          <EntitySet Name="dt_TeamMembers" EntityType="Self.dt_TeamMembers" />
+          <EntitySet Name="dt_Profils" EntityType="db_toll.dt_Profils" />
+          <EntitySet Name="dt_ParamUpdateStatus" EntityType="db_toll.dt_ParamUpdateStatus" />
+          <EntitySet Name="AspNetUserRoles" EntityType="db_toll.AspNetUserRoles" />
+          <EntitySet Name="AspNetRoles" EntityType="db_toll.AspNetRoles" />
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="db_toll.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <EntitySet Name="dt_CommVersions" EntityType="db_toll.dt_CommVersions" />
+          <AssociationSet Name="FK__dt_HomeUp__Versi__34703EF7" Association="db_toll.FK__dt_HomeUp__Versi__34703EF7">
+            <End Role="dt_CommVersions" EntitySet="dt_CommVersions" />
+            <End Role="dt_HomeUpdate" EntitySet="dt_HomeUpdate" />
+          </AssociationSet>
+          <EntitySet Name="dt_CertFilePlan" EntityType="db_toll.dt_CertFilePlan" />
+          <EntitySet Name="dt_Stations" EntityType="db_toll.dt_Stations" />
+          <EntitySet Name="dt_LS" EntityType="db_toll.dt_LS" />
+          <EntitySet Name="dt_ParamLanes" EntityType="db_toll.dt_ParamLanes" />
+          <EntitySet Name="dt_Mp" EntityType="db_toll.dt_Mp" />
+          <EntitySet Name="dt_ParamCategories" EntityType="db_toll.dt_ParamCategories" />
+          <EntitySet Name="dt_ParamFileType" EntityType="db_toll.dt_ParamFileType" />
+          <EntitySet Name="dt_Sites" EntityType="db_toll.dt_Sites" />
+          <AssociationSet Name="FK__dt_LS__SiteId__7B28DBF0" Association="db_toll.FK__dt_LS__SiteId__7B28DBF0">
+            <End Role="dt_Sites" EntitySet="dt_Sites" />
+            <End Role="dt_LS" EntitySet="dt_LS" />
+          </AssociationSet>
+          <EntitySet Name="dt_QualifTrxLane" EntityType="db_toll.dt_QualifTrxLane" />
+          <EntitySet Name="dt_ParamProducts" EntityType="db_toll.dt_ParamProducts" />
+          <EntitySet Name="dt_CertTrxLaneInterface" EntityType="db_toll.dt_CertTrxLaneInterface" />
+          <AssociationSet Name="FK__dt_Qualif__Quali__343D96D2" Association="db_toll.FK__dt_Qualif__Quali__343D96D2">
+            <End Role="dt_CertTrxLaneInterface" EntitySet="dt_CertTrxLaneInterface" />
+            <End Role="dt_QualifTrxLane" EntitySet="dt_QualifTrxLane" />
+          </AssociationSet>
+          <EntitySet Name="dt_CertCtrTrx" EntityType="db_toll.dt_CertCtrTrx" />
+          <EntitySet Name="dt_AdminUserNotifications" EntityType="db_toll.dt_AdminUserNotifications" />
+          <EntitySet Name="AspNetUsers" EntityType="db_toll.AspNetUsers" />
+          <AssociationSet Name="FK__dt_HomeUp__UserI__1C74C122" Association="db_toll.FK__dt_HomeUp__UserI__1C74C122">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="dt_HomeUpdate" EntitySet="dt_HomeUpdate" />
+          </AssociationSet>
+          <EntitySet Name="dt_ParamThreads" EntityType="db_toll.dt_ParamThreads" />
+        </EntityContainer>
+        <EntityType Name="dt_Profils">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="pmid" />
+          </Key>
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="pmid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IpNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SiteId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Stations" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Emailcc" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ChromePath" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CeUserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CePassword" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsConnected" Type="Boolean" Nullable="false" />
+          <Property Name="IsImage" Type="Boolean" Nullable="false" />
+          <Property Name="IsReportReceipt" Type="Boolean" Nullable="false" />
+          <Property Name="IsReportPost" Type="Boolean" Nullable="false" />
+          <Property Name="IsReportNr" Type="Boolean" Nullable="false" />
+          <Property Name="IsReportTrafic" Type="Boolean" Nullable="false" />
+          <Property Name="IsReportVers" Type="Boolean" Nullable="false" />
+          <Property Name="IsReportTrxLane" Type="Boolean" Nullable="false" />
+          <Property Name="LSIds" Type="String" MaxLength="110" FixedLength="false" Unicode="false" />
+          <Property Name="ImageExtension" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsMale" Type="Boolean" Nullable="false" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Country" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsNotificationActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsDefaultMode" Type="Boolean" Nullable="false" />
+          <Property Name="PhoneFix" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RegionIds" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="ZoneLevelIds" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="TimeLevelIds" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="CexIds" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="JobCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="NetworkIds" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AxleIds" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CellIds" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="dt_ParamUpdateStatus">
+          <Key>
+            <PropertyRef Name="UpdateStatusId" />
+            <PropertyRef Name="pmid" />
+          </Key>
+          <Property Name="UpdateStatusId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="UpdateStatusName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pmid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RgbValue" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Name="ProgressValue" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Order" Type="Int32" Nullable="false" />
+          <Property Name="StatusTypeId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="RoleId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetRoles" Relationship="db_toll.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" FromRole="AspNetUserRoles" ToRole="AspNetRoles" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUserRoles" Relationship="db_toll.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" FromRole="AspNetRoles" ToRole="AspNetUserRoles" />
+        </EntityType>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+          <End Type="db_toll.AspNetRoles" Role="AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="db_toll.AspNetUserRoles" Role="AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="dt_CommVersions">
+          <Key>
+            <PropertyRef Name="VersionId" />
+          </Key>
+          <Property Name="VersionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VersionNumber" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DhmModification" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="dt_HomeUpdate" Relationship="db_toll.FK__dt_HomeUp__Versi__34703EF7" FromRole="dt_CommVersions" ToRole="dt_HomeUpdate" />
+        </EntityType>
+        <Association Name="FK__dt_HomeUp__Versi__34703EF7">
+          <End Type="db_toll.dt_CommVersions" Role="dt_CommVersions" Multiplicity="1" />
+          <End Type="db_toll.dt_HomeUpdate" Role="dt_HomeUpdate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dt_CommVersions">
+              <PropertyRef Name="VersionId" />
+            </Principal>
+            <Dependent Role="dt_HomeUpdate">
+              <PropertyRef Name="VersionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="dt_CertFilePlan">
+          <Key>
+            <PropertyRef Name="CertFilePlanId" />
+          </Key>
+          <Property Name="CertFilePlanId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DhmCreation" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DhmPlan" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DhmModification" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Source" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="IsRunning" Type="Boolean" Nullable="false" />
+          <Property Name="IsEveryDay" Type="Boolean" Nullable="false" />
+          <Property Name="FileTypeId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SiteId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="BagContainerId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="StationNumber" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="LaneName" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="PdvId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="LSId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="DhmValueStart" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DhmValueEnd" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CertFileId" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Name="IsPlanned" Type="Boolean" Nullable="false" />
+          <Property Name="TaskId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="IsTrxLane" Type="Boolean" Nullable="false" />
+          <Property Name="BillingId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="CategoryId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="IsFinnished" Type="Boolean" Nullable="false" />
+          <Property Name="IsCron" Type="Boolean" Nullable="false" />
+          <Property Name="IsEveryHour" Type="Boolean" Nullable="false" />
+          <Property Name="AddDaysStart" Type="Int32" Nullable="false" />
+          <Property Name="AddDaysEnd" Type="Int32" Nullable="false" />
+          <Property Name="ThreadTotal" Type="Int32" Nullable="false" />
+          <Property Name="ServerPort" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="ThreadDone" Type="Int32" Nullable="false" />
+          <Property Name="LinesNumber" Type="Int32" Nullable="false" />
+          <Property Name="CurrentLineNumber" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dt_Stations">
+          <Key>
+            <PropertyRef Name="StationId" />
+          </Key>
+          <Property Name="NetworkId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SiteId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="StationNumber" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="StationName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BagHeader" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="BagContainerId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="LSId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="StationOpeName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StationCeName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StationCeNumber" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="IsDouble" Type="Boolean" Nullable="false" />
+          <Property Name="LanesNumber" Type="Int32" Nullable="false" />
+          <Property Name="IsPdv" Type="Boolean" Nullable="false" />
+          <Property Name="CexIdCe" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="StationIdCe" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="IsVirtual" Type="Boolean" Nullable="false" />
+          <Property Name="SiteIdCe" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SearchLatency" Type="Int32" Nullable="false" />
+          <Property Name="ExportLatency" Type="Int32" Nullable="false" />
+          <Property Name="BagContainerIdCe" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Sens" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="StationNameOpeTrafic" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StationNameOpeReceipt" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StationNameOpeNr" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StationNameOpePost" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SectionId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="AxleId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="CexId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="DivisionId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="OrderNumber" Type="Int32" Nullable="false" />
+          <Property Name="System" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="BagContainerName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsPrincipal" Type="Boolean" Nullable="false" />
+          <Property Name="IsBidirectional" Type="Boolean" Nullable="false" />
+          <Property Name="PK" Type="Int32" Nullable="false" />
+          <Property Name="Color" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Name="StationOdIndex" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="TmjLastMonth" Type="Int32" Nullable="false" />
+          <Property Name="RmjLastMonth" Type="Double" Nullable="false" />
+          <Property Name="ReceiptTlpRateLastMonth" Type="Double" Nullable="false" />
+          <Property Name="NumberTlpRateLastMonth" Type="Double" Nullable="false" />
+          <Property Name="StationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SectionOrder" Type="Int32" Nullable="false" />
+          <Property Name="IsSwitch" Type="Boolean" Nullable="false" />
+          <Property Name="SectionOrder1" Type="Int32" Nullable="false" />
+          <Property Name="SectionOrder2" Type="Int32" Nullable="false" />
+          <Property Name="SectionOrder0" Type="Int32" Nullable="false" />
+          <Property Name="IsImage" Type="Boolean" Nullable="false" />
+          <Property Name="IsLoyalty" Type="Boolean" Nullable="false" />
+          <Property Name="IsRealTime" Type="Boolean" Nullable="false" />
+          <Property Name="RegionId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="IsCyclopeMatching" Type="Boolean" Nullable="false" />
+          <Property Name="IsCyclopeClassify" Type="Boolean" Nullable="false" />
+          <Property Name="CellId" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="AxleIdExpert" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="PK2" Type="Int32" />
+          <Property Name="StationNameExpert" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="dt_LS">
+          <Key>
+            <PropertyRef Name="LSId" />
+          </Key>
+          <Property Name="LSId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SiteId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="LSName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pmid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IpAddressP" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="IpAddressR" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="IpAddressOpe" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="IpAddressRed" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="IsVirtual" Type="Boolean" Nullable="false" />
+          <Property Name="UserIdOpe" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="PasswordOpe" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CexId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="RegionId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="LSOrder" Type="Int32" Nullable="false" />
+          <Property Name="IsPrincipal" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="ZipLenght" Type="Int32" Nullable="false" />
+          <Property Name="IsActiveMode" Type="Boolean" Nullable="false" />
+          <Property Name="IsActiveModeR" Type="Boolean" Nullable="false" />
+          <Property Name="AxleId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="dt_Sites" Relationship="db_toll.FK__dt_LS__SiteId__7B28DBF0" FromRole="dt_LS" ToRole="dt_Sites" />
+        </EntityType>
+        <EntityType Name="dt_ParamLanes">
+          <Key>
+            <PropertyRef Name="LaneId" />
+          </Key>
+          <Property Name="SiteId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="StationNumber" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="LaneName" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="IpAddress" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="LaneTypeId" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="IsTest" Type="Boolean" Nullable="false" />
+          <Property Name="Rayon" Type="Int32" Nullable="false" />
+          <Property Name="IsCamContext" Type="Boolean" Nullable="false" />
+          <Property Name="IsCamIapi" Type="Boolean" Nullable="false" />
+          <Property Name="PurgeDuration" Type="Int32" Nullable="false" />
+          <Property Name="IsHms" Type="Boolean" Nullable="false" />
+          <Property Name="IsWriteTime" Type="Boolean" Nullable="false" />
+          <Property Name="IsTrxNumber" Type="Boolean" Nullable="false" />
+          <Property Name="IsLicensePlate" Type="Boolean" Nullable="false" />
+          <Property Name="CamBrandId" Type="Int32" Nullable="false" />
+          <Property Name="LaneModeName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CamBrandName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CamModelName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CamRefName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CamIpAddress" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Observation" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CamIapiIpAddress" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="ImageTypeId" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ImagesNumber" Type="Int32" Nullable="false" />
+          <Property Name="IsNoneStop" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsCyclopeNewtrip" Type="Boolean" Nullable="false" />
+          <Property Name="LaneId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IsPing" Type="Boolean" Nullable="false" />
+          <Property Name="PingComment" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DhmValuePing" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsInverted" Type="Boolean" Nullable="false" />
+          <Property Name="IsCalculateOnContext" Type="Boolean" Nullable="false" />
+          <Property Name="IsChecked" Type="Boolean" Nullable="false" />
+          <Property Name="IsAssigned" Type="Boolean" Nullable="false" />
+          <Property Name="AccessComment" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="dt_Mp">
+          <Key>
+            <PropertyRef Name="MpId" />
+          </Key>
+          <Property Name="MpId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="MpName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MpNameOpe" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MpNameCe" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MpAcronym" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="MpCategory" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MpGroup" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MpNameExpert" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MpOrderExpert" Type="Int32" Nullable="false" />
+          <Property Name="MpCategoryExpert" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="dt_ParamCategories">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="CategoryName" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="AxleNumber" Type="Int32" Nullable="false" />
+          <Property Name="IsHeight" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dt_ParamFileType">
+          <Key>
+            <PropertyRef Name="FileTypeId" />
+            <PropertyRef Name="pmid" />
+          </Key>
+          <Property Name="FileTypeId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="FileTypeName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="pmid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FileExtension" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="StartLineNumber" Type="Int32" Nullable="false" />
+          <Property Name="DiffLineNumber" Type="Int32" Nullable="false" />
+          <Property Name="Source" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="PluginId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="IsVirtual" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="TaskId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LoopName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PurgeInDays" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dt_Sites">
+          <Key>
+            <PropertyRef Name="SiteId" />
+          </Key>
+          <Property Name="SiteId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SiteName" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="StationsNumber" Type="Int32" Nullable="false" />
+          <Property Name="SensesNumber" Type="Int32" Nullable="false" />
+          <Property Name="BagContainerNumber" Type="Int32" Nullable="false" />
+          <Property Name="LanesNumber" Type="Int32" Nullable="false" />
+          <Property Name="PdvsNumber" Type="Int32" Nullable="false" />
+          <Property Name="PdvPostsNumber" Type="Int32" Nullable="false" />
+          <Property Name="SiteIdCe" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="IsVirtual" Type="Boolean" Nullable="false" />
+          <Property Name="AxleId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="dt_LS" Relationship="db_toll.FK__dt_LS__SiteId__7B28DBF0" FromRole="dt_Sites" ToRole="dt_LS" />
+        </EntityType>
+        <Association Name="FK__dt_LS__SiteId__7B28DBF0">
+          <End Type="db_toll.dt_Sites" Role="dt_Sites" Multiplicity="1" />
+          <End Type="db_toll.dt_LS" Role="dt_LS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dt_Sites">
+              <PropertyRef Name="SiteId" />
+            </Principal>
+            <Dependent Role="dt_LS">
+              <PropertyRef Name="SiteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="dt_QualifTrxLane">
+          <Key>
+            <PropertyRef Name="QualifTrxLaneRowId" />
+          </Key>
+          <Property Name="QualifTrxLaneRowId" Type="Int32" Nullable="false" />
+          <Property Name="CategoryPostDacId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="ProductNumber" Type="String" Nullable="false" MaxLength="39" FixedLength="false" Unicode="false" />
+          <Property Name="ReadTickNumber" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="DhmValueO" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LaneNameO" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="ObsPassId" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ObsTickId" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ObsMpId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="IsPathQualified" Type="Boolean" Nullable="false" />
+          <Property Name="NetworkId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="NetworkIdO" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="IsConvenientContext" Type="Boolean" Nullable="false" />
+          <Property Name="IsConvenientIapi" Type="Boolean" Nullable="false" />
+          <Property Name="IsConvenientClass" Type="Boolean" Nullable="false" />
+          <Property Name="IsConvenientContextO" Type="Boolean" Nullable="false" />
+          <Property Name="IsConvenientIapiO" Type="Boolean" Nullable="false" />
+          <Property Name="ObsSequId" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ObsOcrId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SerialNumber" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="CashierNumber" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="Speed" Type="Double" Nullable="false" />
+          <Property Name="LicensePlate" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="LicensePlateO" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="IsPathQualifiedObsTickIdD" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="dt_CertTrxLaneInterface" Relationship="db_toll.FK__dt_Qualif__Quali__343D96D2" FromRole="dt_QualifTrxLane" ToRole="dt_CertTrxLaneInterface" />
+        </EntityType>
+        <EntityType Name="dt_ParamProducts">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SerialNumber" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="BillingId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="DhmExpiration" Type="DateTime" Precision="3" />
+          <Property Name="ClientCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ClientCategory" Type="String" MaxLength="24" FixedLength="false" Unicode="false" />
+          <Property Name="ClientName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ClientPhone" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Identifiant" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="IdentifiantType" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ProductTypeCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ObsTickIdPCount" Type="Int32" Nullable="false" />
+          <Property Name="ObsTickIdDCount" Type="Int32" Nullable="false" />
+          <Property Name="ObsTickIdICount" Type="Int32" Nullable="false" />
+          <Property Name="ObsMpId26Count" Type="Int32" Nullable="false" />
+          <Property Name="DhmUpdate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ObsTickIdPLastQualifDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ObsTickIdDLastQualifDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ObsTickIdPDhmUpdate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ObsTickIdDDhmUpdate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TagStatus" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="MpName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Sold" Type="Double" Nullable="false" />
+          <Property Name="ObsTickIdDCount01" Type="Int32" Nullable="false" />
+          <Property Name="ObsTickIdDCount02" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dt_CertTrxLaneInterface">
+          <Key>
+            <PropertyRef Name="CertTrxLaneInterfaceRowId" />
+          </Key>
+          <Property Name="DhmValue" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SiteId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="StationNumber" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="LaneName" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="TrxNumber" Type="Int32" Nullable="false" />
+          <Property Name="TrxIndex" Type="Int32" Nullable="false" />
+          <Property Name="BillingId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="PartialPrice" Type="Double" Nullable="false" />
+          <Property Name="OctalCode" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="ModeId" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="IsChecked" Type="Boolean" Nullable="false" />
+          <Property Name="IsZip" Type="Boolean" Nullable="false" />
+          <Property Name="IsCe" Type="Boolean" Nullable="false" />
+          <Property Name="CategoryPreDacId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="StationNumberO" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="CertTrxLaneInterfaceRowId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IsLane" Type="Boolean" Nullable="false" />
+          <Property Name="IsMsg" Type="Boolean" Nullable="false" />
+          <Property Name="PostNumber" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="LaneTypeId" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="IsLS" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="dt_QualifTrxLane" Relationship="db_toll.FK__dt_Qualif__Quali__343D96D2" FromRole="dt_CertTrxLaneInterface" ToRole="dt_QualifTrxLane" />
+        </EntityType>
+        <Association Name="FK__dt_Qualif__Quali__343D96D2">
+          <End Type="db_toll.dt_CertTrxLaneInterface" Role="dt_CertTrxLaneInterface" Multiplicity="1" />
+          <End Type="db_toll.dt_QualifTrxLane" Role="dt_QualifTrxLane" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="dt_CertTrxLaneInterface">
+              <PropertyRef Name="CertTrxLaneInterfaceRowId" />
+            </Principal>
+            <Dependent Role="dt_QualifTrxLane">
+              <PropertyRef Name="QualifTrxLaneRowId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="dt_CertCtrTrx">
+          <Key>
+            <PropertyRef Name="CertCtrTrxId" />
+            <PropertyRef Name="pmid" />
+          </Key>
+          <Property Name="CertCtrTrxId" Type="String" Nullable="false" MaxLength="17" FixedLength="false" Unicode="false" />
+          <Property Name="DhmValue" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SiteId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="StationNumber" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="LaneName" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="BillingId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Gap" Type="Int32" Nullable="false" />
+          <Property Name="pmid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="dt_AdminUserNotifications">
+          <Key>
+            <PropertyRef Name="UserNotifId" />
+          </Key>
+          <Property Name="UserNotifId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NotifId" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="dt_HomeUpdate" Relationship="db_toll.FK__dt_HomeUp__UserI__1C74C122" FromRole="AspNetUsers" ToRole="dt_HomeUpdate" />
+        </EntityType>
+        <Association Name="FK__dt_HomeUp__UserI__1C74C122">
+          <End Type="db_toll.AspNetUsers" Role="AspNetUsers" Multiplicity="0..1" />
+          <End Type="db_toll.dt_HomeUpdate" Role="dt_HomeUpdate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="dt_HomeUpdate">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="dt_ParamThreads">
+          <Key>
+            <PropertyRef Name="CertFilePlanId" />
+            <PropertyRef Name="pmid" />
+          </Key>
+          <Property Name="CertFilePlanId" Type="Int32" Nullable="false" />
+          <Property Name="IsFinnished" Type="Boolean" Nullable="false" />
+          <Property Name="pmid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CertFileIdHeader" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DhmCreation" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="db_tollStoreContainer" CdmEntityContainer="DB_A430F9_tollEntities">
+          <EntitySetMapping Name="dt_HomeUpdate">
+            <EntityTypeMapping TypeName="db_toll.dt_HomeUpdate">
+              <MappingFragment StoreEntitySet="dt_HomeUpdate">
+                <ScalarProperty Name="HandledBy" ColumnName="HandledBy" />
+                <ScalarProperty Name="HomeUpdateId" ColumnName="HomeUpdateId" />
+                <ScalarProperty Name="UpdateMessage" ColumnName="UpdateMessage" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UpdateStatusId" ColumnName="UpdateStatusId" />
+                <ScalarProperty Name="DhmValue" ColumnName="DhmValue" />
+                <ScalarProperty Name="Response" ColumnName="Response" />
+                <ScalarProperty Name="EmergencyId" ColumnName="EmergencyId" />
+                <ScalarProperty Name="HomeUpdateEditId" ColumnName="HomeUpdateEditId" />
+                <ScalarProperty Name="PluginId" ColumnName="PluginId" />
+                <ScalarProperty Name="IdParent" ColumnName="IdParent" />
+                <ScalarProperty Name="ChannelId" ColumnName="ChannelId" />
+                <ScalarProperty Name="DhmPlan" ColumnName="DhmPlan" />
+                <ScalarProperty Name="TeamId" ColumnName="TeamId" />
+                <ScalarProperty Name="RowOrder" ColumnName="RowOrder" />
+                <ScalarProperty Name="VersionId" ColumnName="VersionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dt_HomeUpdateEdit">
+            <EntityTypeMapping TypeName="db_toll.dt_HomeUpdateEdit">
+              <MappingFragment StoreEntitySet="dt_HomeUpdateEdit">
+                <ScalarProperty Name="HomeUpdateEditId" ColumnName="HomeUpdateEditId" />
+                <ScalarProperty Name="HomeUpdateId" ColumnName="HomeUpdateId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="DhmModification" ColumnName="DhmModification" />
+                <ScalarProperty Name="Response" ColumnName="Response" />
+                <ScalarProperty Name="DhmValueStart" ColumnName="DhmValueStart" />
+                <ScalarProperty Name="DhmValueEnd" ColumnName="DhmValueEnd" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="ImageExtension" ColumnName="ImageExtension" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dt_ParamChannels">
+            <EntityTypeMapping TypeName="db_toll.dt_ParamChannels">
+              <MappingFragment StoreEntitySet="dt_ParamChannels">
+                <ScalarProperty Name="ChannelId" ColumnName="ChannelId" />
+                <ScalarProperty Name="ChannelName" ColumnName="ChannelName" />
+                <ScalarProperty Name="pmid" ColumnName="pmid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dt_ParamEmergencies">
+            <EntityTypeMapping TypeName="db_toll.dt_ParamEmergencies">
+              <MappingFragment StoreEntitySet="dt_ParamEmergencies">
+                <ScalarProperty Name="EmergencyId" ColumnName="EmergencyId" />
+                <ScalarProperty Name="EmergencyName" ColumnName="EmergencyName" />
+                <ScalarProperty Name="pmid" ColumnName="pmid" />
+                <ScalarProperty Name="RgbValue" ColumnName="RgbValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dt_ParamModules">
+            <EntityTypeMapping TypeName="db_toll.dt_ParamModules">
+              <MappingFragment StoreEntitySet="dt_ParamModules">
+                <ScalarProperty Name="ModuleDescription" ColumnName="ModuleDescription" />
+                <ScalarProperty Name="Progression" ColumnName="Progression" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+                <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
+                <ScalarProperty Name="pmid" ColumnName="pmid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dt_ParamPlugins">
+            <EntityTypeMapping TypeName="db_toll.dt_ParamPlugins">
+              <MappingFragment StoreEntitySet="dt_ParamPlugins">
+                <ScalarProperty Name="PluginId" ColumnName="PluginId" />
+                <ScalarProperty Name="PluginName" ColumnName="PluginName" />
+                <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dt_ParamTeams">
+            <EntityTypeMapping TypeName="db_toll.dt_ParamTeams">
+              <MappingFragment StoreEntitySet="dt_ParamTeams">
+                <ScalarProperty Name="TeamId" ColumnName="TeamId" />
+                <ScalarProperty Name="DhmCreation" ColumnName="DhmCreation" />
+                <ScalarProperty Name="DhmModification" ColumnName="DhmModification" />
+                <ScalarProperty Name="TeamName" ColumnName="TeamName" />
+                <ScalarProperty Name="TeamOrder" ColumnName="TeamOrder" />
+                <ScalarProperty Name="ImageExtension" ColumnName="ImageExtension" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dt_TaskTeams">
+            <EntityTypeMapping TypeName="db_toll.dt_TaskTeams">
+              <MappingFragment StoreEntitySet="dt_TaskTeams">
+                <ScalarProperty Name="TaskTeamId" ColumnName="TaskTeamId" />
+                <ScalarProperty Name="DhmCreation" ColumnName="DhmCreation" />
+                <ScalarProperty Name="DhmModification" ColumnName="DhmModification" />
+                <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+                <ScalarProperty Name="TeamId" ColumnName="TeamId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dt_TeamMembers">
+            <EntityTypeMapping TypeName="db_toll.dt_TeamMembers">
+              <MappingFragment StoreEntitySet="dt_TeamMembers">
+                <ScalarProperty Name="TeamMemberId" ColumnName="TeamMemberId" />
+                <ScalarProperty Name="DhmCreation" ColumnName="DhmCreation" />
+                <ScalarProperty Name="DhmModification" ColumnName="DhmModification" />
+                <ScalarProperty Name="TeamId" ColumnName="TeamId" />
+                <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dt_Profils">
+            <EntityTypeMapping TypeName="db_toll.dt_Profils">
+              <MappingFragment StoreEntitySet="dt_Profils">
+                <ScalarProperty Name="CellIds" ColumnName="CellIds" />
+                <ScalarProperty Name="AxleIds" ColumnName="AxleIds" />
+                <ScalarProperty Name="NetworkIds" ColumnName="NetworkIds" />
+                <ScalarProperty Name="JobCode" ColumnName="JobCode" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="CexIds" ColumnName="CexIds" />
+                <ScalarProperty Name="TimeLevelIds" ColumnName="TimeLevelIds" />
+                <ScalarProperty Name="ZoneLevelIds" ColumnName="ZoneLevelIds" />
+                <ScalarProperty Name="RegionIds" ColumnName="RegionIds" />
+                <ScalarProperty Name="PhoneFix" ColumnName="PhoneFix" />
+                <ScalarProperty Name="IsDefaultMode" ColumnName="IsDefaultMode" />
+                <ScalarProperty Name="IsNotificationActive" ColumnName="IsNotificationActive" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="IsMale" ColumnName="IsMale" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ImageExtension" ColumnName="ImageExtension" />
+                <ScalarProperty Name="LSIds" ColumnName="LSIds" />
+                <ScalarProperty Name="IsReportTrxLane" ColumnName="IsReportTrxLane" />
+                <ScalarProperty Name="IsReportVers" ColumnName="IsReportVers" />
+                <ScalarProperty Name="IsReportTrafic" ColumnName="IsReportTrafic" />
+                <ScalarProperty Name="IsReportNr" ColumnName="IsReportNr" />
+                <ScalarProperty Name="IsReportPost" ColumnName="IsReportPost" />
+                <ScalarProperty Name="IsReportReceipt" ColumnName="IsReportReceipt" />
+                <ScalarProperty Name="IsImage" ColumnName="IsImage" />
+                <ScalarProperty Name="IsConnected" ColumnName="IsConnected" />
+                <ScalarProperty Name="CePassword" ColumnName="CePassword" />
+                <ScalarProperty Name="CeUserName" ColumnName="CeUserName" />
+                <ScalarProperty Name="ChromePath" ColumnName="ChromePath" />
+                <ScalarProperty Name="Emailcc" ColumnName="Emailcc" />
+                <ScalarProperty Name="Stations" ColumnName="Stations" />
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="IpNumber" ColumnName="IpNumber" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="pmid" ColumnName="pmid" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dt_ParamUpdateStatus">
+            <EntityTypeMapping TypeName="db_toll.dt_ParamUpdateStatus">
+              <MappingFragment StoreEntitySet="dt_ParamUpdateStatus">
+                <ScalarProperty Name="StatusTypeId" ColumnName="StatusTypeId" />
+                <ScalarProperty Name="Order" ColumnName="Order" />
+                <ScalarProperty Name="ProgressValue" ColumnName="ProgressValue" />
+                <ScalarProperty Name="RgbValue" ColumnName="RgbValue" />
+                <ScalarProperty Name="pmid" ColumnName="pmid" />
+                <ScalarProperty Name="UpdateStatusName" ColumnName="UpdateStatusName" />
+                <ScalarProperty Name="UpdateStatusId" ColumnName="UpdateStatusId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserRoles">
+            <EntityTypeMapping TypeName="db_toll.AspNetUserRoles">
+              <MappingFragment StoreEntitySet="AspNetUserRoles">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="db_toll.AspNetRoles">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dt_CommVersions">
+            <EntityTypeMapping TypeName="db_toll.dt_CommVersions">
+              <MappingFragment StoreEntitySet="dt_CommVersions">
+                <ScalarProperty Name="DhmModification" ColumnName="DhmModification" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="VersionNumber" ColumnName="VersionNumber" />
+                <ScalarProperty Name="VersionId" ColumnName="VersionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dt_CertFilePlan">
+            <EntityTypeMapping TypeName="db_toll.dt_CertFilePlan">
+              <MappingFragment StoreEntitySet="dt_CertFilePlan">
+                <ScalarProperty Name="CurrentLineNumber" ColumnName="CurrentLineNumber" />
+                <ScalarProperty Name="LinesNumber" ColumnName="LinesNumber" />
+                <ScalarProperty Name="ThreadDone" ColumnName="ThreadDone" />
+                <ScalarProperty Name="ServerPort" ColumnName="ServerPort" />
+                <ScalarProperty Name="ThreadTotal" ColumnName="ThreadTotal" />
+                <ScalarProperty Name="AddDaysEnd" ColumnName="AddDaysEnd" />
+                <ScalarProperty Name="AddDaysStart" ColumnName="AddDaysStart" />
+                <ScalarProperty Name="IsEveryHour" ColumnName="IsEveryHour" />
+                <ScalarProperty Name="IsCron" ColumnName="IsCron" />
+                <ScalarProperty Name="IsFinnished" ColumnName="IsFinnished" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="BillingId" ColumnName="BillingId" />
+                <ScalarProperty Name="IsTrxLane" ColumnName="IsTrxLane" />
+                <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+                <ScalarProperty Name="IsPlanned" ColumnName="IsPlanned" />
+                <ScalarProperty Name="CertFileId" ColumnName="CertFileId" />
+                <ScalarProperty Name="DhmValueEnd" ColumnName="DhmValueEnd" />
+                <ScalarProperty Name="DhmValueStart" ColumnName="DhmValueStart" />
+                <ScalarProperty Name="LSId" ColumnName="LSId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="PdvId" ColumnName="PdvId" />
+                <ScalarProperty Name="LaneName" ColumnName="LaneName" />
+                <ScalarProperty Name="StationNumber" ColumnName="StationNumber" />
+                <ScalarProperty Name="BagContainerId" ColumnName="BagContainerId" />
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+                <ScalarProperty Name="FileTypeId" ColumnName="FileTypeId" />
+                <ScalarProperty Name="IsEveryDay" ColumnName="IsEveryDay" />
+                <ScalarProperty Name="IsRunning" ColumnName="IsRunning" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="DhmModification" ColumnName="DhmModification" />
+                <ScalarProperty Name="DhmPlan" ColumnName="DhmPlan" />
+                <ScalarProperty Name="DhmCreation" ColumnName="DhmCreation" />
+                <ScalarProperty Name="CertFilePlanId" ColumnName="CertFilePlanId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dt_Stations">
+            <EntityTypeMapping TypeName="db_toll.dt_Stations">
+              <MappingFragment StoreEntitySet="dt_Stations">
+                <ScalarProperty Name="StationNameExpert" ColumnName="StationNameExpert" />
+                <ScalarProperty Name="PK2" ColumnName="PK2" />
+                <ScalarProperty Name="AxleIdExpert" ColumnName="AxleIdExpert" />
+                <ScalarProperty Name="CellId" ColumnName="CellId" />
+                <ScalarProperty Name="IsCyclopeClassify" ColumnName="IsCyclopeClassify" />
+                <ScalarProperty Name="IsCyclopeMatching" ColumnName="IsCyclopeMatching" />
+                <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+                <ScalarProperty Name="IsRealTime" ColumnName="IsRealTime" />
+                <ScalarProperty Name="IsLoyalty" ColumnName="IsLoyalty" />
+                <ScalarProperty Name="IsImage" ColumnName="IsImage" />
+                <ScalarProperty Name="SectionOrder0" ColumnName="SectionOrder0" />
+                <ScalarProperty Name="SectionOrder2" ColumnName="SectionOrder2" />
+                <ScalarProperty Name="SectionOrder1" ColumnName="SectionOrder1" />
+                <ScalarProperty Name="IsSwitch" ColumnName="IsSwitch" />
+                <ScalarProperty Name="SectionOrder" ColumnName="SectionOrder" />
+                <ScalarProperty Name="StationId" ColumnName="StationId" />
+                <ScalarProperty Name="NumberTlpRateLastMonth" ColumnName="NumberTlpRateLastMonth" />
+                <ScalarProperty Name="ReceiptTlpRateLastMonth" ColumnName="ReceiptTlpRateLastMonth" />
+                <ScalarProperty Name="RmjLastMonth" ColumnName="RmjLastMonth" />
+                <ScalarProperty Name="TmjLastMonth" ColumnName="TmjLastMonth" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="StationOdIndex" ColumnName="StationOdIndex" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="PK" ColumnName="PK" />
+                <ScalarProperty Name="IsBidirectional" ColumnName="IsBidirectional" />
+                <ScalarProperty Name="IsPrincipal" ColumnName="IsPrincipal" />
+                <ScalarProperty Name="BagContainerName" ColumnName="BagContainerName" />
+                <ScalarProperty Name="System" ColumnName="System" />
+                <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+                <ScalarProperty Name="DivisionId" ColumnName="DivisionId" />
+                <ScalarProperty Name="CexId" ColumnName="CexId" />
+                <ScalarProperty Name="AxleId" ColumnName="AxleId" />
+                <ScalarProperty Name="SectionId" ColumnName="SectionId" />
+                <ScalarProperty Name="StationNameOpePost" ColumnName="StationNameOpePost" />
+                <ScalarProperty Name="StationNameOpeNr" ColumnName="StationNameOpeNr" />
+                <ScalarProperty Name="StationNameOpeReceipt" ColumnName="StationNameOpeReceipt" />
+                <ScalarProperty Name="StationNameOpeTrafic" ColumnName="StationNameOpeTrafic" />
+                <ScalarProperty Name="Sens" ColumnName="Sens" />
+                <ScalarProperty Name="BagContainerIdCe" ColumnName="BagContainerIdCe" />
+                <ScalarProperty Name="ExportLatency" ColumnName="ExportLatency" />
+                <ScalarProperty Name="SearchLatency" ColumnName="SearchLatency" />
+                <ScalarProperty Name="SiteIdCe" ColumnName="SiteIdCe" />
+                <ScalarProperty Name="IsVirtual" ColumnName="IsVirtual" />
+                <ScalarProperty Name="StationIdCe" ColumnName="StationIdCe" />
+                <ScalarProperty Name="CexIdCe" ColumnName="CexIdCe" />
+                <ScalarProperty Name="IsPdv" ColumnName="IsPdv" />
+                <ScalarProperty Name="LanesNumber" ColumnName="LanesNumber" />
+                <ScalarProperty Name="IsDouble" ColumnName="IsDouble" />
+                <ScalarProperty Name="StationCeNumber" ColumnName="StationCeNumber" />
+                <ScalarProperty Name="StationCeName" ColumnName="StationCeName" />
+                <ScalarProperty Name="StationOpeName" ColumnName="StationOpeName" />
+                <ScalarProperty Name="LSId" ColumnName="LSId" />
+                <ScalarProperty Name="BagContainerId" ColumnName="BagContainerId" />
+                <ScalarProperty Name="BagHeader" ColumnName="BagHeader" />
+                <ScalarProperty Name="StationName" ColumnName="StationName" />
+                <ScalarProperty Name="StationNumber" ColumnName="StationNumber" />
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+                <ScalarProperty Name="NetworkId" ColumnName="NetworkId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dt_LS">
+            <EntityTypeMapping TypeName="db_toll.dt_LS">
+              <MappingFragment StoreEntitySet="dt_LS">
+                <ScalarProperty Name="AxleId" ColumnName="AxleId" />
+                <ScalarProperty Name="IsActiveModeR" ColumnName="IsActiveModeR" />
+                <ScalarProperty Name="IsActiveMode" ColumnName="IsActiveMode" />
+                <ScalarProperty Name="ZipLenght" ColumnName="ZipLenght" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsPrincipal" ColumnName="IsPrincipal" />
+                <ScalarProperty Name="LSOrder" ColumnName="LSOrder" />
+                <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+                <ScalarProperty Name="CexId" ColumnName="CexId" />
+                <ScalarProperty Name="PasswordOpe" ColumnName="PasswordOpe" />
+                <ScalarProperty Name="UserIdOpe" ColumnName="UserIdOpe" />
+                <ScalarProperty Name="IsVirtual" ColumnName="IsVirtual" />
+                <ScalarProperty Name="IpAddressRed" ColumnName="IpAddressRed" />
+                <ScalarProperty Name="IpAddressOpe" ColumnName="IpAddressOpe" />
+                <ScalarProperty Name="IpAddressR" ColumnName="IpAddressR" />
+                <ScalarProperty Name="IpAddressP" ColumnName="IpAddressP" />
+                <ScalarProperty Name="pmid" ColumnName="pmid" />
+                <ScalarProperty Name="LSName" ColumnName="LSName" />
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+                <ScalarProperty Name="LSId" ColumnName="LSId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dt_ParamLanes">
+            <EntityTypeMapping TypeName="db_toll.dt_ParamLanes">
+              <MappingFragment StoreEntitySet="dt_ParamLanes">
+                <ScalarProperty Name="AccessComment" ColumnName="AccessComment" />
+                <ScalarProperty Name="IsAssigned" ColumnName="IsAssigned" />
+                <ScalarProperty Name="IsChecked" ColumnName="IsChecked" />
+                <ScalarProperty Name="IsCalculateOnContext" ColumnName="IsCalculateOnContext" />
+                <ScalarProperty Name="IsInverted" ColumnName="IsInverted" />
+                <ScalarProperty Name="DhmValuePing" ColumnName="DhmValuePing" />
+                <ScalarProperty Name="PingComment" ColumnName="PingComment" />
+                <ScalarProperty Name="IsPing" ColumnName="IsPing" />
+                <ScalarProperty Name="LaneId" ColumnName="LaneId" />
+                <ScalarProperty Name="IsCyclopeNewtrip" ColumnName="IsCyclopeNewtrip" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsNoneStop" ColumnName="IsNoneStop" />
+                <ScalarProperty Name="ImagesNumber" ColumnName="ImagesNumber" />
+                <ScalarProperty Name="ImageTypeId" ColumnName="ImageTypeId" />
+                <ScalarProperty Name="CamIapiIpAddress" ColumnName="CamIapiIpAddress" />
+                <ScalarProperty Name="Observation" ColumnName="Observation" />
+                <ScalarProperty Name="CamIpAddress" ColumnName="CamIpAddress" />
+                <ScalarProperty Name="CamRefName" ColumnName="CamRefName" />
+                <ScalarProperty Name="CamModelName" ColumnName="CamModelName" />
+                <ScalarProperty Name="CamBrandName" ColumnName="CamBrandName" />
+                <ScalarProperty Name="LaneModeName" ColumnName="LaneModeName" />
+                <ScalarProperty Name="CamBrandId" ColumnName="CamBrandId" />
+                <ScalarProperty Name="IsLicensePlate" ColumnName="IsLicensePlate" />
+                <ScalarProperty Name="IsTrxNumber" ColumnName="IsTrxNumber" />
+                <ScalarProperty Name="IsWriteTime" ColumnName="IsWriteTime" />
+                <ScalarProperty Name="IsHms" ColumnName="IsHms" />
+                <ScalarProperty Name="PurgeDuration" ColumnName="PurgeDuration" />
+                <ScalarProperty Name="IsCamIapi" ColumnName="IsCamIapi" />
+                <ScalarProperty Name="IsCamContext" ColumnName="IsCamContext" />
+                <ScalarProperty Name="Rayon" ColumnName="Rayon" />
+                <ScalarProperty Name="IsTest" ColumnName="IsTest" />
+                <ScalarProperty Name="LaneTypeId" ColumnName="LaneTypeId" />
+                <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+                <ScalarProperty Name="LaneName" ColumnName="LaneName" />
+                <ScalarProperty Name="StationNumber" ColumnName="StationNumber" />
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dt_Mp">
+            <EntityTypeMapping TypeName="db_toll.dt_Mp">
+              <MappingFragment StoreEntitySet="dt_Mp">
+                <ScalarProperty Name="MpCategoryExpert" ColumnName="MpCategoryExpert" />
+                <ScalarProperty Name="MpOrderExpert" ColumnName="MpOrderExpert" />
+                <ScalarProperty Name="MpNameExpert" ColumnName="MpNameExpert" />
+                <ScalarProperty Name="MpGroup" ColumnName="MpGroup" />
+                <ScalarProperty Name="MpCategory" ColumnName="MpCategory" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="MpAcronym" ColumnName="MpAcronym" />
+                <ScalarProperty Name="MpNameCe" ColumnName="MpNameCe" />
+                <ScalarProperty Name="MpNameOpe" ColumnName="MpNameOpe" />
+                <ScalarProperty Name="MpName" ColumnName="MpName" />
+                <ScalarProperty Name="MpId" ColumnName="MpId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dt_ParamCategories">
+            <EntityTypeMapping TypeName="db_toll.dt_ParamCategories">
+              <MappingFragment StoreEntitySet="dt_ParamCategories">
+                <ScalarProperty Name="IsHeight" ColumnName="IsHeight" />
+                <ScalarProperty Name="AxleNumber" ColumnName="AxleNumber" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dt_ParamFileType">
+            <EntityTypeMapping TypeName="db_toll.dt_ParamFileType">
+              <MappingFragment StoreEntitySet="dt_ParamFileType">
+                <ScalarProperty Name="PurgeInDays" ColumnName="PurgeInDays" />
+                <ScalarProperty Name="LoopName" ColumnName="LoopName" />
+                <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsVirtual" ColumnName="IsVirtual" />
+                <ScalarProperty Name="PluginId" ColumnName="PluginId" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="DiffLineNumber" ColumnName="DiffLineNumber" />
+                <ScalarProperty Name="StartLineNumber" ColumnName="StartLineNumber" />
+                <ScalarProperty Name="FileExtension" ColumnName="FileExtension" />
+                <ScalarProperty Name="pmid" ColumnName="pmid" />
+                <ScalarProperty Name="FileTypeName" ColumnName="FileTypeName" />
+                <ScalarProperty Name="FileTypeId" ColumnName="FileTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dt_Sites">
+            <EntityTypeMapping TypeName="db_toll.dt_Sites">
+              <MappingFragment StoreEntitySet="dt_Sites">
+                <ScalarProperty Name="AxleId" ColumnName="AxleId" />
+                <ScalarProperty Name="IsVirtual" ColumnName="IsVirtual" />
+                <ScalarProperty Name="SiteIdCe" ColumnName="SiteIdCe" />
+                <ScalarProperty Name="PdvPostsNumber" ColumnName="PdvPostsNumber" />
+                <ScalarProperty Name="PdvsNumber" ColumnName="PdvsNumber" />
+                <ScalarProperty Name="LanesNumber" ColumnName="LanesNumber" />
+                <ScalarProperty Name="BagContainerNumber" ColumnName="BagContainerNumber" />
+                <ScalarProperty Name="SensesNumber" ColumnName="SensesNumber" />
+                <ScalarProperty Name="StationsNumber" ColumnName="StationsNumber" />
+                <ScalarProperty Name="SiteName" ColumnName="SiteName" />
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dt_QualifTrxLane">
+            <EntityTypeMapping TypeName="db_toll.dt_QualifTrxLane">
+              <MappingFragment StoreEntitySet="dt_QualifTrxLane">
+                <ScalarProperty Name="IsPathQualifiedObsTickIdD" ColumnName="IsPathQualifiedObsTickIdD" />
+                <ScalarProperty Name="LicensePlateO" ColumnName="LicensePlateO" />
+                <ScalarProperty Name="LicensePlate" ColumnName="LicensePlate" />
+                <ScalarProperty Name="Speed" ColumnName="Speed" />
+                <ScalarProperty Name="CashierNumber" ColumnName="CashierNumber" />
+                <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+                <ScalarProperty Name="ObsOcrId" ColumnName="ObsOcrId" />
+                <ScalarProperty Name="ObsSequId" ColumnName="ObsSequId" />
+                <ScalarProperty Name="IsConvenientIapiO" ColumnName="IsConvenientIapiO" />
+                <ScalarProperty Name="IsConvenientContextO" ColumnName="IsConvenientContextO" />
+                <ScalarProperty Name="IsConvenientClass" ColumnName="IsConvenientClass" />
+                <ScalarProperty Name="IsConvenientIapi" ColumnName="IsConvenientIapi" />
+                <ScalarProperty Name="IsConvenientContext" ColumnName="IsConvenientContext" />
+                <ScalarProperty Name="NetworkIdO" ColumnName="NetworkIdO" />
+                <ScalarProperty Name="NetworkId" ColumnName="NetworkId" />
+                <ScalarProperty Name="IsPathQualified" ColumnName="IsPathQualified" />
+                <ScalarProperty Name="ObsMpId" ColumnName="ObsMpId" />
+                <ScalarProperty Name="ObsTickId" ColumnName="ObsTickId" />
+                <ScalarProperty Name="ObsPassId" ColumnName="ObsPassId" />
+                <ScalarProperty Name="LaneNameO" ColumnName="LaneNameO" />
+                <ScalarProperty Name="DhmValueO" ColumnName="DhmValueO" />
+                <ScalarProperty Name="ReadTickNumber" ColumnName="ReadTickNumber" />
+                <ScalarProperty Name="ProductNumber" ColumnName="ProductNumber" />
+                <ScalarProperty Name="CategoryPostDacId" ColumnName="CategoryPostDacId" />
+                <ScalarProperty Name="QualifTrxLaneRowId" ColumnName="QualifTrxLaneRowId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dt_ParamProducts">
+            <EntityTypeMapping TypeName="db_toll.dt_ParamProducts">
+              <MappingFragment StoreEntitySet="dt_ParamProducts">
+                <ScalarProperty Name="ObsTickIdDCount02" ColumnName="ObsTickIdDCount02" />
+                <ScalarProperty Name="ObsTickIdDCount01" ColumnName="ObsTickIdDCount01" />
+                <ScalarProperty Name="Sold" ColumnName="Sold" />
+                <ScalarProperty Name="MpName" ColumnName="MpName" />
+                <ScalarProperty Name="TagStatus" ColumnName="TagStatus" />
+                <ScalarProperty Name="ObsTickIdDDhmUpdate" ColumnName="ObsTickIdDDhmUpdate" />
+                <ScalarProperty Name="ObsTickIdPDhmUpdate" ColumnName="ObsTickIdPDhmUpdate" />
+                <ScalarProperty Name="ObsTickIdDLastQualifDate" ColumnName="ObsTickIdDLastQualifDate" />
+                <ScalarProperty Name="ObsTickIdPLastQualifDate" ColumnName="ObsTickIdPLastQualifDate" />
+                <ScalarProperty Name="DhmUpdate" ColumnName="DhmUpdate" />
+                <ScalarProperty Name="ObsMpId26Count" ColumnName="ObsMpId26Count" />
+                <ScalarProperty Name="ObsTickIdICount" ColumnName="ObsTickIdICount" />
+                <ScalarProperty Name="ObsTickIdDCount" ColumnName="ObsTickIdDCount" />
+                <ScalarProperty Name="ObsTickIdPCount" ColumnName="ObsTickIdPCount" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="ProductTypeCode" ColumnName="ProductTypeCode" />
+                <ScalarProperty Name="IdentifiantType" ColumnName="IdentifiantType" />
+                <ScalarProperty Name="Identifiant" ColumnName="Identifiant" />
+                <ScalarProperty Name="ClientPhone" ColumnName="ClientPhone" />
+                <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+                <ScalarProperty Name="ClientCategory" ColumnName="ClientCategory" />
+                <ScalarProperty Name="ClientCode" ColumnName="ClientCode" />
+                <ScalarProperty Name="DhmExpiration" ColumnName="DhmExpiration" />
+                <ScalarProperty Name="BillingId" ColumnName="BillingId" />
+                <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dt_CertTrxLaneInterface">
+            <EntityTypeMapping TypeName="db_toll.dt_CertTrxLaneInterface">
+              <MappingFragment StoreEntitySet="dt_CertTrxLaneInterface">
+                <ScalarProperty Name="IsLS" ColumnName="IsLS" />
+                <ScalarProperty Name="LaneTypeId" ColumnName="LaneTypeId" />
+                <ScalarProperty Name="PostNumber" ColumnName="PostNumber" />
+                <ScalarProperty Name="IsMsg" ColumnName="IsMsg" />
+                <ScalarProperty Name="IsLane" ColumnName="IsLane" />
+                <ScalarProperty Name="CertTrxLaneInterfaceRowId" ColumnName="CertTrxLaneInterfaceRowId" />
+                <ScalarProperty Name="StationNumberO" ColumnName="StationNumberO" />
+                <ScalarProperty Name="CategoryPreDacId" ColumnName="CategoryPreDacId" />
+                <ScalarProperty Name="IsCe" ColumnName="IsCe" />
+                <ScalarProperty Name="IsZip" ColumnName="IsZip" />
+                <ScalarProperty Name="IsChecked" ColumnName="IsChecked" />
+                <ScalarProperty Name="ModeId" ColumnName="ModeId" />
+                <ScalarProperty Name="OctalCode" ColumnName="OctalCode" />
+                <ScalarProperty Name="PartialPrice" ColumnName="PartialPrice" />
+                <ScalarProperty Name="BillingId" ColumnName="BillingId" />
+                <ScalarProperty Name="TrxIndex" ColumnName="TrxIndex" />
+                <ScalarProperty Name="TrxNumber" ColumnName="TrxNumber" />
+                <ScalarProperty Name="LaneName" ColumnName="LaneName" />
+                <ScalarProperty Name="StationNumber" ColumnName="StationNumber" />
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+                <ScalarProperty Name="DhmValue" ColumnName="DhmValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dt_CertCtrTrx">
+            <EntityTypeMapping TypeName="db_toll.dt_CertCtrTrx">
+              <MappingFragment StoreEntitySet="dt_CertCtrTrx">
+                <ScalarProperty Name="pmid" ColumnName="pmid" />
+                <ScalarProperty Name="Gap" ColumnName="Gap" />
+                <ScalarProperty Name="BillingId" ColumnName="BillingId" />
+                <ScalarProperty Name="LaneName" ColumnName="LaneName" />
+                <ScalarProperty Name="StationNumber" ColumnName="StationNumber" />
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+                <ScalarProperty Name="DhmValue" ColumnName="DhmValue" />
+                <ScalarProperty Name="CertCtrTrxId" ColumnName="CertCtrTrxId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dt_AdminUserNotifications">
+            <EntityTypeMapping TypeName="db_toll.dt_AdminUserNotifications">
+              <MappingFragment StoreEntitySet="dt_AdminUserNotifications">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="NotifId" ColumnName="NotifId" />
+                <ScalarProperty Name="UserNotifId" ColumnName="UserNotifId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="db_toll.AspNetUsers">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dt_ParamThreads">
+            <EntityTypeMapping TypeName="db_toll.dt_ParamThreads">
+              <MappingFragment StoreEntitySet="dt_ParamThreads">
+                <ScalarProperty Name="DhmCreation" ColumnName="DhmCreation" />
+                <ScalarProperty Name="CertFileIdHeader" ColumnName="CertFileIdHeader" />
+                <ScalarProperty Name="pmid" ColumnName="pmid" />
+                <ScalarProperty Name="IsFinnished" ColumnName="IsFinnished" />
+                <ScalarProperty Name="CertFilePlanId" ColumnName="CertFilePlanId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

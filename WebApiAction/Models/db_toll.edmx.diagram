@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fb8c175f0adb40e7b426543345c22a7a" Name="Diagram1" ZoomLevel="55">
+        <EntityTypeShape EntityType="db_toll.dt_HomeUpdate" Width="1.875" PointX="2.375" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_toll.dt_HomeUpdateEdit" Width="1.75" PointX="0.5" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_toll.dt_ParamChannels" Width="2" PointX="4.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_toll.dt_ParamEmergencies" Width="1.5" PointX="10" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_toll.dt_ParamModules" Width="1.75" PointX="0.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_toll.dt_ParamPlugins" Width="1.75" PointX="2.375" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_toll.dt_ParamTeams" Width="1.5" PointX="8.375" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_toll.dt_TaskTeams" Width="1.5" PointX="11.625" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_toll.dt_TeamMembers" Width="1.75" PointX="13.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_toll.dt_Profils" Width="1.5" PointX="4.375" PointY="3.25" />
+        <EntityTypeShape EntityType="db_toll.dt_ParamUpdateStatus" Width="1.875" PointX="6.375" PointY="0.75" />
+        <EntityTypeShape EntityType="db_toll.AspNetUserRoles" Width="2" PointX="2.25" PointY="11.875" />
+        <EntityTypeShape EntityType="db_toll.AspNetRoles" Width="1.5" PointX="0.5" PointY="11.875" />
+        <AssociationConnector Association="db_toll.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" />
+        <EntityTypeShape EntityType="db_toll.dt_CommVersions" Width="1.5" PointX="0.75" PointY="7.375" />
+        <AssociationConnector Association="db_toll.FK__dt_HomeUp__Versi__34703EF7" />
+        <EntityTypeShape EntityType="db_toll.dt_CertFilePlan" Width="1.5" PointX="6" PointY="3.25" />
+        <EntityTypeShape EntityType="db_toll.dt_Stations" Width="1.5" PointX="7.625" PointY="3.25" />
+        <EntityTypeShape EntityType="db_toll.dt_LS" Width="1.5" PointX="9.25" PointY="3.25" />
+        <EntityTypeShape EntityType="db_toll.dt_ParamLanes" Width="1.5" PointX="10.875" PointY="3.25" />
+        <EntityTypeShape EntityType="db_toll.dt_Mp" Width="1.5" PointX="12.5" PointY="3.25" />
+        <EntityTypeShape EntityType="db_toll.dt_ParamCategories" Width="1.5" PointX="14.125" PointY="3.25" />
+        <EntityTypeShape EntityType="db_toll.dt_ParamFileType" Width="1.5" PointX="15.75" PointY="3.25" />
+        <EntityTypeShape EntityType="db_toll.dt_Sites" Width="1.5" PointX="9.25" PointY="8.625" />
+        <AssociationConnector Association="db_toll.FK__dt_LS__SiteId__7B28DBF0" />
+        <EntityTypeShape EntityType="db_toll.dt_QualifTrxLane" Width="1.5" PointX="2.375" PointY="16" />
+        <EntityTypeShape EntityType="db_toll.dt_ParamProducts" Width="1.5" PointX="19" PointY="3.25" />
+        <EntityTypeShape EntityType="db_toll.dt_CertTrxLaneInterface" Width="1.5" PointX="0.625" PointY="16" />
+        <AssociationConnector Association="db_toll.FK__dt_Qualif__Quali__343D96D2" />
+        <EntityTypeShape EntityType="db_toll.dt_CertCtrTrx" Width="1.5" PointX="4.125" PointY="16" />
+        <EntityTypeShape EntityType="db_toll.dt_AdminUserNotifications" Width="1.5" PointX="5.875" PointY="16" />
+        <EntityTypeShape EntityType="db_toll.AspNetUsers" Width="1.5" PointX="7.625" PointY="16" />
+        <AssociationConnector Association="db_toll.FK__dt_HomeUp__UserI__1C74C122" />
+        <EntityTypeShape EntityType="db_toll.dt_ParamThreads" Width="1.75" PointX="9.375" PointY="16" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
