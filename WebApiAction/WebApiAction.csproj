@@ -313,6 +313,7 @@
     <Content Include="Content\App\animate.css" />
     <Content Include="Content\App\App_style.css" />
     <Content Include="Content\App\bootstrap-datepicker.min.css" />
+    <Content Include="Content\App\bootstrap-icons.css" />
     <Content Include="Content\App\bootstrap-theme.css" />
     <Content Include="Content\App\bootstrap-theme.min.css" />
     <Content Include="Content\App\bootstrap-tour-standalone.min.css" />
