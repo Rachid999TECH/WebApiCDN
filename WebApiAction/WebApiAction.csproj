@@ -392,6 +392,7 @@
     <Content Include="Scripts\App\jszip.min.js" />
     <Content Include="Scripts\App\moment.js" />
     <Content Include="Scripts\App\pdfmake.min.js" />
+    <Content Include="Scripts\App\plotly-2.18.2.min.js" />
     <Content Include="Scripts\App\popper.min.js" />
     <Content Include="Scripts\App\tableexport.min.js" />
     <Content Include="Scripts\App\vfs_fonts.js" />
