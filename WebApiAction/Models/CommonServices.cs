@@ -47,6 +47,57 @@ namespace WebApiAction.Models
         //EmailServices EmailServices = new EmailServices();
         static readonly HttpClient client = new HttpClient();
 
+        public void ClassLogTextUpdate(string LogCategory, string LogSubject, string LogDescription)
+        {
+            try
+            {
+                string FileName = LogCategory + "_" + LogSubject + "_" + DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss.fff").Replace("/", "").Replace("/", "").Replace(" ", "").Replace(":", "").Replace(":", "").Replace(".", "");
+
+                string Url = @"\\172.17.95.21\adm-toll-logs";
+                string User = "adm-toll-share-user";
+                string Password = "K_9iTQ/R4+A_pPk";
+
+                FolderAccess(Url, User, Password);
+                string FolderPath = Url;
+
+                if (!Directory.Exists(FolderPath))
+                {
+                    Directory.CreateDirectory(FolderPath);
+                }
+
+                string FilePath = FolderPath + @"\" + FileName + ".txt";
+
+                if (!File.Exists(FilePath))
+                {
+                    var ProcessCreate = System.IO.File.Create(FilePath);
+                    ProcessCreate.Close();
+                }
+
+                List<string> ScriptList = new List<string>();
+                ScriptList.Add(LogSubject);
+                ScriptList.Add(LogDescription);
+                string[] ScriptBatchLines = ScriptList.ToArray();
+                File.WriteAllLines(FilePath, ScriptBatchLines);
+            }
+            catch
+            {
+
+            };
+        }
+
+        public string ClassQuotesRemove(string Word)
+        {
+            int WordLenght = Word.Length;
+            if (Word != null && WordLenght >= 2)
+            {
+                if (Word.Substring(0, 1) == "\"" && Word.Substring(WordLenght - 1, 1) == "\"")
+                {
+                    Word = Word.Substring(1, WordLenght - 2);
+                }
+            }
+            return Word.Replace("\\\"", "\"");
+        }
+
         public CredentialsModel WebApiCredGet(string Pattern, string IpAddress)
         {
             CredentialsModel CredModel = null;

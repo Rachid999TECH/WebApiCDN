@@ -4,6 +4,7 @@ using System.Data;
 using System.Text;
 using RabbitMQ.Client;
 using System.Threading;
+using System.Net.Http;
 
 //using System.IO;
 //using System.Windows.Forms;
@@ -40,9 +41,53 @@ namespace WebApiAction.Models
         //CertJsonServices CertJsonServices = new CertJsonServices();
         //EmailServices EmailServices = new EmailServices();
 
+        public void TaskAppPollAllRestart()
+        {
+            TaskHttpGet("http://172.17.95.21:5289/api/common/restart/172.17.95.21/WebApiCoreTrxLane-7004/WebApiCoreTrxLane-7004");
+        }
 
+        public void TaskAppIfDownRestart()
+        {
+            TaskHttpGet("http://172.17.95.21:5289/api/common/restart/172.17.95.21/WebApiCoreTrxLane-7004/WebApiCoreTrxLane-7004");
 
+            //CommonServices.ClassLogTextUpdate("info", "task", "");
+            //string requestUri = "http://172.17.95.21:5003/gateway/elastic/adm-toll-trxlane";
+            //using (var client = new HttpClient())
+            //{
+            //    HttpResponseMessage Res = client.GetAsync(requestUri).Result;
+            //    if (Res.IsSuccessStatusCode)
+            //    {
+            //        string response = CommonServices.ClassQuotesRemove(Res.Content.ReadAsStringAsync().Result);
+            //        //CommonServices.ClassLogTextUpdate("info", response, "");
+            //        if(response == "0")
+            //        {
+            //            TaskHttpGet("http://172.17.95.21:5289/api/common/restart/172.17.95.21/WebApiCoreTrxLane-7004/WebApiCoreTrxLane-7004");
+            //        }                    
+            //    }
+            //}
+        }
 
+        public void TaskHttpGet(string requestUri)
+        {
+            using (var client = new HttpClient())
+            {
+                HttpResponseMessage Res = client.GetAsync(requestUri).Result;
+
+            }
+        }
+
+        //public void TaskHttpGet(string ServerIpAddress, string LSIpAddress, int NotificationPortNumber)
+        //{
+        //    string requestUri = "http://" + ServerIpAddress + ":" + 7004 + "/api/trxlane/" + LSIpAddress + "/" + NotificationPortNumber;
+
+        //    HttpResponseMessage Res = await client.GetAsync(requestUri);
+
+        //    if (Res.IsSuccessStatusCode)
+        //    {
+        //        response = CommonServices.ClassQuotesRemove(Res.Content.ReadAsStringAsync().Result);
+        //        ModelList = JsonConvert.DeserializeObject<List<ClassTicketResponseModel>>(response);
+        //    }
+        //}
         public void CertFileAdd(string ServerPort,
                                 string TaskId, string Source, string FileTypeId,
                                 int AddDaysStart, int AddDaysEnd,

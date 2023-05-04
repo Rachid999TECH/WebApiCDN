@@ -78,11 +78,17 @@
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Cors, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.0.0\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http.Cors, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.0.0\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
@@ -303,10 +309,57 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\App\all.css" />
+    <Content Include="Content\App\animate.css" />
+    <Content Include="Content\App\App_style.css" />
+    <Content Include="Content\App\bootstrap-datepicker.min.css" />
+    <Content Include="Content\App\bootstrap-theme.css" />
+    <Content Include="Content\App\bootstrap-theme.min.css" />
+    <Content Include="Content\App\bootstrap-tour-standalone.min.css" />
+    <Content Include="Content\App\bootstrap-tour.css" />
+    <Content Include="Content\App\bootstrap.min.css" />
+    <Content Include="Content\App\buttons.dataTables.min.css" />
+    <Content Include="Content\App\Chart.min.css" />
+    <Content Include="Content\App\custom.bootstrap.css" />
+    <Content Include="Content\App\dataTables.bootstrap.min.css" />
+    <Content Include="Content\App\dataTables.bootstrap4.min.css" />
+    <Content Include="Content\App\font-awesome.min.css" />
+    <Content Include="Content\App\fonts.css" />
+    <Content Include="Content\App\fullcalendar.min.css" />
+    <Content Include="Content\App\fullcalendar.print.css" />
+    <Content Include="Content\App\inputmask.css" />
+    <Content Include="Content\App\introjs.min.css" />
+    <Content Include="Content\App\jquery.dataTables.min.css" />
+    <Content Include="Content\App\material.min.css" />
+    <Content Include="Content\App\my_account.css" />
+    <Content Include="Content\App\my_button.css" />
+    <Content Include="Content\App\my_calendar.css" />
+    <Content Include="Content\App\my_datatable.css" />
+    <Content Include="Content\App\my_form.css" />
+    <Content Include="Content\App\my_grafic.chart.css" />
+    <Content Include="Content\App\my_navbar.css" />
+    <Content Include="Content\App\my_steps.css" />
+    <Content Include="Content\App\my_style.css" />
+    <Content Include="Content\App\my_topbar.css" />
+    <Content Include="Content\App\my_tour.css" />
+    <Content Include="Content\App\responsive.bootstrap.min.css" />
+    <Content Include="Content\App\responsive.dataTables.min.css" />
+    <Content Include="Content\App\select.dataTables.min.css" />
+    <Content Include="Content\App\Site.css" />
+    <Content Include="Content\App\tableexport.min.css" />
+    <Content Include="Content\App\toastr.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\fonts\car-solid.svg" />
+    <Content Include="Content\fonts\coins-solid.svg" />
+    <Content Include="Content\fonts\fa-brands-400.svg" />
+    <Content Include="Content\fonts\fa-regular-400.svg" />
+    <Content Include="Content\fonts\fa-solid-900.svg" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -320,6 +373,28 @@
       <DependentUpon>db_toll.edmx</DependentUpon>
       <LastGenOutput>db_toll.cs</LastGenOutput>
     </Content>
+    <Content Include="Scripts\App\bootstrap-notify.min.js" />
+    <Content Include="Scripts\App\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\App\bootstrap.min.js" />
+    <Content Include="Scripts\App\buttons.flash.min.js" />
+    <Content Include="Scripts\App\buttons.html5.min.js" />
+    <Content Include="Scripts\App\buttons.print.min.js" />
+    <Content Include="Scripts\App\Chart.min.js" />
+    <Content Include="Scripts\App\dataTables.bootstrap4.min.js" />
+    <Content Include="Scripts\App\dataTables.buttons.min.js" />
+    <Content Include="Scripts\App\dataTables.responsive.min.js" />
+    <Content Include="Scripts\App\fullcalendar.min.js" />
+    <Content Include="Scripts\App\intro.min.js" />
+    <Content Include="Scripts\App\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\App\jquery.dataTables.min.js" />
+    <Content Include="Scripts\App\jquery.signalR-2.4.1.min.js" />
+    <Content Include="Scripts\App\jszip.min.js" />
+    <Content Include="Scripts\App\moment.js" />
+    <Content Include="Scripts\App\pdfmake.min.js" />
+    <Content Include="Scripts\App\popper.min.js" />
+    <Content Include="Scripts\App\tableexport.min.js" />
+    <Content Include="Scripts\App\vfs_fonts.js" />
+    <Content Include="Scripts\App\year-select.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -348,6 +423,40 @@
     <Content Include="Models\db_toll.edmx.diagram">
       <DependentUpon>db_toll.edmx</DependentUpon>
     </Content>
+    <Content Include="Content\App\bootstrap-theme.css.map" />
+    <Content Include="Content\App\bootstrap-theme.min.css.map" />
+    <Content Include="Content\App\bootstrap.css.map" />
+    <Content Include="Content\App\bootstrap.min.css.map" />
+    <Content Include="Content\App\bootstrap.min.css_old" />
+    <Content Include="Content\App\jquery.dataTables.min.css_old" />
+    <Content Include="Content\fonts\fa-brands-400.eot" />
+    <Content Include="Content\fonts\fa-brands-400.ttf" />
+    <Content Include="Content\fonts\fa-brands-400.woff" />
+    <Content Include="Content\fonts\fa-brands-400.woff2" />
+    <Content Include="Content\fonts\fa-regular-400.eot" />
+    <Content Include="Content\fonts\fa-regular-400.ttf" />
+    <Content Include="Content\fonts\fa-regular-400.woff" />
+    <Content Include="Content\fonts\fa-regular-400.woff2" />
+    <Content Include="Content\fonts\fa-solid-900.eot" />
+    <Content Include="Content\fonts\fa-solid-900.ttf" />
+    <Content Include="Content\fonts\fa-solid-900.woff" />
+    <Content Include="Content\fonts\fa-solid-900.woff2" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FTPProfile1.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -356,6 +465,18 @@
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Module\ModuleAcc.js" />
+    <Content Include="Scripts\Module\ModuleBreach.js" />
+    <Content Include="Scripts\Module\ModuleCert.js" />
+    <Content Include="Scripts\Module\ModuleChartJs.js" />
+    <Content Include="Scripts\Module\ModuleCommon.js" />
+    <Content Include="Scripts\Module\ModuleCont.js" />
+    <Content Include="Scripts\Module\ModuleMaint.js" />
+    <Content Include="Scripts\Module\ModuleQualif.js" />
+    <Content Include="Scripts\Module\ModuleRepo.js" />
+    <Content Include="Scripts\Module\ModuleSignalR.js" />
+    <Content Include="Scripts\Module\ModuleTicket.js" />
+    <Content Include="Scripts\Module\ModuleUpload.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -364,7 +485,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
-    <Content Include="Content\Site.css" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -374,30 +494,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Collab\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\bootstrap.min.css.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\bootstrap.css.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\bootstrap-theme.css.map" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
