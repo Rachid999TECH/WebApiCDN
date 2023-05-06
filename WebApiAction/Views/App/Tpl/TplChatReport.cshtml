@@ -1,0 +1,118 @@
+﻿@model toll_c.Models.CertificationModel
+
+@using Microsoft.AspNet.Identity
+
+@{
+
+    ViewBag.MyImagerl = "/Images/Profil/" + User.Identity.GetUserId() + ".jpg";
+    ViewBag.UserIdFrom = User.Identity.GetUserId();
+}
+
+<!--<div class="container">
+    <div class="row no-gutters">
+        <div class="col-md-4 border-right">
+
+
+
+
+
+
+
+
+            <div class="settings-tray">
+                <img class="profile-image" src="@ViewBag.MyImagerl" alt="Profile img">
+                <span class="settings-tray--right">
+                </span>
+            </div>
+            <div class="search-box">
+                <div class="input-wrapper">
+                    <span class="fas fa-search"></span>
+                    <input id="KeyWordId" placeholder="Rechercher" type="text" onchange="ContChatSearch()" value="">
+                </div>
+            </div>
+
+            <div id="ContChatContactsId" class="inbox_chat">-->
+                @*@foreach (var item in ViewBag.ContactList)
+                {
+                    ViewBag.ProfilImgUrl = "/Images/Profil/" + @item.UserId + ".jpg";
+                    ViewBag.FullName = @item.FirstName + " " + @item.LastName;
+
+
+                    <div class="friend-drawer friend-drawer--onhover" onclick="ChatMessagesGet('@item.UserId')">
+
+
+                        @if (@item.IsConnected)
+                        {
+                            <span class="fa fa-circle" style="font-size: 8px;margin-right: 4px;background: #5cb85c;
+                            position: absolute;
+                            margin: -2px 0 0 -2px;
+                            width: 10px;
+                            height: 10px;
+                            border-radius: 50%;
+                            color: #5cb85c;"></span>
+                        }
+
+
+                        <img class="profile-image" src="@ViewBag.ProfilImgUrl" alt="">
+                        <div class="text">
+                            <h6>@ViewBag.FullName</h6>
+                            <p class="text-muted">Hey, you're arrested!</p>
+                        </div>
+                        <span class="time text-muted small">13:21</span>
+                    </div>
+                    <hr>
+                }*@
+            <!--</div>
+        </div>
+        <div class="col-md-8">
+            <div class="settings-tray">
+                <div class="friend-drawer no-gutters friend-drawer--grey">
+                    <img id="FriendImageId" class="profile-image" src="" alt="">
+                    <div class="text">
+                        <h6 id="FriendNameId"></h6>
+                        <p class="text-muted">...</p>
+                    </div>
+                    <span class="settings-tray--right">
+                    </span>
+                </div>
+            </div>
+            <div class="chat-panel">
+
+                <div id="ContChatMessagesId" class="msg_history">-->
+
+                    @*@foreach (var message in ViewBag.ChatMessagesList)
+                    {
+                        <div class="row no-gutters @message.UserIdTo">
+                            <div class="col-md-3">
+
+                                @if (@message.UserIdFrom == @ViewBag.UserIdFrom)
+                                {
+                                    <div class="chat-bubble chat-bubble--right">
+                                        @message.ChatMessage
+                                    </div>
+                                }
+                                @if (@message.UserIdTo == @ViewBag.UserIdFrom)
+                                {
+                                    <div class="chat-bubble chat-bubble--left">
+                                        @message.ChatMessage
+                                    </div>
+                                }
+
+                            </div>
+                        </div>
+                    }*@
+                <!--</div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="chat-box-tray">
+                            <span class="far fa-smile"></span>
+                            <input id="ContChatMessageId" type="text" placeholder="Votre message ici..." >
+                            <span class="fas fa-microphone"></span>
+                            <span id="ContChatMessageSendBtnId" class="fas fa-paper-plane" onclick=""></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->

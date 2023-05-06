@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.ReportId = @ViewBag.Pattern + "TableReportId";
+    ViewBag.TableId = @ViewBag.Pattern + "TableId";
+}
+<div id="@ViewBag.ReportId" class="row mb-3">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5>@ViewBag.TableTitle</h5>
+            </div>
+            <div class="card-body">
+                <span class="counter pull-right"></span>
+                <div class="table-responsive">
+                    <table id="@ViewBag.TableId" class="display responsive nowrap" cellspacing="0" style="width:100%">                       
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

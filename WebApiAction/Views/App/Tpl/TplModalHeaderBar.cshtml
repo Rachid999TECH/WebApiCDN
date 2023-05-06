@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.ModalMenuBarId = "ModalMenuBarId" + @ViewBag.PageIndex + @ViewBag.MenuBarNumber;
+}
+
+
+<text>
+    <li class="hb-icon-li-cl" onclick="@ViewBag.OnClick">
+        <a class="hb-icon-a-cl" data-toggle="tooltip" data-placement="top" title="@ViewBag.MenuTextTitle">
+            <i id="@ViewBag.ModalMenuBarId" class="@ViewBag.IconName hb-icon-i-cl"></i>
+        </a>
+    </li>
+    
+</text>
+

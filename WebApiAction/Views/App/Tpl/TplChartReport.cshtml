@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.ChartReportId = @ViewBag.Pattern + "ChartReportId";
+    ViewBag.ChartCardId = @ViewBag.Pattern + "ChartCardId";
+    ViewBag.ChartId = @ViewBag.Pattern + "ChartId";
+    ViewBag.ChartRowId = @ViewBag.Pattern + "ChartRowId";
+    ViewBag.ChartCol0Id = @ViewBag.Pattern + "ChartCol0Id";
+    ViewBag.ChartCol1Id = @ViewBag.Pattern + "ChartCol1Id";
+}
+
+<div id="@ViewBag.ChartReportId" class="row mb-3" >
+    <div class="col-md-12" >
+        <div id="@ViewBag.ChartCardId" class="card">
+            <div id="@ViewBag.ChartId" class="card-body" style="padding:0.01rem;">
+                <div id="@ViewBag.ChartRowId" class="row">
+                    <div id="@ViewBag.ChartCol0Id" class="col"></div>
+                    <div id="@ViewBag.ChartCol1Id" class="col"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.MenuBarId = "MenuBarId" + @ViewBag.PageIndex + @ViewBag.MenuBarNumber;
+    ViewBag.MenuBarContainerId = "menu-bar-ct-id" + @ViewBag.PageIndex + @ViewBag.MenuBarNumber;
+    ViewBag.MenuTextStyle = "background-color:" + @ViewBag.BackgroundColorText + "; flex: 0 0 100%;" +
+                    "border-top-right-radius: 2px;" +
+                    "border-bottom-right-radius:2px";
+}
+
+
+
+
+@if (User.IsInRole(@ViewBag.RoleName01) ||
+     User.IsInRole(@ViewBag.RoleName02) ||
+     User.IsInRole(@ViewBag.RoleName03) ||
+     User.IsInRole(@ViewBag.RoleName04) ||
+     User.IsInRole(@ViewBag.RoleName05) ||
+     User.IsInRole(@ViewBag.RoleName06) ||
+     User.IsInRole(@ViewBag.RoleName07) ||
+     User.IsInRole(@ViewBag.RoleName08) ||
+     User.IsInRole(@ViewBag.RoleName09) ||
+     User.IsInRole(@ViewBag.RoleName10))
+{
+    <text>
+
+        <li id="@ViewBag.MenuBarContainerId" class="hb-icon-li-cl" onclick="@ViewBag.OnClick">
+            <a class="hb-icon-a-cl" data-toggle="tooltip" data-placement="top" title="@ViewBag.MenuTextTitle">
+                <i id="@ViewBag.MenuBarId" class="@ViewBag.IconName hb-icon-i-cl"></i>
+            </a>
+        </li>
+
+    </text>
+}

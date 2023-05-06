@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.ParamActionContainerId = @ViewBag.Pattern + "ParamActionContainerId" + @ViewBag.Index;
+    ViewBag.ParamActionIconId = @ViewBag.Pattern + "ParamActionIconId" + @ViewBag.Index;
+    ViewBag.ParamActionBtnId = @ViewBag.Pattern + "ParamActionBtnId" + @ViewBag.Index;
+    ViewBag.ParamActionTextId = @ViewBag.Pattern + "ParamActionTextId" + @ViewBag.Index;
+}
+
+<div id="@ViewBag.ParamActionContainerId" class="text-left">
+    <button id="@ViewBag.ParamActionBtnId" type="button" class="btn-cl gc-bc1-cl" onclick="@ViewBag.Action">
+        <span id="@ViewBag.ParamActionIconId" class="@ViewBag.ActionIcon btn-icon-m-cl gc-c1-cl"></span>
+        <div id="@ViewBag.ParamActionTextId" class="btn-txt-cl gc-c1-cl">@ViewBag.ActionText</div>
+    </button>
+</div>

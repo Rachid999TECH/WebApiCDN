@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.IntroReportId = @ViewBag.Pattern + "IntroReportId";
+    ViewBag.IntroCardId = @ViewBag.Pattern + "IntroCardId";
+    ViewBag.IntroCardBodyId = @ViewBag.Pattern + "IntroCardBodyId";
+    ViewBag.IntroRowId = @ViewBag.Pattern + "IntroRowId";
+    ViewBag.IntroRow0Id = @ViewBag.Pattern + "IntroRow0Id";
+    ViewBag.IntroRow1Id = @ViewBag.Pattern + "IntroRow1Id";
+    ViewBag.IntroRow2Id = @ViewBag.Pattern + "IntroRow2Id";
+    ViewBag.IntroRow2Id = @ViewBag.Pattern + "IntroRow2Id";
+
+    ViewBag.IntroImageId = @ViewBag.Pattern + "IntroImageId";
+    ViewBag.IntroIconValue = @ViewBag.IntroIcon + " tb-noti-cl ";
+    ViewBag.IntroUlId = @ViewBag.Pattern + "-intro-ul-id";
+}
+
+
+
+<div id="@ViewBag.IntroReportId" class="row mb-3 intro-report-cl">
+    <div class="col-md-12 intro-container">
+        <div id="@ViewBag.IntroCardId" class="card intro-card rounded" style="border: 1px solid @ViewBag.IntroColor">
+            <div id="@ViewBag.IntroCardBodyId" class="card-body intro-card-body ">
+                <div id="@ViewBag.IntroRow0Id" class="intro-img-container" style="display:@ViewBag.IntroImgDisplay">
+                    <img id="@ViewBag.IntroImageId" src="@ViewBag.ImagesVDFolder/Background/@ViewBag.ImageName">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

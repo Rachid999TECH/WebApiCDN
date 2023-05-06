@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.FormReportId = @ViewBag.Pattern + "FormReportId";
+    ViewBag.FormTitleId = @ViewBag.Pattern + "FormTitleId";
+    ViewBag.FormId = @ViewBag.Pattern + "FormId";
+    ViewBag.FormColumn0Id = @ViewBag.Pattern + "FormColumn0Id";
+    ViewBag.FormColumn1Id = @ViewBag.Pattern + "FormColumn1Id";
+}
+
+@*<div id="@ViewBag.FormReportId" class="row mb-3">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5>@ViewBag.FormTitle</h5>
+            </div>
+            <div id="@ViewBag.FormId" class="card-body"> 
+                
+            </div>            
+        </div>
+    </div>
+</div>*@
+
+<div id="@ViewBag.FormReportId" class="row mb-3">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5>@ViewBag.FormTitle</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div id="@ViewBag.FormColumn0Id" class="col"></div>
+                    <div id="@ViewBag.FormColumn1Id" class="col"></div>
+                </div>                
+            </div>            
+        </div>
+    </div>
+</div>

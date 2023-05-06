@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Id = "PlateId" + @ViewBag.FormIndex;
+    ViewBag.ParentId = "PlateId" + @ViewBag.FormIndex + "Parent";
+    ViewBag.LabelId = "PlateId" + @ViewBag.FormIndex + "Label";
+
+    ViewBag.PlateOrderId = "PlateOrderId" + @ViewBag.FormIndex;
+    ViewBag.PlateSeriesId = "PlateSeriesId" + @ViewBag.FormIndex;
+    ViewBag.PlatePrefectureId = "PlatePrefectureId" + @ViewBag.FormIndex;
+}
+@*<div id="@ViewBag.ParentId" class="form-group row mb-1">
+    <label for="@ViewBag.Id" class="col-2 col-form-label">@ViewBag.Label</label>
+    <div class="col-sm-6">
+        <input class="form-control" type="@ViewBag.Type" id="@ViewBag.Id">
+    </div>
+</div>*@
+
+
+<div id="@ViewBag.ParentId" class="form-group row mb-1">
+    <label for="@ViewBag.Id" id="@ViewBag.LabelId" class="col-4 col-form-label" >@ViewBag.Label</label>
+    <div class="col">
+        <input class="form-control" type="text" id="@ViewBag.PlateOrderId"  onchange="@ViewBag.OnChange" style="height: 40px; border-color: red;">
+    </div>
+    <div class="col-2">
+        <select class="form-control" id="@ViewBag.PlateSeriesId" onchange="@ViewBag.OnChange" style="height: 40px; border-color: red;"></select>
+    </div>
+    <div class="col">
+        <input class="form-control" type="text" id="@ViewBag.PlatePrefectureId"  onchange="@ViewBag.OnChange" style="height: 40px; border-color: red;">
+    </div>
+</div>
+
+
+
+
+

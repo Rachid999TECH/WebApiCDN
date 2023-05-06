@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.ParentId = @ViewBag.Id + "Parent";
+}
+<div id="@ViewBag.ParentId" class="form-group row mb-1">
+    <label for="@ViewBag.Id" class="col-3 col-form-label">@ViewBag.Label</label>
+    <div class="col-sm-6">
+        <input class="form-control" type="checkbox" id="@ViewBag.Id" onchange="@ViewBag.OnChange">
+    </div>    
+</div>
+
+

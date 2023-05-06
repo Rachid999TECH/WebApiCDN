@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.NavReportId = @ViewBag.Pattern + "NavReportId";
+    ViewBag.NavId1 = @ViewBag.Pattern + "NavId1";
+    ViewBag.NavId2 = @ViewBag.Pattern + "NavId2";
+}
+
+@*<div id="@ViewBag.GridReportId" class="row mb-3">
+    <div id="@ViewBag.GridContainerId" class="col-md-12">
+        <div id="@ViewBag.GridCardId" class="card grid-card">
+            <div id="@ViewBag.GridCardBodyId" class="card-body">
+                <div id="@ViewBag.GridRowId" class="row">
+                    <div id="@ViewBag.GridCol0Id" class="col grid-col"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>*@
+
+<div id="@ViewBag.NavReportId" class="row mb-3" style="margin-top: 10px; margin-bottom: 10px; background-color: #F2F5FA; margin-left: 10px; margin-right: 10px;">
+    <div class="col-md-12" style="background-color: #F2F5FA;">
+        @*<div class="col-lg-14 order-lg-2">*@
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a href="" data-target="#@ViewBag.NavId1" data-toggle="tab" class="nav-link active" onclick="@ViewBag.NavOnClick1">@ViewBag.NavLabel1</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" data-target="#@ViewBag.NavId2" data-toggle="tab" class="nav-link" onclick="@ViewBag.NavOnClick2">@ViewBag.NavLabel2</a>
+                </li>
+            </ul>
+            <div class="tab-content py-4">
+                <div class="tab-pane active" id="@ViewBag.NavId1">
+                </div>
+                <div class="tab-pane" id="@ViewBag.NavId2">
+                </div>
+            </div>
+        @*</div>*@
+
+    </div>
+</div>

@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.SheetReportId = @ViewBag.Pattern + "SheetReportId";
+    ViewBag.SheetId = @ViewBag.Pattern + "SheetId";
+    ViewBag.SheetRowId = @ViewBag.Pattern + "SheetRowId";
+    ViewBag.SheetCol0Id = @ViewBag.Pattern + "SheetCol0Id";
+    ViewBag.SheetCol1Id = @ViewBag.Pattern + "SheetCol1Id";
+    ViewBag.SheetCol2Id = @ViewBag.Pattern + "SheetCol2Id";
+}
+
+<div id="@ViewBag.ReportId" class="row mb-3">
+    <div class="col-md-12">
+        <div class="card">
+            <div id="@ViewBag.ChartId" class="card-body">
+            </div>
+            <div class="card-body">
+                <div id="@ViewBag.ChartRowId" class="row">
+                    <div id="@ViewBag.SheetCol0Id" class="col"></div>
+                    <div id="@ViewBag.SheetCol1Id" class="col"></div>
+                    <div id="@ViewBag.SheetCol2Id" class="col"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

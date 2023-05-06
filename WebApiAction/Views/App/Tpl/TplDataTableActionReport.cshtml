@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.ActionReportId = @ViewBag.Pattern + "DataTableActionReportId";
+    ViewBag.ActionTitleId = @ViewBag.Pattern + "ActionTitleId";
+    ViewBag.ActionRowId = @ViewBag.Pattern + "ActionRowId";
+    ViewBag.ActionCol0Id = @ViewBag.Pattern + "ActionCol0Id";
+    ViewBag.ActionCol1Id = @ViewBag.Pattern + "ActionCol1Id";
+    ViewBag.ActionActionContainerId = @ViewBag.Pattern + "ActionContainerId";
+    ViewBag.ActionActionBtnId = @ViewBag.Pattern + "ActionBtnId";
+    ViewBag.ActionMessageContainerId = @ViewBag.Pattern + "ActionMessageContainerId";
+    ViewBag.ActionMessageIconId = @ViewBag.Pattern + "ActionessageIconId";
+    ViewBag.ActionMessageTextId = @ViewBag.Pattern + "ActionMessageTextId";
+}
+
+<div id="DataTableActionReportId" class="row mb-3">
+    <div class="col-md-12">
+        <div class="card">
+            @*<div class="card-header">
+                <h5>@ViewBag.ActionTitle</h5>
+            </div>*@
+            <div class="card-body">
+                @*<div id="@ViewBag.ActionRowId" class="row">
+                    <div id="@ViewBag.ActionCol0Id" class="col"></div>
+                    <div id="@ViewBag.ActionCol1Id" class="col"></div>
+                </div>*@
+                @*<div class="row">
+                    <div id="ActionCol0Id" class="col-sm-6"></div>
+                </div>*@
+                <div class="text-left">
+                    <button id="DataTableActionBtnId" type="button" class="btn btn-secondary" style="float: right;margin-left: 10px;font-size: 12px;" onclick="@ViewBag.DataTableAction">
+                        <span class="@ViewBag.DataTableActionIcon" style="font-size: 16px;margin-right: 15px;"></span>
+                        <div class="text-right" style="float:right">@ViewBag.DataTableActionText</div>
+                    </button>
+                </div>
+            </div>
+            @*<div class="container" style="width: 100%;margin-left: 0px">
+                <div id="ActionMessageContainerId">
+                    <span id="ActionMessageIconId"></span>
+                    <span id="ActionMessageTextId"></span>
+                </div>
+            </div>*@
+        </div>
+    </div>
+</div>

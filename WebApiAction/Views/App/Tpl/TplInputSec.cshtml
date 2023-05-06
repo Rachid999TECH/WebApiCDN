@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.ParentId = @ViewBag.Id + "Parent";
+    ViewBag.LabelId = @ViewBag.Id + "Label";
+}
+
+
+@if (User.IsInRole(@ViewBag.RoleName01) ||
+     User.IsInRole(@ViewBag.RoleName02) ||
+     User.IsInRole(@ViewBag.RoleName03) ||
+     User.IsInRole(@ViewBag.RoleName04) ||
+     User.IsInRole(@ViewBag.RoleName05) ||
+     User.IsInRole(@ViewBag.RoleName06) ||
+     User.IsInRole(@ViewBag.RoleName07) ||
+     User.IsInRole(@ViewBag.RoleName08) ||
+     User.IsInRole(@ViewBag.RoleName09) ||
+     User.IsInRole(@ViewBag.RoleName10))
+{
+    <text>
+        <div id="@ViewBag.ParentId" class="form-group row mb-1">
+            <label for="@ViewBag.Id" id="@ViewBag.LabelId" class="col-4 col-form-label">@ViewBag.Label</label>
+            <div class="col-8">
+                <input class="form-control" type="@ViewBag.Type" id="@ViewBag.Id" style="height:40px">
+            </div>
+        </div>
+    </text>
+}
+
+
+
+
+
+
+
+
+
+
+

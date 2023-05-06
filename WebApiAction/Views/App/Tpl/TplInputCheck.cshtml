@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.ParentId = @ViewBag.Id + "Parent";
+}
+<div id="@ViewBag.ParentId" class="form-group row mb-1">
+    <label for="@ViewBag.Id" class="col-6 col-form-label">@ViewBag.Label</label>
+    
+    <div class="col-6">
+        <label class="switch" style="float:left;margin-top: 8px;">
+            <input id="@ViewBag.Id" type="checkbox" value="false" class="success form-control"  onchange="@ViewBag.OnChange">
+            <span class="slider round"></span>
+        </label>
+    </div>
+
+</div>
+
+

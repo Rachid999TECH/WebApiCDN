@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.ReportId = @ViewBag.Pattern + "ReportId";
+    ViewBag.CardBodyId = @ViewBag.Pattern + "CardBodyId";
+}
+
+<div id="@ViewBag.ReportId" class="row mb-3">
+    <div class="col-md-12">
+        <div class="card">
+            @*<div class="card-header">
+                <h5>@ViewBag.ReportTitle</h5>
+            </div>*@
+            <div id="@ViewBag.CardBodyId" class="card-body"> 
+                
+            </div>            
+        </div>
+    </div>
+</div>

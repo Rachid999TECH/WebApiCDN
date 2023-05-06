@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.ModalBtnId = @ViewBag.Pattern + "ModalBtnId";
+    ViewBag.ModalReportId = @ViewBag.Pattern + "ModalReportId";
+    ViewBag.ModalDialogReportId = @ViewBag.Pattern + "ModalDialogReportId";
+    ViewBag.ModalTitleId = @ViewBag.Pattern + "ModalTitleId";
+    ViewBag.ModalFormId = @ViewBag.Pattern + "ModalFormId";
+    ViewBag.ModalActionId = @ViewBag.Pattern + "ModalActionId";
+    ViewBag.ModalRowId = @ViewBag.Pattern + "ModalRowId";
+    ViewBag.ModalCol0Id = @ViewBag.Pattern + "ModalCol0Id";
+    ViewBag.ModalCol1Id = @ViewBag.Pattern + "ModalCol1Id";
+    ViewBag.ModalFooterId = @ViewBag.Pattern + "ModalFooterId";
+    ViewBag.ModalBodyId = @ViewBag.Pattern + "ModalBodyId";
+    ViewBag.ModalContentId = @ViewBag.Pattern + "ModalContentId";
+    ViewBag.ModalCloseBtnId = @ViewBag.Pattern + "ModalCloseBtnId";
+}
+
+<div class="modal fade" id="@ViewBag.ModalReportId" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div id="@ViewBag.ModalDialogReportId" class="modal-dialog" role="document">
+        <div id="@ViewBag.ModalContentId" class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="@ViewBag.ModalTitleId">@ViewBag.ModalTitle</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div id="@ViewBag.ModalBodyId" class="modal-body">
+
+            </div>
+            <div id="@ViewBag.ModalFooterId" class="modal-footer">
+                <div>
+                    <button id="@ViewBag.ModalCloseBtnId" type="button" class="btn-cl gc-bc1-cl" data-dismiss="modal">
+                        <span class="far fa-times-circle btn-icon-m-cl gc-c1-cl"></span>
+                        <div class="btn-txt-cl gc-c1-cl">Fermer</div>
+                    </button>
+                </div>
+
+
+                @*<button id="@ViewBag.ModalActionId" type="button" class="btn btn-primary">Send message</button>*@
+            </div>
+        </div>
+    </div>
+</div>
+

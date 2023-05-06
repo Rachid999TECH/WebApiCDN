@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.ParentId = @ViewBag.Id + "Parent";
+}
+<div id="@ViewBag.ParentId" class="form-group mb-1" >
+    <label for="@ViewBag.Id" class="col-form-label">@ViewBag.Label</label>
+    <div>
+        <textarea id="@ViewBag.Id" class="form-control col myform-tarea"></textarea>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,70 @@
+﻿@{
+
+}
+
+
+<div id="tb-report-id" style="display:@ViewBag.DisplayOnLogin">
+    <div class="tb-div-cl">
+        <div class="tb-search-cl">
+            <div>                
+                <span class="@ViewBag.AppIcon tb-logo-cl">
+                </span>
+                <a href="/Home/AboutIndex" class="tb-name-cl">@ViewBag.AppName</a>
+            </div>
+        </div>
+        <div class="tb-item-cl">
+            <div>
+                <span class="fas fa-bell tb-noti-cl gc-c1-cl">
+                </span>
+            </div>
+        </div>
+        <div id="tb-user-id" class="">
+            <div>
+                @if (Request.IsAuthenticated)
+                {
+                    <span class="tb-acc-span-cl">
+                        <img class="tb-acc-img-cl" src="@ViewBag.ProfilImgUrl">
+                    </span>
+
+                }
+                else
+                {
+                    <span class="tb-acc-span-cl">
+                        <img class="tb-acc-img-cl" src="~/Images/Profil/profil-default-small.jpg">
+                    </span>
+                }
+            </div>
+        </div>
+
+        <div id="tb-acc-id" class="tb-acc-report-cl" tabindex="-1" style="display:none">
+            <div class="tb-acc-div-cl">
+                <ul class="tb-acc-ul-cl">
+                    <li><a class="tb-acc-a-cl" href="/Home/AboutIndex">À propos</a></li>
+                    <li><a class="tb-acc-a-cl" href="/Acc/AccIndex">Mon compte</a></li>
+                    <li><a class="tb-acc-a-cl">Historique des versions</a></li>
+                </ul>
+                <ul class="tb-acc-ul-cl">
+                    <li>
+                        <text>
+                            @if (Request.IsAuthenticated)
+                            {
+
+                                using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <a class="tb-acc-a-cl" href="javascript:document.getElementById('logoutForm').submit()">
+                                        <span class="fas fa-power-off">&nbsp;</span>
+                                        Déconnexion
+                                    </a>
+                                }
+                            }
+                        </text>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
