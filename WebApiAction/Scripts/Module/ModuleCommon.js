@@ -11855,3 +11855,25 @@ function DisplayParamEvt() {
     ShowControl("EndDateId");
     ShowControl("DisplayReconciliationBtn");
 }
+
+function TopBarUpdate() {
+
+    var ActionBtnId = 'tb-update-id';
+    var Icon = 'fas fa-redo-alt tb-noti-cl gc-c1-cl';
+
+    $('#' + ActionBtnId).find('span').attr('class', 'fa fa-spinner fa-spin btn-icon-m-cl gc-c1-cl');
+
+    $.ajax({
+        url: '/Common/CommonTopBarUpdate',
+        method: "POST",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (data) {
+            $('#' + ActionBtnId).find('span').attr('class', Icon);
+        },
+        error: function (request, status, error) {
+            alert('Update error');
+            $('#' + ActionBtnId).find('span').attr('class', 'far fa-trash-alt btn-icon-cl gc-c1-cl');
+        }
+    });
+}
