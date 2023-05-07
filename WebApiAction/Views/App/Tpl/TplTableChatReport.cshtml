@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.TableReportId = @ViewBag.Pattern + "TableReportId";
+    ViewBag.TableId = @ViewBag.Pattern + "TableId";
+    ViewBag.TableCardId = @ViewBag.Pattern + "TableCardId";
+    ViewBag.TableCardHeaderId = @ViewBag.Pattern + "TableCardHeaderId";
+    ViewBag.TableCardBodyId = @ViewBag.Pattern + "TableCardBodyId";
+    ViewBag.TableTitleId = @ViewBag.Pattern + "TableTitleId";
+}
+<div id="@ViewBag.TableReportId" class="row mb-3 dt-trp-chat-cl">
+    <div class="col-md-12">
+        <div id="@ViewBag.TableCardId" class="card box-cl">
+            @*<div id="@ViewBag.TableCardHeaderId" class="card-header dt-ch-cl">
+                <h5 class="dt-tl-cl">@ViewBag.TableTitle</h5>
+            </div>*@
+            <div id="@ViewBag.TableCardBodyId" class="card-body" style="padding: 0rem;">
+                <span class="counter pull-right"></span>
+                <div class="table-responsive">
+                    <table id="@ViewBag.TableId" class="display responsive nowrap" cellspacing="0" style="width:100%"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

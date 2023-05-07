@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.ParamReportId = @ViewBag.Pattern + "ParamReportId";
+    ViewBag.ParamTitleId = @ViewBag.Pattern + "ParamTitleId";
+    ViewBag.ParamRowId = @ViewBag.Pattern + "ParamRowId";
+    ViewBag.ParamCol0Id = @ViewBag.Pattern + "ParamCol0Id";
+    ViewBag.ParamCol1Id = @ViewBag.Pattern + "ParamCol1Id";
+    ViewBag.ParamActionContainerId = @ViewBag.Pattern + "ParamActionContainerId";
+    ViewBag.ParamActionBtnId = @ViewBag.Pattern + "ParamActionBtnId";
+    ViewBag.ParamMessageContainerId = @ViewBag.Pattern + "ParamMessageContainerId";
+    ViewBag.ParamMessageIconId = @ViewBag.Pattern + "ParamMessageIconId";
+    ViewBag.ParamMessageTextId = @ViewBag.Pattern + "ParamMessageTextId";
+}
+
+<div id="@ViewBag.ParamReportId" class="row mb-3">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5>@ViewBag.ParamTitle</h5>
+            </div>
+            <div class="card-body">
+                <div id="@ViewBag.ParamRowId" class="row">
+                    <div id="@ViewBag.ParamCol0Id" class="col"></div>
+                    <div id="@ViewBag.ParamCol1Id" class="col"></div>
+                </div>
+                <div class="row">
+                    <div id="ParamCol0Id" class="col-sm-6"></div>
+                </div>
+                <div class="text-left">
+                    <button id="@ViewBag.ActionBtnId1" type="button" class="btn btn-secondary" style="float: left;margin-left: 10px;font-size: 12px;width:15%" onclick="@ViewBag.ActionOnClick1">
+                        <span class="@ViewBag.ActionIcon1" style="font-size: 16px;margin-right: 15px;"></span>
+                        <div class="text-right" style="float:right">@ViewBag.ActionText1</div>
+                    </button>
+                </div>
+                <div class="text-left">
+                    <button id="@ViewBag.ActionBtnId2" type="button" class="btn btn-secondary" style="float: left;margin-left: 10px;font-size: 12px;width:15%" onclick="@ViewBag.ActionOnClick2">
+                        <span class="@ViewBag.ActionIcon2" style="font-size: 16px;margin-right: 15px;"></span>
+                        <div class="text-right" style="float:right">@ViewBag.ActionText2</div>
+                    </button>
+                </div>
+                <div class="text-left">
+                    <button id="@ViewBag.ActionBtnId3" type="button" class="btn btn-secondary" style="float: left;margin-left: 10px;font-size: 12px;width:15%" onclick="@ViewBag.ActionOnClick3">
+                        <span class="@ViewBag.ActionIcon3" style="font-size: 16px;margin-right: 15px;"></span>
+                        <div class="text-right" style="float:right">@ViewBag.ActionText3</div>
+                    </button>
+                </div>
+                <div class="text-left">
+                    <button id="@ViewBag.ActionBtnId4" type="button" class="btn btn-secondary" style="float: left;margin-left: 10px;font-size: 12px;width:15%" onclick="@ViewBag.ActionOnClick4">
+                        <span class="@ViewBag.ActionIcon4" style="font-size: 16px;margin-right: 15px;"></span>
+                        <div class="text-right" style="float:right">@ViewBag.ActionText4</div>
+                    </button>
+                </div>
+                <div class="text-left">
+                    <button id="@ViewBag.ActionBtnId5" type="button" class="btn btn-secondary" style="float: left;margin-left: 10px;font-size: 12px;width:15%" onclick="@ViewBag.ActionOnClick5">
+                        <span class="@ViewBag.ActionIcon5" style="font-size: 16px;margin-right: 15px;"></span>
+                        <div class="text-right" style="float:right">@ViewBag.ActionText5</div>
+                    </button>
+                </div>
+            </div>
+            <div class="container" style="width: 100%;margin-left: 0px">
+                <div id="ParamMessageContainerId">
+                    <span id="ParamMessageIconId"></span>
+                    <span id="ParamMessageTextId"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

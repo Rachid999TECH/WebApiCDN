@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.ModalReportId = @ViewBag.Pattern + "ModalReportId";
+    ViewBag.ActionContainerId = @ViewBag.Pattern + "ActionContainerId";
+    ViewBag.ActionBtnId = @ViewBag.Pattern + "ActionBtnId";
+    ViewBag.ActionIconId = @ViewBag.Pattern + "ActionIconId";
+    ViewBag.ActionTextId = @ViewBag.Pattern + "ActionTextId";
+}
+
+
+<div id="@ViewBag.ActionContainerId" class="text-left">
+    <button type="button" id="@ViewBag.ActionBtnId" class="fr-btn-cl gc-bc1-cl" data-toggle="modal" data-target="#@ViewBag.ModalReportId"
+            data-whatever="xxx"
+            onclick="">
+        <span id="@ViewBag.ActionIconId" class="btn-icon-m-cl gc-c1-cl"></span>
+        <div id="@ViewBag.ActionTextId" class="btn-txt-cl gc-c1-cl"></div>
+    </button>
+</div>

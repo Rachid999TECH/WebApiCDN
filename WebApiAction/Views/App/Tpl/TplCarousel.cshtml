@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.ImgId0 = @ViewBag.Id + "0";
+    ViewBag.ImgId1 = @ViewBag.Id + "1";
+    ViewBag.ImgId2 = @ViewBag.Id + "2";
+
+    ViewBag.BtnId0 = "BtnId" + @ViewBag.Id + "0";
+    ViewBag.BtnId1 = "BtnId" + @ViewBag.Id + "1";
+    ViewBag.BtnId2 = "BtnId" + @ViewBag.Id + "2";
+
+    ViewBag.ParamActionContainerId = @ViewBag.Pattern + "ParamActionContainerId" + @ViewBag.Index;
+    ViewBag.ParamActionIconId = @ViewBag.Pattern + "ParamActionIconId" + @ViewBag.Index;
+    ViewBag.ParamActionBtnId = @ViewBag.Pattern + "ParamActionBtnId" + @ViewBag.Index;
+    ViewBag.ParamActionTextId = @ViewBag.Pattern + "ParamActionTextId" + @ViewBag.Index;
+
+}
+
+<div id="@ViewBag.Id" class="carousel slide" data-ride="carousel">
+    <ul class="carousel-indicators">
+        <li data-target="#@ViewBag.Id" data-slide-to="0" class="active"></li>
+        <li data-target="#@ViewBag.Id" data-slide-to="1"></li>
+        <li data-target="#@ViewBag.Id" data-slide-to="2"></li>
+    </ul>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img id="@ViewBag.ImgId0" src="" alt="" width="1100" height="500">
+            <div class="carousel-caption">
+                @*<h3>Los Angeles</h3>
+        <p>We had such a great time in LA!</p>*@
+
+
+                <div class="text-left">
+                    <button id="@ViewBag.BtnId0" type="button" class="btn-cl gc-bc1-cl" >
+                        <span class="far fa-trash-alt btn-icon-cl gc-c1-cl"></span>
+                    </button>
+                </div>
+
+
+
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img id="@ViewBag.ImgId1" src="" alt="" width="1100" height="500">
+            <div class="carousel-caption">
+                @*<h3>Chicago</h3>
+                    <p>Thank you, Chicago!</p>*@
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img id="@ViewBag.ImgId2" src="" alt="" width="1100" height="500">
+            <div class="carousel-caption">
+                @*<h3>New York</h3>
+                    <p>We love the Big Apple!</p>*@
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#@ViewBag.Id" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#@ViewBag.Id" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </a>
+</div>

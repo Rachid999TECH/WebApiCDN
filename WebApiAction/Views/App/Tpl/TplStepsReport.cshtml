@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.RowId = @ViewBag.Pattern + "MenuReportId";
+
+    ViewBag.SpanId1 = @ViewBag.Pattern + "SpanId1";
+    ViewBag.SpanId2 = @ViewBag.Pattern + "SpanId2";
+    ViewBag.SpanId3 = @ViewBag.Pattern + "SpanId3";
+    ViewBag.SpanId4 = @ViewBag.Pattern + "SpanId4";
+
+    ViewBag.StepLabel1 = @ViewBag.Pattern + "LabelId1";
+    ViewBag.StepLabel2 = @ViewBag.Pattern + "LabelId2";
+    ViewBag.StepLabel3 = @ViewBag.Pattern + "LabelId3";
+    ViewBag.StepLabel4 = @ViewBag.Pattern + "LabelId4";
+
+    ViewBag.StepLi1 = @ViewBag.Pattern + "StepLi1";
+    ViewBag.StepLi2 = @ViewBag.Pattern + "StepLi2";
+    ViewBag.StepLi3 = @ViewBag.Pattern + "StepLi3";
+    ViewBag.StepLi4 = @ViewBag.Pattern + "StepLi4";
+}
+<div id="@ViewBag.RowId" class="row">
+</div>
+
+<section class="signup-step-container" id="StepsReportId">
+    <div class="">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-8">
+                <div class="wizard">
+                    <div class="wizard-inner">
+                        <div class="connecting-line"></div>
+                        <ul class="nav nav-tabs" role="tablist">
+
+                            <li id="@ViewBag.StepLi1" role="presentation" class="active" >
+                                <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" aria-expanded="true">
+                                    <span id="@ViewBag.SpanId1" class="round-tab" onclick="StepsGet(32, 2, 1)">1 </span>
+                                    <i id="@ViewBag.StepLabel1">Analyses</i>
+                                </a>
+                            </li>
+
+                            <li id="@ViewBag.StepLi2" role="presentation" class="disabled">
+                                <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" aria-expanded="false">
+                                    <span id="@ViewBag.SpanId2" class="round-tab" onclick="StepsGet('33', '')">2</span>
+                                    <i id="@ViewBag.StepLabel2">Axes d'analyse</i>
+                                </a>
+                            </li>
+
+                            <li id="@ViewBag.StepLi3" role="presentation" class="disabled">
+                                <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab">
+                                    <span id="@ViewBag.SpanId3" class="round-tab" onclick="StepsGet('34', '')">3</span>
+                                    <i id="@ViewBag.StepLabel3">Donnée</i>
+                                </a>
+                            </li>
+
+                            <li id="@ViewBag.StepLi4" role="presentation" class="disabled">
+                                <a href="#step4" data-toggle="tab" aria-controls="step4" role="tab">
+                                    <span id="@ViewBag.SpanId4" class="round-tab" onclick="StepsGet('35', '')">4</span>
+                                    <i id="@ViewBag.StepLabel4">Systèmes</i>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <form role="form" action="index.html" class="login-box">
+
+                        <div class="tab-content" id="steps-id">
+                            <div class="clearfix"></div>
+                        </div>
+
+                    </form>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

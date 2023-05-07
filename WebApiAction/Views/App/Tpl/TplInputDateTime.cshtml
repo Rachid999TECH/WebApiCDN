@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.ParentId = @ViewBag.Id + "Parent";
+}
+
+<div id="@ViewBag.ParentId" class="form-group row mb-1">
+    <label for="@ViewBag.Id" class="col-4 col-form-label">@ViewBag.Label</label>
+    <div class="col-8">
+        <input class="form-control" type="datetime-local" value="@DateTime.Now" id="@ViewBag.Id">
+    </div>
+</div>

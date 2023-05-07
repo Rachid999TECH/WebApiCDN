@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.DataTargetId = @ViewBag.PatternFix + @ViewBag.PatternForm + "ModalReportId";
+}
+
+
+
+@*<button id="@ViewBag.Id" type="button" class="btn-cl gc-bc1-cl" onclick="@ViewBag.OnClick">
+    <span class="@ViewBag.IconName btn-icon-m-cl gc-c1-cl"></span>
+    <div class="btn-txt-cl gc-c1-cl">@ViewBag.Label</div>
+</button>*@
+
+<button id="@ViewBag.Id" type="button" class="dt-btn-cl gc-bc1-cl" data-toggle="modal" data-target="#@ViewBag.DataTargetId" data-whatever="xxx" onclick="@ViewBag.OnClick">
+    <span class="@ViewBag.Icon btn-icon-m-cl gc-c1-cl"></span>
+    <div class="btn-txt-cl gc-c1-cl">@ViewBag.Label</div>
+</button>

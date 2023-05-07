@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.IntroReportId = @ViewBag.Pattern + "IntroReportId";
+    ViewBag.IntroCardId = @ViewBag.Pattern + "IntroCardId";
+    ViewBag.IntroCardBodyId = @ViewBag.Pattern + "IntroCardBodyId";
+    ViewBag.IntroRowId = @ViewBag.Pattern + "IntroRowId";
+    ViewBag.IntroRow0Id = @ViewBag.Pattern + "IntroRow0Id";
+    ViewBag.IntroRow1Id = @ViewBag.Pattern + "IntroRow1Id";
+    ViewBag.IntroRow2Id = @ViewBag.Pattern + "IntroRow2Id";
+    ViewBag.IntroRow2Id = @ViewBag.Pattern + "IntroRow2Id";
+
+    ViewBag.IntroImageId = @ViewBag.Pattern + "IntroImageId";
+    ViewBag.IntroIconValue = @ViewBag.IntroIcon + " tb-noti-cl ";
+    ViewBag.IntroUlId = @ViewBag.Pattern + "-intro-ul-id";
+
+    ViewBag.IntroProgressId = "IntroProgressId" + @ViewBag.ModuleId;
+    ViewBag.IntroProgressBarId = "IntroProgressBarId" + @ViewBag.ModuleId;
+
+    ViewBag.IntroStatus01Id = "IntroStatus01Id" + @ViewBag.ModuleId;
+    ViewBag.IntroStatus02Id = "IntroStatus02Id" + @ViewBag.ModuleId;
+    ViewBag.IntroStatus03Id = "IntroStatus03Id" + @ViewBag.ModuleId;
+    ViewBag.IntroStatus04Id = "IntroStatus04Id" + @ViewBag.ModuleId;
+    ViewBag.IntroStatus05Id = "IntroStatus05Id" + @ViewBag.ModuleId;
+    ViewBag.IntroStatus06Id = "IntroStatus06Id" + @ViewBag.ModuleId;
+    ViewBag.IntroStatus07Id = "IntroStatus07Id" + @ViewBag.ModuleId;
+    ViewBag.IntroStatus08Id = "IntroStatus08Id" + @ViewBag.ModuleId;
+    ViewBag.IntroStatus09Id = "IntroStatus09Id" + @ViewBag.ModuleId;
+    ViewBag.IntroStatus10Id = "IntroStatus10Id" + @ViewBag.ModuleId;
+
+    ViewBag.IntroStatus01ClickId = "IntroStatus01ClickId" + @ViewBag.ModuleId;
+    ViewBag.IntroStatus02ClickId = "IntroStatus02ClickId" + @ViewBag.ModuleId;
+    ViewBag.IntroStatus03ClickId = "IntroStatus03ClickId" + @ViewBag.ModuleId;
+    ViewBag.IntroStatus04ClickId = "IntroStatus04ClickId" + @ViewBag.ModuleId;
+    ViewBag.IntroStatus05ClickId = "IntroStatus05ClickId" + @ViewBag.ModuleId;
+    ViewBag.IntroStatus06ClickId = "IntroStatus06ClickId" + @ViewBag.ModuleId;
+    ViewBag.IntroStatus07ClickId = "IntroStatus07ClickId" + @ViewBag.ModuleId;
+    ViewBag.IntroStatus08ClickId = "IntroStatus08ClickId" + @ViewBag.ModuleId;
+    ViewBag.IntroStatus09ClickId = "IntroStatus09ClickId" + @ViewBag.ModuleId;
+    ViewBag.IntroStatus10ClickId = "IntroStatus10ClickId" + @ViewBag.ModuleId;
+
+    ViewBag.IntroDiBtnId = "IntroDiBtnId" + @ViewBag.ModuleId;
+
+}
+
+
+
+<div id="@ViewBag.IntroReportId" class="row mb-3 intro-report-cl">
+    <div class="col-md-12 intro-container">
+        <div id="@ViewBag.IntroCardId" class="card module-card rounded" style="border: 1px solid @ViewBag.IntroColor">
+            <div id="@ViewBag.IntroCardBodyId" style="cursor: pointer;" class="card-body intro-card-body ">
+                <div class="row" style="cursor: pointer; background-color: @ViewBag.IntroColor; height: 40px" href="@ViewBag.IntroHref" target="_blank" onClick="window.open('@ViewBag.IntroHref');">
+                    <div class="col-2">
+                        <a href="@ViewBag.IntroHref" target="_blank" class="icon-stack icon-stack-lg bg-yellow-soft text-yellow mb-2">
+                            <span class="@ViewBag.IntroIconValue" style="color:white"></span>
+                        </a>
+                    </div>
+                    <div class="col-10">
+                        <h4 class="mod-tl-cl" style="color:white">@ViewBag.IntroTitle</h4>
+                    </div>
+                </div>
+                <div id="@ViewBag.IntroRow0Id" class="intro-img-container" style="display:@ViewBag.IntroImgDisplay">
+                    <img id="@ViewBag.IntroImageId" src="@ViewBag.ImagesVDFolder/Background/@ViewBag.ImageName">
+                </div>
+
+                <div id="@ViewBag.IntroRow1Id" style="cursor: pointer;" class="intro-desc-container" href="@ViewBag.IntroHref" target="_blank" onClick="window.open('@ViewBag.IntroHref');">
+                    <p class="intro-description">@ViewBag.Description</p>
+                    <ul id="@ViewBag.IntroUlId"></ul>
+                </div>
+
+                <div id="@ViewBag.IntroRow2Id" href="@ViewBag.IntroHref" target="_blank" onClick="window.open('@ViewBag.IntroHref');">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-2" style="padding-right: 5px;">
+                            <span id="@ViewBag.IntroProgressId" class="intro-progress-cl">@ViewBag.IntroProgressValue</span>
+                        </div>
+                        <div class="col-10" style="margin-top:10px;padding-left: 0px;">
+                            <div style="display: flex; height: 0.5rem;background-color: #f8f9fA;">
+                                <div id="@ViewBag.IntroProgressBarId" class="progress-bar progress-bar-striped" role="progressbar" style="width: @ViewBag.IntroProgressValue;background-color: @ViewBag.IntroColor" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

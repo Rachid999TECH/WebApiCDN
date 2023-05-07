@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.IntroReportId = @ViewBag.Pattern + "IntroReportId";
+    ViewBag.IntroCardId = @ViewBag.Pattern + "IntroCardId";
+    ViewBag.IntroCardBodyId = @ViewBag.Pattern + "IntroCardBodyId";
+    ViewBag.IntroRowId = @ViewBag.Pattern + "IntroRowId";
+    ViewBag.IntroRow0Id = @ViewBag.Pattern + "IntroRow0Id";
+    ViewBag.FeatContainerId = @ViewBag.Pattern + "-feat-ct-id";
+
+    ViewBag.IntroImageId = @ViewBag.Pattern + "IntroImageId";
+
+    ViewBag.IntroUlId = @ViewBag.Pattern + "-feat-ul-id";
+}
+
+
+
+
+<div id="@ViewBag.IntroReportId" class="row intro-report">
+    <div class="col-md-12 intro-container">
+        <div id="@ViewBag.IntroCardId" class="card intro-card">
+            <div id="@ViewBag.IntroCardBodyId" style="background-color: #F2F5FA;" class="card-body intro-card-body">
+                <div id="@ViewBag.FeatContainerId" class="intro-desc-h-container">
+                    <p class="feat-desc-cl">@ViewBag.Description</p>
+                    <ul id="@ViewBag.IntroUlId"></ul>
+                    <div class="text-left">
+                        <button type="button" class="btn-cl gc-c1-cl gc-brc1-cl" target="_blank" style="margin-top: 8px;" onClick="@ViewBag.FeatOnClick">
+                            <div class="btn-txt-cl  gc-c1-cl">En savoir plus >></div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

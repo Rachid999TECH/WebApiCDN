@@ -1,0 +1,19 @@
+﻿
+@{
+    //ViewBag.LabelId = @ViewBag.Id + "LabelId";
+    ViewBag.HrefId = @ViewBag.Id + "HrefId";
+    //ViewBag.ImageId = @ViewBag.Id + "ImageId";
+}
+
+<div class="form-group row" style="margin:2%">
+    @*<label for="@ViewBag.LabelId" class=" col-form-label">@ViewBag.Label</label>*@
+    @*<div class="col-sm-6">*@
+        @*<p type="text" class="form-control" id="@ViewBag.Id">*@
+            <a id="@ViewBag.HrefId" href="~/Images/Background/PageGarde.jpg" target="_blank">
+                <img id="@ViewBag.Id" src="~/Images/Background/PageGarde.jpg" style="width:95%">
+            </a>
+        @*</p>*@
+    @*</div>*@
+</div>
+
+

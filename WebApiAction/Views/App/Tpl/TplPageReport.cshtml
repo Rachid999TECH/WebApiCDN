@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.PageReportId = @ViewBag.Pattern + "PageReportId";
+    ViewBag.PageZoomBtnId = @ViewBag.Pattern + "PageZoomBtnId";
+    ViewBag.PageCardId = @ViewBag.Pattern + "PageCardId";
+    ViewBag.PageRowId = @ViewBag.Pattern + "PageRowId";
+    ViewBag.PageCol0Id = @ViewBag.Pattern + "PageCol0Id";
+    ViewBag.PageCol1Id = @ViewBag.Pattern + "PageCol1Id";
+    ViewBag.PageCol2Id = @ViewBag.Pattern + "PageCol2Id";
+    ViewBag.PageCol3Id = @ViewBag.Pattern + "PageCol3Id";
+    ViewBag.PageCol4Id = @ViewBag.Pattern + "PageCol4Id";
+}
+
+<div id="@ViewBag.PageReportId" class="row mb-3 page-report">
+    <div class="col-md-12">
+        <div id="@ViewBag.PageCardId" class="card page-card tb-df-md" >
+            <div class="card-body">
+                <div id="@ViewBag.PageRowId">
+                    <div id="@ViewBag.PageCol0Id"></div>
+                    <div id="@ViewBag.PageCol1Id"></div>
+                    <div id="@ViewBag.PageCol2Id"></div>
+                    <div id="@ViewBag.PageCol3Id"></div>
+                    <div id="@ViewBag.PageCol4Id"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

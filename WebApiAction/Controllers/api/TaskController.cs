@@ -2,6 +2,7 @@
 using WebApiAction.Models;
 using System.Web.Http;
 using System.Web.Http.Cors;
+using System.Web;
 //using System.Collections.Generic;
 //using System.Linq;
 //using System.Web;
@@ -29,22 +30,19 @@ namespace WebApiAction.Controllers
         CommonServices CommonServices = new CommonServices();
         TaskServices TaskServices = new TaskServices();       
 
-        [HttpPost]
-        public IHttpActionResult TaskUpdate(TaskUpdateModel ModelNew)
-        {
-            try
-            {
-                //TaskServices.CertFileAdd(ModelNew);
-                
-            }
-            catch (Exception e)
-            {
-                string LogSubject = "Error_TaskUpdate";
-                string Issue = e.ToString() + Environment.NewLine;
-                CommonServices.LogUpdate(LogSubject, Issue);
-            };
+       
+        //[HttpGet]
+        //public IHttpActionResult GetHtmlContent()
+        //{
+        //    dynamic model = new { Name = "John Doe" }; // Example model to pass to the template
 
-            return Ok();
-        }
+        //    string templatePath = "Path/To/Your/Template.cshtml"; // Replace with the actual path to your CSHTML template
+
+        //    string renderedContent = RenderTemplate(templatePath, model);
+
+        //    IHtmlString htmlString = new HtmlString(renderedContent);
+
+        //    return Ok(new HtmlResponse { HtmlContent = htmlString.ToString() });
+        //}
     }
 }

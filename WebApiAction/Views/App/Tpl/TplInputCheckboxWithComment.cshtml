@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.ParentId = @ViewBag.Id + "ParentId";
+    ViewBag.LabelId = @ViewBag.Id + "LabelId";
+    ViewBag.IsCheckedId = @ViewBag.Id + "IsCheckedId";
+    ViewBag.CommentId = @ViewBag.Id + "CommentId";
+}
+
+
+<div id="@ViewBag.ParentId" class="form-group row mb-1">   
+    <div class="col-4">
+        <label for="@ViewBag.LabelId" class="col-form-label">@ViewBag.Label</label>
+    </div>
+    <div class="col">
+        <label class="switch" style="float:left;margin-top: 8px;">
+            <input id="@ViewBag.IsCheckedId" type="checkbox" value="false" class="success form-control" onchange="@ViewBag.OnChange">
+            <span class="slider round"></span>
+        </label>
+    </div>  
+    <div class="col-6">
+        <textarea id="@ViewBag.CommentId" class="form-control col myform-tarea"></textarea>
+    </div>
+</div>
+
+
+
+

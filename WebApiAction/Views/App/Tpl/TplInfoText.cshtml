@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.IdParent = @ViewBag.Id + "Parent";
+}
+
+
+
+
+<div id="@ViewBag.IdParent" class="row">
+    <label for="@ViewBag.Id" class="col-sm-2 col-form-label" sstyle="font-weight: normal;">@ViewBag.Label</label>
+    <div class="col-sm-6">
+        <p type="text" class="form-control" id="@ViewBag.Id" style="border:transparent;">
+    </div>
+</div>

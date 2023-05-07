@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.ParamReportId = @ViewBag.Pattern + "ParamReportId";
+    ViewBag.ParamCardId = @ViewBag.Pattern + "ParamCardId";
+    ViewBag.ParamCardHeaderId = @ViewBag.Pattern + "ParamCardHeaderId";
+    ViewBag.ParamTitleId = @ViewBag.Pattern + "ParamTitleId";
+    ViewBag.ParamCardBodyId = @ViewBag.Pattern + "ParamCardBodyId";
+    ViewBag.ParamRowId = @ViewBag.Pattern + "ParamRowId";
+    ViewBag.ParamCol0Id = @ViewBag.Pattern + "ParamCol0Id";
+    ViewBag.ParamCol1Id = @ViewBag.Pattern + "ParamCol1Id";
+    ViewBag.ParamCol2Id = @ViewBag.Pattern + "ParamCol2Id";
+    ViewBag.ParamCol3Id = @ViewBag.Pattern + "ParamCol3Id";
+
+    ViewBag.ParamActionContainerId = @ViewBag.Pattern + "ParamActionContainerId";
+    ViewBag.ParamActionIconId = @ViewBag.Pattern + "ParamActionIconId";
+    ViewBag.ParamActionBtnId = @ViewBag.Pattern + "ParamActionBtnId";
+    ViewBag.ParamActionTextId = @ViewBag.Pattern + "ParamActionTextId";
+
+    ViewBag.ParamActionContainerId1 = @ViewBag.Pattern + "ParamActionContainerId1";
+    ViewBag.ParamActionIconId1 = @ViewBag.Pattern + "ParamActionIconId1";
+    ViewBag.ParamActionBtnId1 = @ViewBag.Pattern + "ParamActionBtnId1";
+    ViewBag.ParamActionTextId1 = @ViewBag.Pattern + "ParamActionTextId1";
+
+    ViewBag.ParamActionContainerId2 = @ViewBag.Pattern + "ParamActionContainerId2";
+    ViewBag.ParamActionIconId2 = @ViewBag.Pattern + "ParamActionIconId2";
+    ViewBag.ParamActionBtnId2 = @ViewBag.Pattern + "ParamActionBtnId2";
+    ViewBag.ParamActionTextId2 = @ViewBag.Pattern + "ParamActionTextId2";
+
+    ViewBag.ParamActionContainerId3 = @ViewBag.Pattern + "ParamActionContainerId3";
+    ViewBag.ParamActionIconId3 = @ViewBag.Pattern + "ParamActionIconId3";
+    ViewBag.ParamActionBtnId3 = @ViewBag.Pattern + "ParamActionBtnId3";
+    ViewBag.ParamActionTextId3 = @ViewBag.Pattern + "ParamActionTextId3";
+
+    ViewBag.ParamMessageContainerId = @ViewBag.Pattern + "ParamMessageContainerId";
+    ViewBag.ParamMessageIconId = @ViewBag.Pattern + "ParamMessageIconId";
+    ViewBag.ParamMessageTextId = @ViewBag.Pattern + "ParamMessageTextId";
+}
+
+<div id="@ViewBag.ParamReportId" class="row mb-3" style="margin-left: auto;margin-right: auto;">
+    <div class="col-md-12">
+        <div id="@ViewBag.ParamCardId" class="card box-cl">
+            <div id="@ViewBag.ParamCardHeaderId" class="card-header">
+                <h5 id="@ViewBag.ParamTitleId" class="panel-title">@ViewBag.ParamTitle</h5>
+            </div>
+            <div id="@ViewBag.ParamCardBodyId" class="card-body">
+                <div id="@ViewBag.ParamRowId" class="row">
+                    <div id="@ViewBag.ParamCol0Id" class="col param-col"></div>
+                    <div id="@ViewBag.ParamCol1Id" class="col param-col"></div>
+                    <div id="@ViewBag.ParamCol2Id" class="col param-col"></div>
+                    <div id="@ViewBag.ParamCol3Id" class="col param-col"></div>
+                </div>
+                <div class="row">
+                    <div id="ParamCol0Id" class="col-sm-6"></div>
+                </div>
+                <div id="ParamLigne0Id"></div>
+                @*<div id="@ViewBag.ParamActionContainerId" class="text-left">
+                    <button id="@ViewBag.ParamActionBtnId" type="button" class="btn btn-secondary" style="float: right;margin-left: 10px;font-size: 12px;background-color:transparent;border:1px solid #ced4da;" onclick="@ViewBag.Action">
+                        <span id="@ViewBag.ParamActionIconId" class="@ViewBag.ActionIcon" style="font-size: 16px;margin-right: 15px;color:#000000"></span>
+                        <div id="@ViewBag.ParamActionTextId" class="text-right" style="float:right;color:#495057;">@ViewBag.ActionText</div>
+                    </button>
+                </div>*@
+
+            </div>
+            <div id="@ViewBag.ParamMessageContainerId"class="container" style="width: 100%;margin-left: 0px;display:none">
+                    <span id="ParamMessageIconId"></span>
+                    <span id="ParamMessageTextId"></span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.ParamActionFormContainerId = @ViewBag.Pattern + "ParamActionFormContainerId" + @ViewBag.Index;
+    ViewBag.ParamActionFormIconId = @ViewBag.Pattern + "ParamActionFormIconId" + @ViewBag.Index;
+    ViewBag.ParamActionFormBtnId = @ViewBag.Pattern + "ParamActionFormBtnId" + @ViewBag.Index;
+    ViewBag.ParamActionFormTextId = @ViewBag.Pattern + "ParamActionFormTextId" + @ViewBag.Index;
+}
+
+@if (User.IsInRole(@ViewBag.RoleName01) ||
+     User.IsInRole(@ViewBag.RoleName02) ||
+     User.IsInRole(@ViewBag.RoleName03) ||
+     User.IsInRole(@ViewBag.RoleName04) ||
+     User.IsInRole(@ViewBag.RoleName05) ||
+     User.IsInRole(@ViewBag.RoleName06) ||
+     User.IsInRole(@ViewBag.RoleName07) ||
+     User.IsInRole(@ViewBag.RoleName08) ||
+     User.IsInRole(@ViewBag.RoleName09) ||
+     User.IsInRole(@ViewBag.RoleName10))
+{
+    <text>
+        <div id="@ViewBag.ParamActionFormContainerId" class="text-left">
+            <button id="@ViewBag.ParamActionFormBtnId" type="button" class="btn-cl gc-bc1-cl" data-toggle="modal" data-target="#@ViewBag.ButtonFormDataTargetId" data-whatever="xxx" onclick="@ViewBag.Action">
+                <span id="@ViewBag.ParamActionFormIconId" class="@ViewBag.ActionIcon btn-icon-m-cl gc-c1-cl"></span>
+                <div id="@ViewBag.ParamActionFormTextId" class="btn-txt-cl gc-c1-cl">@ViewBag.ActionText</div>
+            </button>
+        </div>
+    </text>
+}
+
+
+
+
+
+

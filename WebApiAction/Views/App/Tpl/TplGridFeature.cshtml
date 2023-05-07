@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.GridReportId = @ViewBag.Pattern + "GridReportId";
+    //ViewBag.GridId = @ViewBag.Pattern + "GridId";
+
+    ViewBag.GridZoomBtnId = @ViewBag.Pattern + "GridZoomBtnId";
+
+    ViewBag.GridContainerId = @ViewBag.Pattern + "GridContainerId";
+    ViewBag.GridCardId = @ViewBag.Pattern + "GridCardId";
+    ViewBag.GridCardBodyId = @ViewBag.Pattern + "GridCardBodyId";
+    ViewBag.GridRowId = @ViewBag.Pattern + "GridRowId";
+
+    ViewBag.GridCol0Id = @ViewBag.Pattern + "-grid-col-id";
+}
+
+<div id="@ViewBag.GridReportId" class="row">
+    <div id="@ViewBag.GridContainerId" class="col-md-12">
+        <div id="@ViewBag.GridCardId" class="card grid-card">
+            <div id="@ViewBag.GridCardBodyId" class="card-body">
+                <div id="@ViewBag.GridRowId" class="row">
+                    <div id="@ViewBag.GridCol0Id" class="col"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

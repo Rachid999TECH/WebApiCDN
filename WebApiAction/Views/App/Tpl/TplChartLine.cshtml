@@ -1,0 +1,7 @@
+﻿@{
+    ViewBag.CanevasIdParent = @ViewBag.Pattern + "CanevasIdParent";
+    ViewBag.CanevasId = @ViewBag.Pattern + "CanevasId";
+}
+<div id="@ViewBag.CanevasIdParent" class="chart-area">
+    <canvas id="@ViewBag.CanevasId" height="200" class="box-cl"></canvas>
+</div>

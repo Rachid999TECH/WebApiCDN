@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.ActionContainerId = @ViewBag.Pattern + "ActionContainerId";
+    ViewBag.ActionIconId = @ViewBag.Pattern + "ActionIconId";
+    ViewBag.ActionBtnId = @ViewBag.Pattern + "ActionBtnId";
+    ViewBag.ActionTextId = @ViewBag.Pattern + "ActionTextId";
+}
+
+
+<div id="@ViewBag.ActionContainerId" class="text-left">
+    <button id="@ViewBag.ActionBtnId" type="button" class="btn-cl gc-bc1-cl" onclick="@ViewBag.OnClick">
+        <span id="@ViewBag.ActionIconId" class="@ViewBag.IconName btn-icon-m-cl gc-c1-cl"></span>
+        <div id="@ViewBag.ActionTextId" class="btn-txt-cl gc-c1-cl">@ViewBag.Label</div>
+    </button>
+</div>

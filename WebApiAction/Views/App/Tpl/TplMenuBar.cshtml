@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.MenuIconStyle = "border-top-left-radius: 2px;" +
+                            "border-top-right-radius: 0;" +
+                            "border-bottom-right-radius: 0;" +
+                            "border-bottom-left-radius: 2px;" +
+                            "display: block;" +
+                            "float: left;" +
+                            "height: 100%;" +
+                            /* width: 90px; */
+                            "text-align: center;" +
+                            "font-size: 2.5rem;" +
+                            /* line-height: 90px; */
+                            "background: rgba(0, 0, 0, 0.2);" +
+                            "background-color:" + @ViewBag.BackgroundColorIcon;
+    ViewBag.MenuTextStyle = "background-color:" + @ViewBag.BackgroundColorText + "; flex: 0 0 100%;" +
+                                        "border-top-right-radius: 2px;" +
+                                        "border-bottom-right-radius:2px";
+
+}
+
+
+
+
+
+<div class="col-xl-3 col-md-6 mb-3" style="height: 4.5rem">
+    <div class="card border-left-success shadow h-100 row" style="border: 1px solid rgba(0,0,0,0);">
+        <a class="info-box-icon bg-aqua clo-4" style="@ViewBag.MenuIconStyle" href="@ViewBag.MenuTextLink">
+            <span>
+            <i class="@ViewBag.IconName" style="color:white;font-size: 1.6rem; margin-bottom:1px "></i>
+            </span>
+        </a>
+        <div class="col-8" style="@ViewBag.MenuTextStyle">
+            <br />
+            <a href="@ViewBag.MenuTextLink" style="color:white; text-transform: uppercase!important; font-size: 0.7rem; font-weight: bolder;">@ViewBag.MenuTextTitle</a>
+        </div>
+    </div>
+</div>
+
+

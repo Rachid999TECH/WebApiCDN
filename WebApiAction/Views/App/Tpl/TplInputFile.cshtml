@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.ParentId = @ViewBag.Id + "Parent";
+}
+
+<div id="@ViewBag.ParentId" class="form-group row mb-1">
+    <label for="@ViewBag.Id" class="col-4 col-form-label">@ViewBag.Label</label>
+    <div class="col-8">
+        <input id="@ViewBag.Id" type="file" class="form-control" name="ProfilImgUploadedFile" style="font-size: 0.9rem" multiple>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
