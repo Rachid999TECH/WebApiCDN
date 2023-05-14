@@ -1315,7 +1315,7 @@ img {
 }
 /*---------------------------------intro-css------------*/
 .grid-col {
-    min-width: 300px;
+    /*min-width: 300px;*/
     margin-left: 10px;
     margin-right: 10px;
 }
@@ -2634,6 +2634,11 @@ ol, p, ul:not(.list-unstyled) {
     }
 
 /*---------------bootstrap 4--------------------*/
+.panel-title {
+    font-size: 16px;
+    font-weight: bold;
+    height: 4px;
+}
 .card-header {
     height: auto;
     display: block;
@@ -2641,14 +2646,16 @@ ol, p, ul:not(.list-unstyled) {
 }
 
 .card-header {
-    margin-top: 5px;
+    /*margin-top: 5px;
     margin-right: 5px;
     margin-left: 0;
-    border-bottom: 1px solid transparent;
+    border-bottom: 1px solid transparent;*/
+    margin-top: 1px;
+    margin-bottom: 1px;
 }
 
 .card-body {
-    /*padding: 1rem;*/
+    padding: 8px;
 }
 
 .card .card-body, .card .card-footer, .card .card-header {
@@ -5137,7 +5144,7 @@ footer {
 
 
 /*A enlever*/
-#btnPrev {
+/*#btnPrev {
     float: left;
     margin-bottom: 20px;
     &:before
@@ -5179,7 +5186,7 @@ footer {
     color: @calendar-standout;
     font-weight: bold;
 }
-}
+}*/
 
 
 
