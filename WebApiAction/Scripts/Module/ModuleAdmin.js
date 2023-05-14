@@ -1140,8 +1140,9 @@ function AdminAppsGet(ActionBtnId, Icon, ServerId, AppId) {
             { "data": "AppId" },//5
             { "data": "AppId" },//6
             { "data": "AppId" },//7
+            { "data": "AppId" },//8
 
-            { "data": "LastRestart" },//8
+            { "data": "LastRestart" },//9
         ],
         "columnDefs": [
             { "width": "3%", "className": "text-center", "targets": 0 },
@@ -1153,8 +1154,9 @@ function AdminAppsGet(ActionBtnId, Icon, ServerId, AppId) {
             { "width": "1%", "className": "text-left", "targets": 5 },
             { "width": "1%", "className": "text-left", "targets": 6 },
             { "width": "1%", "className": "text-left", "targets": 7 },
+            { "width": "1%", "className": "text-left", "targets": 8 },
 
-            { "width": "3%", "className": "text-left", "targets": 8 },
+            { "width": "3%", "className": "text-left", "targets": 9 },
 
             { "targets": 0, "render": function (data, type, row) { return data; } },
             { "targets": 1, "render": function (data, type, row) { return data; } },
@@ -1179,7 +1181,13 @@ function AdminAppsGet(ActionBtnId, Icon, ServerId, AppId) {
                 }
             },
 
-            { "targets": 8, "render": function (data, type, row) { return GetDhmValueFromDataTableDate(data); } },
+            {
+                "targets": 8, "render": function (data, type, row) {
+                    return DataTableButtonGet('AdminAppUpdate', data, data + ', \'HTML\'', '', 'dt-btn-cl gc-bc1-cl', 'fas fa-redo-alt btn-icon-cl gc-c1-cl', '')
+                }
+            },
+
+            { "targets": 9, "render": function (data, type, row) { return GetDhmValueFromDataTableDate(data); } },
         ],
         "iDisplayLength": 100,
         "language": {
@@ -1210,6 +1218,26 @@ function AdminAppsGet(ActionBtnId, Icon, ServerId, AppId) {
     NotiConnectionIdUpdate('Administration > Application > Affichage');
 }
 
+function AdminAppUpdate(AppId, Pattern) {
+    var ActionBtnId = 'AdminAppUpdateBtnId' + AppId;
+    var Icon = 'fas fa-redo-alt';
+    var IsMargin = false;
+    ActionSpin(ActionBtnId, IsMargin);
+
+    var obj = {};
+    obj.AppId = AppId;
+    obj.Pattern = Pattern;
+    $.ajax({
+        url: "/Admin/AdminAppUpdate",
+        method: "POST",
+        data: JSON.stringify(obj),
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (data) {
+            ActionBtnSet(ActionBtnId, Icon, IsMargin);
+        }
+    });
+}
 
 function AdminAppTaskRun(AppId, TaskName) {
     var ActionBtnId = 'AdminAppTaskRunBtnId' + AppId;

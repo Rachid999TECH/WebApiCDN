@@ -1,5 +1,6 @@
 ﻿function CollabAllReportsHide() {
     HideReport('HomeReportId');
+    HideReport('MenuReportId');
     HideReport('Page0_PageReportId');
     HideReport('ParamReportId');
 
@@ -52,6 +53,14 @@ function CollabAllParametersHide() {
     HideParent('ParamId');
     HideParent('UserIdAdmin');    
 
+    HideParent('InfoSubTypeId');
+    HideParent('InfoStatusId');
+    HideParent('InfoSubTypeId');
+    HideParent('AxleIdExpert');
+    HideParent('AxleSenseId');
+    HideParent('PkId');
+    HideParent('PmId');
+
     HideReport('ParamActionContainerId0');
     HideReport('ParamActionContainerId1');
     HideReport('ParamActionContainerId2');
@@ -80,18 +89,18 @@ function CollabHomeOpen() {
     //Fill
     var PluginId = '0';
     var Index = '';
-    HtmlDropDownListNameOnlyLabelFill('EmergencyId', '0', '/Param/ParamEmergenciesGet', 'EmergencyId', 'EmergencyName', 'Sélectionner Urgence');
-    HtmlDropDownListNameOnlyLabelFill('EmergencyId1', '0', '/Param/ParamEmergenciesGet', 'EmergencyId', 'EmergencyName', 'Sélectionner Urgence');
-    HtmlDropDownListNameOnlyLabelFill('UpdateStatusId', '0', '/Home/HomeUpdateGetUpdateStatus', 'UpdateStatusId', 'UpdateStatusName', 'Sélectionner Statut');
-    HtmlDropDownListNameOnlyLabelFill('UpdateStatusId1', '0', '/Home/HomeUpdateGetUpdateStatus', 'UpdateStatusId', 'UpdateStatusName', 'Sélectionner Statut');
-    HtmlDropDownListNameOnlyLabelFill('TeamId', 0, '/Home/DimTeamsGet', 'TeamId', 'TeamName', 'Sélectionner Groupe');
-    HtmlDropDownListNameOnlyLabelFill('TeamId1', 0, '/Home/DimTeamsGet', 'TeamId', 'TeamName', 'Sélectionner Group');
-    HtmlDropDownListNameOnlyLabelFill('VersionId', '0', '/Common/ParamVersVersionGet', 'VersionId', 'VersionNumber', 'Sélectionner Version');
-    HtmlDropDownListNameOnlyLabelFill('VersionId1', '0', '/Common/ParamVersVersionGet', 'VersionId', 'VersionNumber', 'Sélectionner Version');
-    HtmlDropDownListNameOnlyLabelFill('HandledById', '0', '/Param/ParamUsersTollAdminGet', 'UserId', 'FullName', 'Sélectionner Destinataire');
-    HtmlDropDownListNameOnlyLabelFill('HandledById1', '0', '/Param/ParamUsersTollAdminGet', 'UserId', 'FullName', 'Sélectionner Destinataire');
-    HtmlDropDownListNameOnlyLabelFill('ServerId', '0', '/Param/ParamServersGet', 'ServerId', 'ServerName', 'Sélectionner Serveur');
-    HtmlDropDownListNameOnlyLabelFill('ServerId1', '0', '/Param/ParamServersGet', 'ServerId', 'ServerName', 'Sélectionner Serveur');
+    HtmlDropDownListNameOnlyLabelFill('EmergencyId', '0', '/Collab/CollabEmergenciesGet', 'EmergencyId', 'EmergencyName', 'Sélectionner Urgence');
+    HtmlDropDownListNameOnlyLabelFill('EmergencyId1', '0', '/Collab/CollabEmergenciesGet', 'EmergencyId', 'EmergencyName', 'Sélectionner Urgence');
+    HtmlDropDownListNameOnlyLabelFill('UpdateStatusId', '0', '/Collab/CollabUpdateStatusGet', 'UpdateStatusId', 'UpdateStatusName', 'Sélectionner Statut');
+    HtmlDropDownListNameOnlyLabelFill('UpdateStatusId1', '0', '/Collab/CollabUpdateStatusGet', 'UpdateStatusId', 'UpdateStatusName', 'Sélectionner Statut');
+    HtmlDropDownListNameOnlyLabelFill('TeamId', 0, '/Collab/CollabTeamsGet', 'TeamId', 'TeamName', 'Sélectionner Groupe');
+    HtmlDropDownListNameOnlyLabelFill('TeamId1', 0, '/Collab/CollabTeamsGet', 'TeamId', 'TeamName', 'Sélectionner Group');
+    HtmlDropDownListNameOnlyLabelFill('VersionId', '0', '/Collab/CollabVersionGet', 'VersionId', 'VersionNumber', 'Sélectionner Version');
+    HtmlDropDownListNameOnlyLabelFill('VersionId1', '0', '/Collab/CollabVersionGet', 'VersionId', 'VersionNumber', 'Sélectionner Version');
+    HtmlDropDownListNameOnlyLabelFill('HandledById', '0', '/Collab/CollabHandlersGet', 'UserId', 'FullName', 'Sélectionner Destinataire');
+    HtmlDropDownListNameOnlyLabelFill('HandledById1', '0', '/Collab/CollabHandlersGet', 'UserId', 'FullName', 'Sélectionner Destinataire');
+    HtmlDropDownListNameOnlyLabelFill('ServerId', '0', '/Collab/CollabServersGet', 'ServerId', 'ServerName', 'Sélectionner Serveur');
+    HtmlDropDownListNameOnlyLabelFill('ServerId1', '0', '/Collab/CollabServersGet', 'ServerId', 'ServerName', 'Sélectionner Serveur');
     HtmlDropDownListNameOnlyLabelFill('ChannelId', '0', '/Collab/CollabChannelsGet', 'ChannelId', 'ChannelName', 'Sélectionner Canal');
     HtmlDropDownListNameOnlyLabelFill('ChannelId1', '0', '/Collab/CollabChannelsGet', 'ChannelId', 'ChannelName', 'Sélectionner Canal');
 
@@ -99,7 +108,13 @@ function CollabHomeOpen() {
     HtmlDropDownListNameOnlyWithInputLabelFill('AppId1', '0', '/Collab/CollabAppsGet', 'AppId', 'AppName', 0, 'Sélectionner Application');
     HtmlDropDownListWithTwoInputsNameOnlyLabelFill('ModuleId1', '0', '/Collab/CollabModulesGet', 'ModuleId', 'ModuleName', 0, 0, 'Sélectionner Module');
     HtmlDropDownListNameOnlyWithInputLabelFill('PluginId1', '0', '/Collab/CollabPluginsGet', 'PluginId', 'PluginName', 0, 'Sélectionner Menu');
-    HtmlDropDownListWithInputNameOnlyLabelFill('ParamId', '0', '/Common/ParamsGet', 'ParamId', 'ParamName', '22', 'Sélectionner Configuration');//
+    HtmlDropDownListWithInputNameOnlyLabelFill('ParamId', '0', '/Collab/CollabParamsGet', 'ParamId', 'ParamName', '22', 'Sélectionner Configuration');//
+
+    HtmlDropDownListNameOnlyLabelFill('InfoTypeId', '0', '/Info/InfoTypesGet', 'InfoTypeId', 'InfoTypeName', 'Sélectionner type');
+    HtmlDropDownListNameOnlyLabelFill('InfoStatusId', '0', '/Info/InfoStatusGet', 'InfoStatusId', 'InfoStatusName', 'Sélectionner Status');
+    HtmlDropDownListNameOnlyLabelFill('InfoSubTypeId', '0', '/Info/InfoSubTypesGet', 'InfoSubTypeId', 'InfoSubTypeName', 'Sélectionner Sous-type');
+    HtmlDropDownListNameOnlyLabelFill('AxleId', '0', '/Info/InfoAxlesGet', 'AxleIdExpert', 'AxleNameExpert', 'Sélectionner Axe');
+    HtmlDropDownListNameOnlyLabelFill('AxleSensId', '0', '/Info/AxleSensGet', 'AxleSensId', 'AxleSensName', 'Sélectionner Sens');
 
     //Onchange
     //ElementOnChangeSet('KeywordId', "CollabActionDisplay('0')");    
@@ -130,12 +145,16 @@ function CollabHomeOpen() {
 
     //Action
     ParamActionBtnGet(2, 'Initialiser', 'fas fa-power-off', 'CollabActionReset()');
+
+    //style
+    RightBarHide();  
+    LeftBarHide();
 }
 
-function CollabActionOpen() {
+function CollabDemandOpen() {
 
     //Set pattern
-    var Pattern = 'CollabAction';
+    //var Pattern = 'CollabAction';
 
     //Hide all
     CollabAllReportsHide();
@@ -143,33 +162,265 @@ function CollabActionOpen() {
     MenuBarHighlight(1, 7);
 
     //Set title
-    ParamTitleSet('Gestion des actions');
+    ParamTitleSet('Créer une demande');
+
+    //Show Parameters
+    ShowReport('ParamReportId');
+
+    //Parents    
+    ShowParent('MessageId');
+   
+    //Reset keyword
+    CollabActionReset();
+
+    ParamActionBtnGet(0, 'Rechercher', 'fas fa-search', "CollabActionSearch('1')");
+    ParamActionBtnGet(1, 'Ajouter', 'fas fa-plus-circle', "CollabDemandAdd()");
+
+    //CollabActionDisplay('0');
+}
+
+function CollabDemandAdd() {
+
+    var ActionBtnId = 'ParamActionBtnId1';
+    var Icon = 'fas fa-plus-circle btn-icon-m-cl gc-c1-c';
+
+    var IdParent = 1;
+    var PluginId = 22;
+    var EmergencyId = '0';
+    var UpdateStatusId = '0';
+    var ChannelId = '0';
+    var DhmString = '';
+    var UpdateMessage = GetElementValue('MessageId');
+    var TeamId = 0;
+    var VersionId = '0';
+    var HandledBy = '0';
+    var IsToNotify = false;
+
+    var DhmValueNeedString = GetDateStringFromDatePicker('DhmValueNeedId');
+    var DhmValueValidString = GetDateStringFromDatePicker('DhmValueValidId');
+    var DhmValueRealizeString = GetDateStringFromDatePicker('DhmValueRealizeId');
+
+    var QuantityPM = 0;
+    var QuantityDev = 0;
+
+    ActionBtnMarginSpin(ActionBtnId);
+        
+    var files = $("#FileId").get(0).files;
+    var data = new FormData();
+    for (var i = 0; i < files.length; i++) {
+        data.append("FileId", files[i]);
+    };
+
+    data.append("IdParent", IdParent);
+    data.append("PluginId", PluginId);
+    data.append("EmergencyId", EmergencyId);
+    data.append("UpdateStatusId", UpdateStatusId);
+    data.append("ChannelId", ChannelId);
+    data.append("TeamId", TeamId);
+    data.append("DhmString", DhmString);
+    data.append("UpdateMessage", UpdateMessage);
+    data.append("VersionId", VersionId);
+    data.append("IsTopBarFix", false);
+    data.append("UserId", '0');
+    data.append("HandledBy", HandledBy);
+    data.append("IsToNotify", IsToNotify);
+
+    data.append("DhmValueNeedString", DhmValueNeedString);
+    data.append("DhmValueValidString", DhmValueValidString);
+    data.append("DhmValueRealizeString", DhmValueRealizeString);
+
+    data.append("QuantityPM", QuantityPM);
+    data.append("QuantityDev", QuantityDev);
+
+    $.connection.hub.start({ jsonp: true }).done(function () {
+        data.append("ConnectionId", $.connection.hub.id);
+        $.ajax({
+            url: "/Collab/CollabActionAdd",
+            method: "POST",
+            dataType: "json",
+            contentType: false,
+            processData: false,
+            data: data,
+            success: function (data) {
+                ActionBtnIconMarginSet(ActionBtnId, Icon);
+                if (data != '0') {
+                    DataTableActionBtnIconSet(ActionBtnId, Icon);
+                    CollabActionDisplay(data);
+                }
+            }
+        });
+    });
+}
+
+function CollabBugOpen() {
+
+    //Set pattern
+    //var Pattern = 'CollabAction';
+
+    //Hide all
+    CollabAllReportsHide();
+    CollabAllParametersHide();
+    MenuBarHighlight(1, 7);
+
+    //Set title
+    ParamTitleSet('Signaler un bug');
 
     //Show Parameters
     ShowReport('ParamReportId');
 
     //Parents
-    ShowParent('KeywordId');
+    //ShowParent('KeywordId');
     ShowParent('ServerId');
+    ShowParent('AppId');
     ShowParent('ModuleId');
     ShowParent('PluginId');
-    ShowParent('EmergencyId');
-    ShowParent('UpdateStatusId');
+    //ShowParent('EmergencyId');
+    //ShowParent('UpdateStatusId');
     ShowParent('MessageId');
-    ShowParent('UpdateStatusId');
-    ShowParent('TeamId');
-    ShowParent('HandledById');
-    ShowParent('IsToNotifyId');
+    //ShowParent('UpdateStatusId');
+    //ShowParent('TeamId');
+    //ShowParent('HandledById');
+    //ShowParent('IsToNotifyId');
     ShowParent('FileId');
 
     //Reset keyword
     CollabActionReset();
 
-    ParamActionBtnGet(0, 'Afficher', 'fas fa-eye', "CollabActionDisplay('0')");
-    ParamActionBtnGet(1, 'Ajouter', 'fas fa-plus-circle', "CollabActionAdd('1', '')");
+    ParamActionBtnGet(0, 'Afficher', 'fas fa-eye', "CollabActionDisplay('1')");
+    ParamActionBtnGet(1, 'Ajouter', 'fas fa-plus-circle', "CollabBugAdd('1', '')");
     ParamActionBtnGet(2, 'Initialiser', 'fas fa-power-off', 'CollabActionReset()');
 
     //CollabActionDisplay('0');
+}
+
+
+function CollabMonitorOpen() {
+
+    //Set pattern
+    //var Pattern = 'CollabAction';
+
+    //Hide all
+    CollabAllReportsHide();
+    CollabAllParametersHide();
+    MenuBarHighlight(1, 7);
+
+    //Set title
+    ParamTitleSet('Superviser les tickets');
+
+    //Show Parameters
+    ShowReport('ParamReportId');
+
+    //Parents
+    //ShowParent('KeywordId');
+    ShowParent('ServerId');
+    ShowParent('AppId');
+    ShowParent('ModuleId');
+    ShowParent('PluginId');
+    ShowParent('EmergencyId');
+    ShowParent('UpdateStatusId');
+    //ShowParent('MessageId');
+    ShowParent('TeamId');
+    ShowParent('HandledById');
+    //ShowParent('IsToNotifyId');
+    //ShowParent('FileId');
+
+    //Reset keyword
+    CollabActionReset();
+
+    ParamActionBtnGet(0, 'Afficher', 'fas fa-eye', "CollabActionDisplay('1')");
+    //ParamActionBtnGet(1, 'Ajouter', 'fas fa-plus-circle', "CollabBugAdd('1', '')");
+    ParamActionBtnGet(2, 'Initialiser', 'fas fa-power-off', 'CollabActionReset()');
+
+    //CollabActionDisplay('0');
+
+    //OnClick
+    ElementOnClickSet('ServerId', "CollabAppsGet('', '')");
+    ElementOnClickSet('AppId', "CollabModulesGet('', '')");
+    ElementOnClickSet('ModuleId', "CollabPluginsGet('', '')");
+    //ElementOnClickSet('PluginId', "CollabActionDisplay('1')");
+    //ElementOnClickSet('EmergencyId', "CollabActionDisplay('1')");
+    //ElementOnClickSet('UpdateStatusId', "CollabActionDisplay('1')");
+    //ElementOnClickSet('TeamId', "CollabActionDisplay('1')");
+    //ElementOnClickSet('HandledById', "CollabActionDisplay('1')");
+
+    //OnChange
+    ElementOnChangeSet('ServerId', "CollabActionDisplay('1')");
+    ElementOnChangeSet('AppId', "CollabActionDisplay('1')");
+    ElementOnChangeSet('ModuleId', "CollabActionDisplay('1')");
+    ElementOnChangeSet('PluginId', "CollabActionDisplay('1')");
+    ElementOnChangeSet('EmergencyId', "CollabActionDisplay('1')");
+    ElementOnChangeSet('UpdateStatusId', "CollabActionDisplay('1')");
+    ElementOnChangeSet('TeamId', "CollabActionDisplay('1')");
+    ElementOnChangeSet('HandledById', "CollabActionDisplay('1')");
+}
+
+
+function CollabInfoOpen() {
+
+    //Set pattern
+    //var Pattern = 'CollabAction';
+
+    //Hide all
+    CollabAllReportsHide();
+    CollabAllParametersHide();
+    MenuBarHighlight(1, 7);
+
+    //Set title
+    ParamTitleSet('Signaler un accident');
+
+    //Show Parameters
+    ShowReport('ParamReportId');
+
+    //Parents
+    //ShowParent('KeywordId');
+    //ShowParent('ServerId');
+    //ShowParent('AppId');
+    //ShowParent('ModuleId');
+    //ShowParent('PluginId');
+    ShowParent('EmergencyId');
+    //ShowParent('UpdateStatusId');
+    ShowParent('MessageId');
+    //ShowParent('TeamId');
+    //ShowParent('HandledById');
+    //ShowParent('IsToNotifyId');
+    //ShowParent('FileId');
+
+    ShowParent('InfoSubTypeId');
+    ShowParent('InfoStatusId');
+    ShowParent('InfoSubTypeId');
+    ShowParent('AxleIdExpert');
+    ShowParent('AxleSenseId');
+    ShowParent('PkId');
+    ShowParent('PmId');
+
+    //Reset keyword
+    CollabActionReset();
+
+    ParamActionBtnGet(0, 'Afficher', 'fas fa-eye', "CollabActionDisplay('1')");
+    //ParamActionBtnGet(1, 'Ajouter', 'fas fa-plus-circle', "CollabBugAdd('1', '')");
+    ParamActionBtnGet(2, 'Initialiser', 'fas fa-power-off', 'CollabActionReset()');
+
+    //CollabActionDisplay('0');
+
+    //OnClick
+    ElementOnClickSet('ServerId', "CollabAppsGet('', '')");
+    ElementOnClickSet('AppId', "CollabModulesGet('', '')");
+    ElementOnClickSet('ModuleId', "CollabPluginsGet('', '')");
+    //ElementOnClickSet('PluginId', "CollabActionDisplay('1')");
+    //ElementOnClickSet('EmergencyId', "CollabActionDisplay('1')");
+    //ElementOnClickSet('UpdateStatusId', "CollabActionDisplay('1')");
+    //ElementOnClickSet('TeamId', "CollabActionDisplay('1')");
+    //ElementOnClickSet('HandledById', "CollabActionDisplay('1')");
+
+    //OnChange
+    ElementOnChangeSet('ServerId', "CollabActionDisplay('1')");
+    ElementOnChangeSet('AppId', "CollabActionDisplay('1')");
+    ElementOnChangeSet('ModuleId', "CollabActionDisplay('1')");
+    ElementOnChangeSet('PluginId', "CollabActionDisplay('1')");
+    ElementOnChangeSet('EmergencyId', "CollabActionDisplay('1')");
+    ElementOnChangeSet('UpdateStatusId', "CollabActionDisplay('1')");
+    ElementOnChangeSet('TeamId', "CollabActionDisplay('1')");
+    ElementOnChangeSet('HandledById', "CollabActionDisplay('1')");
 }
 
 function CollabTeamOpen() {
@@ -438,6 +689,46 @@ function CollabCalendarGet() {
     })
 }
 
+function CollabActionSearch(IdParent) {
+
+    var HomeUpdateId = 0;
+    var VersionId = 0;
+
+    var ModuleId = '0';
+    var PluginId = 0;
+    var UpdateStatusId = '0';
+    var EmergencyId = '0';
+    var ChannelId = '0';
+    var DhmString = GetDhmStringFromDatePicker('DhmId');
+    var TeamId = 0;
+    var HandledBy = '0';
+    var ServerId = '0';
+    var AppId = '0';
+    var Keyword = GetElementValue('MessageId');
+
+    var ActionBtnId = 'ParamActionBtnId0';
+    var Icon = 'fas fa-eye';
+    var Pattern = 'CollabAction';
+
+    if (Keyword == '') {
+        CollabActionGet(ActionBtnId, Icon, Pattern, Keyword, IdParent, ModuleId, PluginId, UpdateStatusId, EmergencyId, ChannelId, DhmString, TeamId, HomeUpdateId, VersionId, HandledBy, ServerId, AppId);
+    }
+    else {
+        var ModuleId = '0';
+        var PluginId = '0';
+        var UpdateStatusId = '0';
+        var EmergencyId = '0';
+        var ChannelId = '0';
+        var DhmString = GetDhmStringFromDatePicker('DhmId');
+        var TeamId = '0';
+        var HandledBy = '0';
+        var ServerId = '0';
+        var AppId = '0';
+        CollabActionGet(ActionBtnId, Icon, Pattern, Keyword, IdParent, ModuleId, PluginId, UpdateStatusId, EmergencyId, ChannelId, DhmString, TeamId, HomeUpdateId, VersionId, HandledBy, ServerId, AppId);
+    }
+
+}
+
 function CollabActionDisplay(IdParent) {
 
     var HomeUpdateId = 0;
@@ -490,7 +781,7 @@ function CollabActionGet(ActionBtnId, Icon, Pattern, Keyword, IdParent, ModuleId
 
     $('#' + PatternTableId).DataTable().destroy();;
     $('#' + PatternTableId).DataTable({  
-        "scrollY": '660px',
+        "scrollY": '790px',
         "scrollCollapse": true,
         "scrollX": true,
         //"searchPanes": {
@@ -499,10 +790,10 @@ function CollabActionGet(ActionBtnId, Icon, Pattern, Keyword, IdParent, ModuleId
         //"dom": 'Plfrtip',
         //"scrollY": '800px',
         //"scrollCollapse": true,
-        "dom": 'Bfrtip',
-        "buttons": [
-            'excel'
-        ],
+        //"dom": 'Bfrtip',
+        //"buttons": [
+        //    'excel'
+        //],
         "initComplete": function (settings, json) {
 
             HideReport(Pattern + 'TableCardHeaderId');
@@ -765,12 +1056,12 @@ function CollabActionGet(ActionBtnId, Icon, Pattern, Keyword, IdParent, ModuleId
         },
         "processing": false,
         "responsive": true,
-        "bFilter": true,
-        "autoWidth": true,
-        "searching": true,
-        "lengthChange": true,
-        "showNEntries": true,
-        "bInfo": true,
+        "bFilter": false,
+        "autoWidth": false,
+        "searching": false,
+        "lengthChange": false,
+        "showNEntries": false,
+        "bInfo": false,
         "bPaginate": true,
         //"order": [[0, 'asc'], [1, 'asc']]
         "ordering": false,
@@ -1154,7 +1445,7 @@ function CollabActionComment(RowId, FormIndex) {
 
 
 
-function CollabActionAdd(RowId, FormIndex) {
+function CollabBugAdd(RowId, FormIndex) {
 
     var ActionBtnId = 'ParamActionBtnId1';
     var Icon = 'fas fa-plus-circle btn-icon-m-cl gc-c1-c';
@@ -2976,46 +3267,47 @@ function CollabAppsGet(DefaultValue, Index) {
 function CollabPresetGet(Index) {
 
     var ServerId = ElementDropDownListValueGet('ServerId' + Index);
+    CollabAppsGet('0', Index);
 
     if (ServerId == 8) {//NA
 
         //Parents
-        ShowParent('KeywordId' + Index);
-        ShowParent('ModuleId' + Index);
-        ShowParent('PluginId' + Index);
-        ShowParent('EmergencyId' + Index);
-        ShowParent('UpdateStatusId' + Index);
-        HideParent('ChannelId' + Index);
-        ShowParent('DhmId' + Index);
-        ShowParent('MessageId' + Index);
-        ShowParent('UpdateStatusId' + Index);
-        ShowParent('TeamId' + Index);
-        HideParent('VersionId' + Index);
-        HideParent('HandledById' + Index);
-        ShowParent('IsToNotifyId' + Index);
-        ShowParent('FileId' + Index);
-        ShowParent('ServerId' + Index);
-        ShowParent('AppId' + Index);
+        //ShowParent('KeywordId' + Index);
+        //ShowParent('ModuleId' + Index);
+        //ShowParent('PluginId' + Index);
+        //ShowParent('EmergencyId' + Index);
+        //ShowParent('UpdateStatusId' + Index);
+        //HideParent('ChannelId' + Index);
+        //ShowParent('DhmId' + Index);
+        //ShowParent('MessageId' + Index);
+        //ShowParent('UpdateStatusId' + Index);
+        //ShowParent('TeamId' + Index);
+        //HideParent('VersionId' + Index);
+        //HideParent('HandledById' + Index);
+        //ShowParent('IsToNotifyId' + Index);
+        //ShowParent('FileId' + Index);
+        //ShowParent('ServerId' + Index);
+        //ShowParent('AppId' + Index);
 
-        HideParent('DhmValueNeedId' + Index);
-        HideParent('DhmValueValidId' + Index);
-        HideParent('DhmValueRealizeId' + Index);
+        //HideParent('DhmValueNeedId' + Index);
+        //HideParent('DhmValueValidId' + Index);
+        //HideParent('DhmValueRealizeId' + Index);
 
-        HideParent('QuantityPMId' + Index);
-        HideParent('QuantityDevId' + Index);
+        //HideParent('QuantityPMId' + Index);
+        //HideParent('QuantityDevId' + Index);
 
-        ElementDropDownListSet('VersionId' + Index, '0');
-        ElementDropDownListSet('AppId' + Index, '7');
-        ElementDropDownListSet('HandledById' + Index, '0');
+        //ElementDropDownListSet('VersionId' + Index, '0');
+        //ElementDropDownListSet('AppId' + Index, '7');
+        //ElementDropDownListSet('HandledById' + Index, '0');
 
-        ElementValueSet('DhmValueNeedId' + Index, '');
-        ElementValueSet('DhmValueValidId' + Index, '');
-        ElementValueSet('DhmValueRealizeId' + Index, '');
+        //ElementValueSet('DhmValueNeedId' + Index, '');
+        //ElementValueSet('DhmValueValidId' + Index, '');
+        //ElementValueSet('DhmValueRealizeId' + Index, '');
 
-        ElementValueSet('QuantityPMId' + Index, 0);
-        ElementValueSet('QuantityDevId' + Index, 0);
+        //ElementValueSet('QuantityPMId' + Index, 0);
+        //ElementValueSet('QuantityDevId' + Index, 0);
 
-        CollabAppsGet('0', Index);
+        /*CollabAppsGet('0', Index);*/
 
     }
     else {
@@ -3023,31 +3315,31 @@ function CollabPresetGet(Index) {
         
 
         //Parents
-        ShowParent('KeywordId' + Index);
-        ShowParent('ModuleId' + Index);
-        ShowParent('PluginId' + Index);
-        ShowParent('EmergencyId' + Index);
-        ShowParent('UpdateStatusId' + Index);
-        HideParent('ChannelId' + Index);
-        ShowParent('DhmId' + Index);
-        ShowParent('MessageId' + Index);
-        ShowParent('UpdateStatusId' + Index);
-        ShowParent('TeamId' + Index);
-        HideParent('VersionId' + Index);
-        ShowParent('HandledById' + Index);
-        ShowParent('IsToNotifyId' + Index);
-        ShowParent('FileId' + Index);
-        ShowParent('ServerId' + Index);
-        ShowParent('AppId' + Index);
+        //ShowParent('KeywordId' + Index);
+        //ShowParent('ModuleId' + Index);
+        //ShowParent('PluginId' + Index);
+        //ShowParent('EmergencyId' + Index);
+        //ShowParent('UpdateStatusId' + Index);
+        //HideParent('ChannelId' + Index);
+        //ShowParent('DhmId' + Index);
+        //ShowParent('MessageId' + Index);
+        //ShowParent('UpdateStatusId' + Index);
+        //ShowParent('TeamId' + Index);
+        //HideParent('VersionId' + Index);
+        //ShowParent('HandledById' + Index);
+        //ShowParent('IsToNotifyId' + Index);
+        //ShowParent('FileId' + Index);
+        //ShowParent('ServerId' + Index);
+        //ShowParent('AppId' + Index);
 
-        ShowParent('DhmValueNeedId' + Index);
-        ShowParent('DhmValueValidId' + Index);
-        ShowParent('DhmValueRealizeId' + Index);
+        //ShowParent('DhmValueNeedId' + Index);
+        //ShowParent('DhmValueValidId' + Index);
+        //ShowParent('DhmValueRealizeId' + Index);
 
-        ShowParent('QuantityPMId' + Index);
-        ShowParent('QuantityDevId' + Index);
+        //ShowParent('QuantityPMId' + Index);
+        //ShowParent('QuantityDevId' + Index);
 
-        CollabAppsGet('0', Index);
+        //CollabAppsGet('0', Index);
     }
 }
 

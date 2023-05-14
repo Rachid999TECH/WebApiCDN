@@ -5,6 +5,35 @@ var numFormat = $.fn.dataTable.render.number(' ', ',', 2).display;
 var numShortFormat = $.fn.dataTable.render.number(' ', '', 0).display;
 var numFormatOnDecimal = $.fn.dataTable.render.number(' ', ',', 1).display;
 
+
+function RightBarHide() {
+    HideElement('rb-chev-right-id');
+    ShowElement('rb-chev-left-id');
+    document.getElementById('Grid_0000GridCol2Id').setAttribute('Class', '');
+    HideReport('TicketHistoryId');
+}
+
+function RightBarShow() {
+    ShowElement('rb-chev-right-id');
+    HideElement('rb-chev-left-id');
+    document.getElementById('Grid_0000GridCol2Id').setAttribute('Class', 'col');
+    ShowElement('TicketHistoryId');
+}
+
+function LeftBarHide() {
+    ShowElement('lb-chev-right-id');
+    HideElement('lb-chev-left-id');
+    document.getElementById('Grid_0000GridCol0Id').setAttribute('Class', '');
+    HideReport('MobileReportId');
+}
+
+function LeftBarShow() {
+    HideElement('lb-chev-right-id');
+    ShowElement('lb-chev-left-id');
+    document.getElementById('Grid_0000GridCol0Id').setAttribute('Class', 'col');
+    ShowElement('MobileReportId');
+}
+
 function startIntro() {
     var intro = introJs();
     intro.setOptions({
@@ -7120,6 +7149,10 @@ function HideChartReport(TableId) {
 
 function HideElement(ElementId) {
     $('#' + ElementId).hide();
+}
+
+function ShowElement(ElementId) {
+    $('#' + ElementId).show();
 }
 
 function HideControl(ControlPattern) {
