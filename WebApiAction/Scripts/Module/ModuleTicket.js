@@ -19,6 +19,9 @@
     HideReport('Page4_PageReportId');
     HideReport('Page5_PageReportId');
     HideReport('Page6_PageReportId');
+
+    HideReport('MobileReportId');
+    HideReport('TicketHistoryId');   
 }
 
 function CollabAllParametersHide() {
@@ -53,11 +56,11 @@ function CollabAllParametersHide() {
     HideParent('ParamId');
     HideParent('UserIdAdmin');    
 
-    HideParent('InfoSubTypeId');
+    HideParent('InfoTypeId');
     HideParent('InfoStatusId');
     HideParent('InfoSubTypeId');
-    HideParent('AxleIdExpert');
-    HideParent('AxleSenseId');
+    HideParent('AxleId');
+    HideParent('AxleSensId');
     HideParent('PkId');
     HideParent('PmId');
 
@@ -1125,14 +1128,14 @@ function CollabActionFormLoad(Pattern, PatternForm, RowId) {
 
             var obj = {};
             obj.Keyword = '';
-            obj.IdParent = '0';
+            obj.IdParent = 0;
             obj.ModuleId = '0';
-            obj.PluginId = '0';
+            obj.PluginId = 0;
             obj.EmergencyId = '0';
             obj.UpdateStatusId = '0';
             obj.ChannelId = '0';
             obj.DateString = '';
-            obj.TeamId = '0';
+            obj.TeamId = 0;
             obj.HomeUpdateId = HomeUpdateId;
             obj.VersionId = 0;
             obj.HandledBy = '0';
