@@ -291,7 +291,7 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-    .page-wrapper.toggled .page-content {
+    .page-wrapper.toggled {
         padding-left: 220px;
     }
 }
@@ -637,20 +637,6 @@ body {
 
 
 
-.page-content {
-    display: inline-block;
-    width: 100%;
-    padding-left: 0px;
-    padding-top: 5px;
-}
-
-    .page-content > div {
-        /*padding: 20px 40px;*/
-    }
-
-.page-content {
-    overflow-x: hidden;
-}
 
 /*------scroll bar---------------------*/
 
@@ -1016,16 +1002,12 @@ img {
 
 
 /*-------------------------page-content-------------*/
-.page-content {
+.pc-cl {
     display: inline-block;
     width: 100%;
     padding-left: 0px;
-}
-
-@media (max-width: 400px) {
-    .page-content > div {
-        padding: 8px 8px;
-    }
+    padding-top: 5px;
+    overflow-x: hidden;
 }
 
 /*---------------------headerbar------------*/
@@ -4365,7 +4347,13 @@ a.waves-effect, a.waves-light {
     height: 34px;
 }
 
-/*---------signin--------*/
+/*---------login--------*/
+.lg-form-cl {
+    margin: auto;
+    background-color: #ffffff;
+    border: 1px solid #ccc !important;
+    border-radius: 16px;
+}
 .lg-report-cl {
     width: 100%;
     margin: 0 auto;
@@ -5361,7 +5349,7 @@ hr {
 }
 
 .tb-df-md {
-    background-color: #F2F5FA !important;
+    /*background-color: #F2F5FA !important;*/
     color: #363d47 !important;
     padding: 0px;
 }
