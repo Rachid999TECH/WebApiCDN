@@ -5973,7 +5973,8 @@ thead td {
 /*@import url('https://fonts.googleapis.com/css?family=Roboto');*/
 
 body {
-    font-family: 'Roboto', sans-serif;
+    /*font-family: 'Roboto', sans-serif;*/
+    font-family: Lato, sans-serif;
 }
 
 * {
