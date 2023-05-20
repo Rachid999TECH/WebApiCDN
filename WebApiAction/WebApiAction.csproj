@@ -611,6 +611,9 @@
     <Content Include="Views\App\Tpl\TplTopBarTour.cshtml" />
     <Content Include="Views\App\Tpl\TplUlElement.cshtml" />
     <Content Include="Views\App\Tpl\TplWebServiceReport.cshtml" />
+    <Content Include="Views\App\App\AppConnect.cshtml" />
+    <Content Include="Views\App\App\AppLeftBar.cshtml" />
+    <Content Include="Views\App\App\AppTopBar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

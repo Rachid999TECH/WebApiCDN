@@ -1,0 +1,81 @@
+﻿<div id="tb-report-id" style="display:@ViewBag.DisplayOnLogin">
+    <div class="tb-div-cl">
+
+        <div id="show-sidebar" class="tb-item-cl">
+            <span id="leftbar-id" class="fas fa-bars tb-noti-cl gc-c1-cl">
+            </span>
+            @*<div id="tb-noti-count-id" class="tb-count-cl">
+            </div>*@
+        </div>
+
+
+        @*<a id="show-sidebar" class="btn btn-sm ls-small-cl gc-bgc1-cl" href="#" style="display:unset">
+            <i id="leftbar-id" class="fas fa-bars" style="color:white"></i>
+        </a>*@
+
+
+
+
+        <div id="tb-search-id" class="tb-search-cl">
+            <div>
+                <span class="@ViewBag.AppIcon tb-logo-cl">
+                </span>
+                <a href="/Home/AboutIndex" class="tb-name-cl">@ViewBag.AppName &copy;</a>
+            </div>
+        </div>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto active" href="/Home/AboutIndex#tb-report-id">Home</a></li>
+                <li><a class="nav-link scrollto" href="#about">About me</a></li>
+                <li><a class="nav-link scrollto" href="#services">Services</a></li>
+                <li class="dropdown">
+                    <a href="#"><span>Products</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li class="dropdown">
+                            <a href="/Project/ProjectIndex"><span>Portfolio</span> <i class="bi bi-chevron-right"></i></a>
+                            <ul>
+                                <li><a href="#">Progress</a></li>
+                                <li><a href="#">Man Power</a></li>
+                                <li><a href="#">Events</a></li>
+                                <li><a href="#">Report</a></li>
+                                <li><a href="#">Administration</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a class="nav-link scrollto" href="#contact-id">Contact</a></li>
+                <li><a id="tb-tour-id" class="nav-link scrollto" href="#contact-id" onclick="HomeTourGet()">Explore</a></li>
+                <li class="dropdown">
+
+                    <a href="#"><span>My Account</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="#">My profil</a></li>
+                        <li><a href="#">Help</a></li>
+
+                        <text>
+                            @if (Request.IsAuthenticated)
+                            {
+                                using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                                {
+                                    @Html.AntiForgeryToken()
+                                <li><a href="javascript:document.getElementById('logoutForm').submit()">Disconnect</a></li>
+                            }
+                        }
+                            </text>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <div id="tb-noti-id" class="tb-item-cl">
+                <span class="fas fa-bell tb-noti-cl gc-c1-cl">
+                </span>
+                <div id="tb-noti-count-id" class="tb-count-cl">
+                </div>
+            </div>
+
+        </div>
+</div>
+
+
