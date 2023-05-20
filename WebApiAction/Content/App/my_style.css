@@ -5108,9 +5108,16 @@ footer {
 }
 
 
-
-/*---my_topbar*/
 /*----------------topbar-----------------*/
+.tb-left-cl {
+    display: flex;
+    gap: 40px;
+}
+
+.tb-logo-cl {
+    height: 30px;
+}
+
 .tb-div-cl {
     align-items: center;
     background-color: #fff;
@@ -5257,11 +5264,6 @@ footer {
     font-size: 2rem;
     vertical-align: middle;
     border-radius: 4rem;
-}
-
-.tb-logo-cl {
-    font-size: 26px;
-    margin-top: 10px;
 }
 
 .tb-name-cl {

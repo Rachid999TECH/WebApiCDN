@@ -472,6 +472,7 @@
     <Content Include="Scripts\Module\ModuleSignalR.js" />
     <Content Include="Scripts\Module\ModuleTicket.js" />
     <Content Include="Scripts\Module\ModuleUpload.js" />
+    <Content Include="Scripts\Module\ModuleProject.js" />
     <Content Include="Scripts\Test.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
