@@ -234,12 +234,13 @@ span.count {
 
 /*--------------------------------------body---------------*/
 body {
-    /*font-size: 0.9rem;*/
-    /*font-size: 11px;*/
-    font-family: "Open Sans", Arial, sans-serif;
+    background-color: #fff;
+    font-size: 12px;
+    font-weight: 300;
+    font-family: Inter,sans-serif;
     color: #4F4F4F;
-    /*background-color: #fff;*/
 }
+
 
 @media (max-width: 400px) {
     .form-control {
@@ -2549,13 +2550,7 @@ ol, p, ul:not(.list-unstyled) {
 }
 
 /*--------------body------*/
-body {
-    background-color: #fff;
-    font-size: 12px;
-    font-weight: 300;
-    font-family: 'Hind Vadodara','Segoe UI', arial;
-    color: #474c51;
-}
+
 
 
 
@@ -5972,10 +5967,6 @@ thead td {
 
 /*@import url('https://fonts.googleapis.com/css?family=Roboto');*/
 
-body {
-    /*font-family: 'Roboto', sans-serif;*/
-    font-family: Lato, sans-serif;
-}
 
 * {
     margin: 0;
