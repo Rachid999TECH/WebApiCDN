@@ -333,17 +333,7 @@
     <Content Include="Content\App\introjs.min.css" />
     <Content Include="Content\App\jquery.dataTables.min.css" />
     <Content Include="Content\App\material.min.css" />
-    <Content Include="Content\App\my_account.css" />
-    <Content Include="Content\App\my_button.css" />
-    <Content Include="Content\App\my_calendar.css" />
-    <Content Include="Content\App\my_datatable.css" />
-    <Content Include="Content\App\my_form.css" />
-    <Content Include="Content\App\my_grafic.chart.css" />
-    <Content Include="Content\App\my_navbar.css" />
-    <Content Include="Content\App\my_steps.css" />
     <Content Include="Content\App\my_style.css" />
-    <Content Include="Content\App\my_topbar.css" />
-    <Content Include="Content\App\my_tour.css" />
     <Content Include="Content\App\responsive.bootstrap.min.css" />
     <Content Include="Content\App\responsive.dataTables.min.css" />
     <Content Include="Content\App\select.dataTables.min.css" />
@@ -498,6 +488,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\App\Tpl\TplAboutReport.cshtml" />
     <Content Include="Views\App\Tpl\TplAccordion.cshtml" />
+    <Content Include="Views\App\Tpl\TplAppConnect.cshtml" />
     <Content Include="Views\App\Tpl\TplAssitReport.cshtml" />
     <Content Include="Views\App\Tpl\TplButton.cshtml" />
     <Content Include="Views\App\Tpl\TplButtonFormSec.cshtml" />

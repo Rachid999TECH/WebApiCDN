@@ -1,0 +1,55 @@
+﻿<li class="sidebar-dropdown">
+    <div class="sidebar-submenu">
+        <ul>
+            <li>
+                <text>
+                    @if (!Request.IsAuthenticated)
+                    {
+                        <div class="lg-report-cl">
+                            <div class="lg-ct-cl">
+                                <div class="lg-wp-cl">
+                                    <form class="lg-fr-cl validate-form">
+                                        <span class="lg-fr-tl-cl p-b-26">
+                                            @ViewBag.AppName
+                                        </span>
+                                        <span class="@ViewBag.AppIcon lg-fr-icon-cl">
+                                        </span>
+                                        <a class="lg-fr-slogan-cl">
+                                            @ViewBag.Slogan
+                                        </a>
+
+                                        <div id="login-btn-report-id" class="row">
+                                            <div class="col-md-12">
+                                                <section>
+                                                    <div class="form-group">
+                                                        <div class="">
+                                                            <button id="loginLink" type="button" class="btn btn-default lg-fr-btn-cl gc-bgc1-cl">
+                                                                @Html.ActionLink("Se connecter", "LoginIndex", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </section>
+                                            </div>
+                                        </div>
+
+                                        <div id="login-div-id">
+                                        </div>
+                                        <div class="text-center p-t-115">
+                                            <span class="txt1">
+
+                                            </span>
+                                            <a class="">
+                                                Vous ne possédez pas encore de compte sur @ViewBag.AppName ?
+                                                @Html.ActionLink("Inscription", "RegisterIndex", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })
+                                            </a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </text>
+            </li>
+        </ul>
+    </div>
+</li>

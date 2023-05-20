@@ -2,22 +2,7 @@
     ViewBag.ParentId = @ViewBag.Id + "Parent";
     ViewBag.LabelId = @ViewBag.Id + "Label";
 }
-@*<div id="@ViewBag.ParentId" class="form-group row mb-1">
-        <label for="@ViewBag.Id" class="col-2 col-form-label">@ViewBag.Label</label>
-        <div class="col-sm-6">
-            <input class="form-control" type="@ViewBag.Type" id="@ViewBag.Id">
-        </div>
-    </div>*@
-
 
 <div id="@ViewBag.ParentId" class="form-group row mb-1">
-    @*<label for="@ViewBag.Id" id="@ViewBag.LabelId" class="col-4 col-form-label">@ViewBag.Label</label>*@
-    @*<div class="col-8">*@
-    <input class="form-control" title="@ViewBag.Label" type="@ViewBag.Type" id="@ViewBag.Id" style="height: 32px; margin-left: 20px; margin-right: 20px; width: 140px; background-color: white;" placeholder="@ViewBag.Label">
-    @*</div>*@
+    <input class="form-control" title="@ViewBag.Label" type="@ViewBag.Type" id="@ViewBag.Id" placeholder="@ViewBag.Label">
 </div>
-
-
-
-
-

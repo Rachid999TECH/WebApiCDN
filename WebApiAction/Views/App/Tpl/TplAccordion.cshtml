@@ -8,11 +8,11 @@
 
 <div id="@ViewBag.AccordionId" style="background-color: #F2F5FA;" class="card pannel accordion-panel-cl panel-default">
     <div class="card-header panel-heading accordion-panel-heading-cl">
-        <h4 class="panel-title">
+        <span class="panel-title">
             <a class="accordion-a-cl" style="background-color: #F2F5FA;" role="button" data-toggle="collapse" data-parent="#@ViewBag.AccordionContainerId" href="#@ViewBag.AccordionCollapsId" aria-expanded="false" aria-controls="@ViewBag.AccordionCollapsId" class="collapsed">
                 @ViewBag.AccordionTitle
             </a>
-        </h4>
+        </span>
     </div>
     <div id="@ViewBag.AccordionCollapsId" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="@ViewBag.AccordionId" data-parent="#@ViewBag.AccordionContainerId">
         <div class="panel-body accordion-pb-cl">
