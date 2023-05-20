@@ -4289,6 +4289,7 @@ a.waves-effect, a.waves-light {
 }
 
 .form-control {
+    width: 100%;
     margin-left: 2px;
     margin-right: 2px;
     background-color: #fff;
@@ -4372,7 +4373,7 @@ a.waves-effect, a.waves-light {
 
 .lg-ct-cl {
     width: 100%;
-    min-height: 100vh;
+    min-height: 90vh;
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -4381,8 +4382,6 @@ a.waves-effect, a.waves-light {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 15px;
-    background: #f2f2f2;
 }
 
 .lg-wp-cl {
@@ -4390,7 +4389,7 @@ a.waves-effect, a.waves-light {
     background: #fff;
     border-radius: 10px;
     overflow: hidden;
-    padding: 77px 55px 33px 55px;
+    padding: 55px 55px 33px 55px;
     box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
     /*-moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
     -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
@@ -4587,13 +4586,10 @@ a.waves-effect, a.waves-light {
     margin-top: 30px;
 }
 
-    .lg-fr-btn-cl > a {
-        color: #fff;
-    }
-
-.p-t-115 {
-    padding-top: 115px;
+.lg-fr-btn-cl > a {
+    color: #fff;
 }
+
 
 .txt1 {
     font-family: Poppins-Regular;
@@ -6301,6 +6297,7 @@ input[type="checkbox"]::before {
     top: 0px;
     background-color: #fff;
     border-radius: 2px;
+    display:none;
 }
 
 input[type="checkbox"]::after {
@@ -6458,7 +6455,7 @@ input[type="checkbox"]:checked::before {
     align-items: center;
     justify-content: space-between;
     padding: 5px 10px 5px 10px;
-    font-weight: 600;
+    /*font-weight: 600;*/
     color: #555555;
     white-space: nowrap;
     transition: 0.3s;
@@ -6672,4 +6669,4 @@ input[type="checkbox"]:checked::before {
     font-weight: bold;
 }
 
-
+/*-------------navbar-------------*/
