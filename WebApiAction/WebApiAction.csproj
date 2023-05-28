@@ -333,6 +333,7 @@
     <Content Include="Content\App\introjs.min.css" />
     <Content Include="Content\App\jquery.dataTables.min.css" />
     <Content Include="Content\App\material.min.css" />
+    <Content Include="Content\App\my_multiselect.css" />
     <Content Include="Content\App\my_style.css" />
     <Content Include="Content\App\responsive.bootstrap.min.css" />
     <Content Include="Content\App\responsive.dataTables.min.css" />
@@ -379,6 +380,7 @@
     <Content Include="Scripts\App\intro.min.js" />
     <Content Include="Scripts\App\jquery-3.3.1.min.js" />
     <Content Include="Scripts\App\jquery.dataTables.min.js" />
+    <Content Include="Scripts\App\jquery.multi-select.min.js" />
     <Content Include="Scripts\App\jquery.signalR-2.4.1.min.js" />
     <Content Include="Scripts\App\jszip.min.js" />
     <Content Include="Scripts\App\moment.js" />
