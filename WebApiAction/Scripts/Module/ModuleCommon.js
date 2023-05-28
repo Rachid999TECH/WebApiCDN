@@ -3333,16 +3333,16 @@ $('#tb-log-id')
     });
 
 //common
-$('#SideBarWrapper')
-    .on('click', function () {
-        HideReport('tb-acc-id');
-        HideReport('tb-noti-report-id');
-        HideReport('tb-hist-report-id');
-        HideReport('tb-conn-report-id');
-        //HideReport('tb-fix-report-id');
-        HideReport('tb-log-report-id');
-        HideReport('tb-chat-report-id');
-    });
+//$('#SideBarWrapper')
+//    .on('click', function () {
+//        HideReport('tb-acc-id');
+//        HideReport('tb-noti-report-id');
+//        HideReport('tb-hist-report-id');
+//        HideReport('tb-conn-report-id');
+//        //HideReport('tb-fix-report-id');
+//        HideReport('tb-log-report-id');
+//        HideReport('tb-chat-report-id');
+//    });
 
 //Chat
 $('#tb-chat-id')
@@ -8951,38 +8951,6 @@ function AddElement(ParentId, elementTag, elementId, html) {
     newElement.innerHTML = html;
     p.appendChild(newElement);
 }
-
-//jQuery(function ($) {
-
-//    $(".sidebar-dropdown > a").click(function () {
-//        $(".sidebar-submenu").slideUp(200);
-//        if (
-//            $(this)
-//                .parent()
-//                .hasClass("active")
-//        ) {
-//            $(".sidebar-dropdown").removeClass("active");
-//            $(this)
-//                .parent()
-//                .removeClass("active");
-//        } else {
-//            $(".sidebar-dropdown").removeClass("active");
-//            $(this)
-//                .next(".sidebar-submenu")
-//                .slideDown(200);
-//            $(this)
-//                .parent()
-//                .addClass("active");
-//        }
-//    });
-
-//    $("#close-sidebar").click(function () {
-//        $(".page-wrapper").removeClass("toggled");
-//    });
-//    $("#show-sidebar").click(function () {
-//        $(".page-wrapper").addClass("toggled");
-//    });
-//});
 
 function ShowReport(Pattern) {
     $('#' + Pattern).show();
