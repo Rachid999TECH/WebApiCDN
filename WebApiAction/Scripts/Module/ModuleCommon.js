@@ -1104,10 +1104,23 @@ function HtmlDropDowListMultipleRefresh(ElementId, Label, OnChange) {
 
     var DisplayValue = $('#' + ElementId + 'Parent').css('display');
 
-    $('#' + ElementId + 'Parent').replaceWith('<div id="' + ElementId + 'Parent" class="form-group row mb-1" style="margin-right: 10px; display: ' + DisplayValue + '">' +
-        '<select class= "form-control" id = "' + ElementId + '" onchange = "' + OnChange + '" style = "height: 32px; margin-left: 20px; margin-right: 6px; width: 220px; background-color: white;" multiple = "multiple" >' +
+    $('#' + ElementId + 'Parent').replaceWith(
+        '<div id="' + ElementId + 'Parent" class="form-group row mb-1 el-mul-ct-cl" style="display: ' + DisplayValue + '">' +
+        '<span class="col-form-label">' + Label + '</span>' +
+        '<select class= "form-control mod-inp-cl" id = "' + ElementId + '" onchange = "' + OnChange + '" multiple = "multiple" >' +
+
+        //test
+        //'<i class="fa fa-th-list el-mul-op-cl"></i>' +
+        //'<i class="fa fa-bars el-mul-op-cl"></i>' +
+        //'<i class="fa fa-check-circle el-mul-op-cl"></i>' +
+        //'<i class="fa fa-chevron-circle-left el-mul-op-cl"></i>' +
+
         '<option value="0" selected>' + Label + '</option></select>' +
-        '</div>');
+        '</div>'
+    );
+
+
+
 }
 
 function HtmlDropDowListRefresh(ElementId, Label, OnChange) {
@@ -1117,7 +1130,7 @@ function HtmlDropDowListRefresh(ElementId, Label, OnChange) {
     $('#' + ElementId + 'Parent').replaceWith('<div id="' + ElementId + 'Parent" class="form-group row mb-1" style="margin-right: 10px; display: ' + DisplayValue + '">' +
         '<label for="' + ElementId + '" id="' + ElementId + 'Label" class="col-4 col-form-label">' + Label + '</label>' +
         '<div class="col-8">' +
-        '<select class= "form-control" id = "' + ElementId + '" onchange = "' + OnChange + '" style = "height: 32px; margin-left: 20px; margin-right: 6px; width: 220px; background-color: white;" >' +
+        '<select class= "form-control mod-inp-cl" id = "' + ElementId + '" onchange = "' + OnChange + '" >' +
         '<option value="0">' + Label + '</option></select>' +
         '</div>' +
         '</div>');
@@ -1128,7 +1141,7 @@ function HtmlDropDowListLabelRefresh(ElementId, Label, OnChange) {
     var DisplayValue = $('#' + ElementId + 'Parent').css('display');
 
     $('#' + ElementId + 'Parent').replaceWith('<div id="' + ElementId + 'Parent" class="form-group row mb-1" style="margin-right: 10px; display: ' + DisplayValue + '">' +
-        '<select class= "form-control" id = "' + ElementId + '" onchange = "' + OnChange + '" style = "height: 32px; margin-left: 20px; margin-right: 6px; width: 220px; background-color: white;" >' +
+        '<select class= "form-control mod-inp-cl" id = "' + ElementId + '" onchange = "' + OnChange + '" >' +
         '<option value="0">' + Label + '</option></select>' +
         '</div>');
 }
@@ -1150,23 +1163,28 @@ function HtmlDropDowListMultipleCheckRefresh(ElementId, Label, OnChange, Checked
         checked = 'checked';
     }
 
-    $('#' + ElementId + 'Parent').replaceWith('<div id="' + ElementId + 'Parent" class="form-group row mb-1" style="margin-right: 10px; display: ' + DisplayValue + '">' +
-        '<select class= "form-control" id = "' + ElementId + '" onchange = "' + OnChange + '" style = "height: 32px; margin-left: 20px; margin-right: 6px; width: 220px; background-color: white;" multiple = "multiple" >' +
-        '<option value="0" selected>' + Label + '</option></select>' +
-        '<div class="form-check">' +
+    $('#' + ElementId + 'Parent').replaceWith(
+        '<div id="' + ElementId + 'Parent" class="form-group row mb-1 el-mul-ct-cl" style="display: ' + DisplayValue + '">' +
+        '<span class="col-form-label">' + Label + '</span>' +
+        '<select class= "form-control mod-inp-cl" id = "' + ElementId + '" onchange = "' + OnChange + '" multiple = "multiple" >' +
+        '<option value="0" selected></option></select>' +
+        '<div class="form-check" style="display:none">' +
         '<input class="form-check-input" type="checkbox" value="" id="' + ElementId + 'Check" ' + checked + '>' +
         '</div>' +
         '</div>');
+
+    //Test
+
 }
 
 function HtmlDropDownMultipleDeselectAll(ElementId, number) {
-    for (var j = 4; j <= number; j++) {
+    for (var j = 2; j <= number; j++) {
         document.querySelector('#' + ElementId + 'Parent > div > div > div > label:nth-child(' + j + ') > input').checked = false;
     };
 }
 
 function HtmlDropDownMultipleSelectAll(ElementId, number) {
-    for (var j = 4; j <= number; j++) {
+    for (var j = 2; j <= number; j++) {
         document.querySelector('#' + ElementId + 'Parent > div > div > div > label:nth-child(' + j + ') > input').checked = true;
     };
 }
@@ -1183,7 +1201,7 @@ function HtmlDropDowListCheckRefresh(ElementId, Label, OnChange, Checked) {
     }
 
     $('#' + ElementId + 'Parent').replaceWith('<div id="' + ElementId + 'Parent" class="form-group row mb-1" style="margin-right: 10px; display: ' + DisplayValue + '">' +
-        '<select class= "form-control" id = "' + ElementId + '" onchange = "' + OnChange + '" style = "height: 32px; margin-left: 20px; margin-right: 6px; width: 220px; background-color: white;" >' +
+        '<select class= "form-control mod-inp-cl" id = "' + ElementId + '" onchange = "' + OnChange + '" >' +
         '<option value="0">' + Label + '</option></select>' +
         '<div class="form-check">' +
         '<input class="form-check-input" type="checkbox" value="" id="' + ElementId + 'Check" ' + checked + '>' +
@@ -6966,7 +6984,8 @@ function ElementDropDownListValueGet(Id) {
 }
 
 function ElementDropDownListValueMultipleGet(Id) {
-    return '\'' + $('#' + Id).val() + '\'';
+    /*return '\'' + $('#' + Id).val() + '\'';*/
+    return encodeURIComponent($('#' + Id).val());
     /* return $('#' + Id).val();*/
     /*return '"' + $('#' + Id).val() + '"';*/
     //return new String($('#' + Id).val());
@@ -7036,38 +7055,7 @@ function AddElement(ParentId, elementTag, elementId, html) {
     p.appendChild(newElement);
 }
 
-//jQuery(function ($) {
-
-//    $(".sidebar-dropdown > a").click(function () {
-//        $(".sidebar-submenu").slideUp(200);
-//        if (
-//            $(this)
-//                .parent()
-//                .hasClass("active")
-//        ) {
-//            $(".sidebar-dropdown").removeClass("active");
-//            $(this)
-//                .parent()
-//                .removeClass("active");
-//        } else {
-//            $(".sidebar-dropdown").removeClass("active");
-//            $(this)
-//                .next(".sidebar-submenu")
-//                .slideDown(200);
-//            $(this)
-//                .parent()
-//                .addClass("active");
-//        }
-//    });
-
-//    $("#close-sidebar").click(function () {
-//        $(".page-wrapper").removeClass("toggled");
-//    });
-//    $("#show-sidebar").click(function () {
-//        $(".page-wrapper").addClass("toggled");
-//    });
-//});
-
+//-----------------leftbar
 jQuery(function ($) {
 
     $(".sidebar-dropdown > a").click(function () {
@@ -7099,6 +7087,14 @@ jQuery(function ($) {
         $(".page-wrapper").addClass("toggled");
     });
 });
+
+
+
+
+
+
+
+
 
 function ShowReport(Pattern) {
     $('#' + Pattern).show();
@@ -7480,14 +7476,12 @@ function GetDhmStringFromDhmPicker(DatePickerId) {
 
 function DataTableDhmStringFromDhmValueGet(DhmValue) {
     var DhmString = new String(DhmValue).replace("/", "").replace("/", "").replace(":", "").replace(":", "");
-    alert(DhmString);
     return DhmString;
 }
 
 function GetFirstCellValue(TableId, ColumnIndex) {
     var value = 0;
     $('#' + TableId).DataTable().column(ColumnIndex).data().each(function (d, j) {
-        //alert(d);
         value = d;
     });;
     return value;
@@ -7507,14 +7501,11 @@ function GetFirstCellPercentageValue(TableId, ColumnIndex, TotalColumnIndex) {
         total = d;
     });;
 
-    //alert(total);
-
     if (total != 0 && total != null) {
         //percentage = (value / total * 100).toFixed(2);
         percentage = (value / total * 100).toFixed(2);
     };
 
-    //alert(percentage);
     return percentage;
 
 }
@@ -8961,37 +8952,37 @@ function AddElement(ParentId, elementTag, elementId, html) {
     p.appendChild(newElement);
 }
 
-jQuery(function ($) {
+//jQuery(function ($) {
 
-    $(".sidebar-dropdown > a").click(function () {
-        $(".sidebar-submenu").slideUp(200);
-        if (
-            $(this)
-                .parent()
-                .hasClass("active")
-        ) {
-            $(".sidebar-dropdown").removeClass("active");
-            $(this)
-                .parent()
-                .removeClass("active");
-        } else {
-            $(".sidebar-dropdown").removeClass("active");
-            $(this)
-                .next(".sidebar-submenu")
-                .slideDown(200);
-            $(this)
-                .parent()
-                .addClass("active");
-        }
-    });
+//    $(".sidebar-dropdown > a").click(function () {
+//        $(".sidebar-submenu").slideUp(200);
+//        if (
+//            $(this)
+//                .parent()
+//                .hasClass("active")
+//        ) {
+//            $(".sidebar-dropdown").removeClass("active");
+//            $(this)
+//                .parent()
+//                .removeClass("active");
+//        } else {
+//            $(".sidebar-dropdown").removeClass("active");
+//            $(this)
+//                .next(".sidebar-submenu")
+//                .slideDown(200);
+//            $(this)
+//                .parent()
+//                .addClass("active");
+//        }
+//    });
 
-    $("#close-sidebar").click(function () {
-        $(".page-wrapper").removeClass("toggled");
-    });
-    $("#show-sidebar").click(function () {
-        $(".page-wrapper").addClass("toggled");
-    });
-});
+//    $("#close-sidebar").click(function () {
+//        $(".page-wrapper").removeClass("toggled");
+//    });
+//    $("#show-sidebar").click(function () {
+//        $(".page-wrapper").addClass("toggled");
+//    });
+//});
 
 function ShowReport(Pattern) {
     $('#' + Pattern).show();
